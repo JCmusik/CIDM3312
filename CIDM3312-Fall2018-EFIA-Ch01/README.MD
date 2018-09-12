@@ -3,4 +3,14 @@
 ## Entity Framework in Action
 
 * Chapter 01 - Simple Models
-* Chapter 02 - Queries
+
+
+
+## Assignment instructions
+Update the example to include these features:
+
+* Create new records
+* Update data in a record
+* Search for records
+* Sort records
+* Group records

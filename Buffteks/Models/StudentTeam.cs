@@ -1,4 +1,4 @@
-namespace inClassPractice.Models
+namespace Buffteks.Models
 {
     public class StudentTeam
     {

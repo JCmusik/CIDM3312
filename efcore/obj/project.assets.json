@@ -687,11 +687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/inClass/inClass.csproj",
-      "projectName": "inClass",
-      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/inClass.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/efcore/efcore.csproj",
+      "projectName": "efcore",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/efcore/efcore.csproj",
       "packagesPath": "/Users/johncunningham/.nuget/packages/",
-      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/obj/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/efcore/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

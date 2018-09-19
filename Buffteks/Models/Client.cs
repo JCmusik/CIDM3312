@@ -7,7 +7,5 @@ namespace Buffteks.Models
         public string CompanyName { get; set; }
         public string ClientContactEmail { get; set; }
         public string  ClientContactPhoneNumber { get; set; }
-        public Project Project { get; set; }
-        public int ProjectId { get; set; }
     }
 }

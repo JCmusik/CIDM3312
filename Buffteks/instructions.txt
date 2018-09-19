@@ -3,7 +3,7 @@ Buffteks
 STUDENT		TEAM
 PROJECT		CLIENT
 
-team of students that get together to work on projects that create websites for clients
+Team of students that get together to work on projects that create websites for clients
 
 
 Create first draft of entities
@@ -36,14 +36,16 @@ Table Names:
     TEAM
         Attributes:
             TeamId - PK
+            Name
+            ProjectId - FK
     CLIENT
         Attributes:
             ClientId - PK
             ClientContactName
             CompanyName
             ClientContactEmail
-            ProjectId - FK
     PROJECT
         Attributes:
             ProjectId - PK
             ProjectName
+            ClientId - FK

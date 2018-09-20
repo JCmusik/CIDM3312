@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Buffteks.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20180920122714_Initial")]
+    [Migration("20180920234536_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,13 +55,17 @@ namespace Buffteks.Migrations
 
                     b.Property<DateTime>("StartDate");
 
+                    b.Property<int>("TeamId");
+
                     b.Property<double>("TotalHours");
 
                     b.HasKey("ProjectId");
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("Project");
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("Buffteks.Models.Student", b =>
@@ -120,6 +124,11 @@ namespace Buffteks.Migrations
                     b.HasOne("Buffteks.Models.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Buffteks.Models.Team", "Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

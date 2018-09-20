@@ -12,5 +12,7 @@ namespace Buffteks.Models
         public DateTime EndDate { get; set; }
         public int ClientId { get; set; }
         public Client Client { get; set; }
+        public int TeamId { get; set; }
+        public Team Team { get; set; }
     }
 }

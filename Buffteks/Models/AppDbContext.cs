@@ -5,10 +5,7 @@ namespace Buffteks.Models
     public class AppDbContext : DbContext
     {
         public DbSet<StudentTeam> StudentTeams { get; set; }
-        
-        public DbSet<TeamClient> TeamClients { get; set; }
-        
-
+        public DbSet<Project> Project { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=Buffteks.db;");
@@ -28,20 +25,6 @@ namespace Buffteks.Models
             .WithMany(st => st.StudentTeam)
             .HasForeignKey(t => t.TeamId);
 
-
-
-            modelBuilder.Entity<TeamClient>()
-            .HasKey(tp => new { tp.TeamId, tp.ClientId });
-
-            modelBuilder.Entity<TeamClient>()
-            .HasOne(t => t.Team)
-            .WithMany(tc => tc.TeamClients)
-            .HasForeignKey(t => t.TeamId);
-
-            modelBuilder.Entity<TeamClient>()
-            .HasOne(p => p.Client)
-            .WithMany(tc => tc.TeamClients)
-            .HasForeignKey(t => t.ClientId);
         }
     }
 }

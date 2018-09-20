@@ -7,6 +7,5 @@ namespace Buffteks.Models
         public int ClientId { get; set; }
         public string ClientContactName { get; set; }
         public string Name { get; set; }
-        public List<TeamClient> TeamClients { get; set; }
     }
 }

@@ -12,6 +12,5 @@ namespace Buffteks.Models
         public DateTime EndDate { get; set; }
         public int ClientId { get; set; }
         public Client Client { get; set; }
-        public List<TeamClient> TeamProject { get; set; }
     }
 }

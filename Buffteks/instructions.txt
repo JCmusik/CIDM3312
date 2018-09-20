@@ -13,7 +13,6 @@ Business Rules:
 STUDENTS can be on 1 or many TEAMS
 TEAMS can have 1 or many STUDENTS
 
-
 CLIENT can have 1 or many PROJECTS
 PROJECTS can have only 1 CLIENT
 

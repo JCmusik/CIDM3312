@@ -9,5 +9,7 @@ namespace Buffteks.Models
         public string TeamLeader { get; set; }
         public List<StudentTeam> StudentTeam { get; set; }
         public List<Student> Students { get; set; }
+        public int ProjectId { get; set; }
+        public Project Projects { get; set; }
     }
 }

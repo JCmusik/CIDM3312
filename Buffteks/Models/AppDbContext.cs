@@ -4,8 +4,10 @@ namespace Buffteks.Models
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Team> Team { get; set; }
-        public DbSet<Student> Student { get; set; }
+        public DbSet<StudentTeam> StudentTeams { get; set; }
+        
+        public DbSet<TeamClient> TeamClients { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -17,14 +19,29 @@ namespace Buffteks.Models
             .HasKey(t => new { t.StudentId, t.TeamId });
 
             modelBuilder.Entity<StudentTeam>()
-            .HasOne(st => st.Student)
-            .WithMany(s => s.StudentTeam)
-            .HasForeignKey(st => st.StudentId);
+            .HasOne(s => s.Student)
+            .WithMany(st => st.StudentTeam)
+            .HasForeignKey(s => s.StudentId);
 
             modelBuilder.Entity<StudentTeam>()
-            .HasOne(st => st.Team)
-            .WithMany(t => t.StudentTeam)
-            .HasForeignKey(st => st.TeamId);
+            .HasOne(t => t.Team)
+            .WithMany(st => st.StudentTeam)
+            .HasForeignKey(t => t.TeamId);
+
+
+
+            modelBuilder.Entity<TeamClient>()
+            .HasKey(tp => new { tp.TeamId, tp.ClientId });
+
+            modelBuilder.Entity<TeamClient>()
+            .HasOne(t => t.Team)
+            .WithMany(tc => tc.TeamClients)
+            .HasForeignKey(t => t.TeamId);
+
+            modelBuilder.Entity<TeamClient>()
+            .HasOne(p => p.Client)
+            .WithMany(tc => tc.TeamClients)
+            .HasForeignKey(t => t.ClientId);
         }
     }
 }

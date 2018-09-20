@@ -1,11 +1,12 @@
+using System.Collections.Generic;
+
 namespace Buffteks.Models
 {
-    public class Client
+    public class Client : Person
     {
         public int ClientId { get; set; }
         public string ClientContactName { get; set; }
-        public string CompanyName { get; set; }
-        public string ClientContactEmail { get; set; }
-        public string  ClientContactPhoneNumber { get; set; }
+        public string Name { get; set; }
+        public List<TeamClient> TeamClients { get; set; }
     }
 }

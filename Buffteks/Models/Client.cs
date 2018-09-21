@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Buffteks.Models
 {
     public class Client : Person

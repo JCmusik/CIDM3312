@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace Buffteks.Models
 {
+    /// <summary>
+    /// Defines a Student
+    /// </summary>
     public class Student : Person
     {
         public int StudentId { get; set; }

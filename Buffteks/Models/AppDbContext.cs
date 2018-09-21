@@ -2,6 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Buffteks.Models
 {
+    /// <summary>
+    /// Database context for connecting to SQLite
+    /// </summary>
     public class AppDbContext : DbContext
     {
         public DbSet<StudentTeam> StudentTeams { get; set; }

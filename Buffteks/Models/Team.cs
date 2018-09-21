@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace Buffteks.Models
 {
     /// <summary>
-    /// Defines a Team made up of Students
+    /// Defines a Team object with a list of Students
     /// </summary>
     public class Team
     {

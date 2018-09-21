@@ -1,5 +1,8 @@
 namespace Buffteks.Models
 {
+    /// <summary>
+    /// Abstract class with common properties for derived classes to inherit
+    /// </summary>
     public abstract class Person
     {
         public string FirstName { get; set; }

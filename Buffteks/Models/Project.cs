@@ -2,6 +2,9 @@ using System;
 
 namespace Buffteks.Models
 {
+    /// <summary>
+    /// Defines a Project object
+    /// </summary>
     public class Project
     {
         public int ProjectId { get; set; }

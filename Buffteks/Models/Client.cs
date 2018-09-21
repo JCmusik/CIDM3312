@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace Buffteks.Models
 {
+    /// <summary>
+    /// Defines a Client object with a list of Projects
+    /// </summary>
     public class Client : Person
     {
         public int ClientId { get; set; }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Buffteks.Models;
 
 namespace Buffteks
 {
@@ -6,7 +7,13 @@ namespace Buffteks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using(var context = new AppDbContext())
+            {
+               foreach (var s in context.Student)
+               {
+                   System.Console.WriteLine(s);
+               }
+            }
         }
     }
 }

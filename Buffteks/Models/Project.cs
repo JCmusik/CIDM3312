@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Buffteks.Models
 {
@@ -8,6 +9,7 @@ namespace Buffteks.Models
     public class Project
     {
         public int ProjectId { get; set; }
+        [StringLength(100)]
          public string ProjectName { get; set; }
          public double TotalHours { get; set; }
          public DateTime StartDate { get; set; }

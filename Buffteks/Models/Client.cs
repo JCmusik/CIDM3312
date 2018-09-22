@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Buffteks.Models
 {
@@ -8,6 +9,7 @@ namespace Buffteks.Models
     public class Client : Person
     {
         public int ClientId { get; set; }
+        [StringLength(70)]
         public string CompanyName { get; set; }
         public List<Project> Project { get; set; }
     }

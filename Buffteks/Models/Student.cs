@@ -10,6 +10,6 @@ namespace Buffteks.Models
         public int StudentId { get; set; }
         public List<StudentTeam> StudentTeam { get; set; }
 
-        public override string ToString() => $"Name: {FirstName} {LastName} \nEmail: {Email}\nPhone: {PhoneNumber}\n";
+        public override string ToString() => $"Name: {FirstName} {LastName} \nEmail: {Email}\nPhone: {PhoneNumber}";
     }
 }

@@ -1,7 +1,7 @@
 namespace Buffteks.Models
 {
     /// <summary>
-    /// Extra entity for many to many relationship of Student and Team
+    /// Extra entity for many to many relationship of Student and Team  Fluent API's found in <cref="AppDbContext.cs"> in the <cref="OnModelCreating"> model builder
     /// </summary>
     public class StudentTeam
     {

@@ -8,9 +8,16 @@ namespace Buffteks.Models
     /// </summary>
     public class Client : Person
     {
+    #region Properties
+
+        // Primary Key
         public int ClientId { get; set; }
-        [StringLength(70)]
+        
+        [MaxLength(70)] // sets max length of property
         public string CompanyName { get; set; }
         public List<Project> Project { get; set; }
+
+    #endregion
+       
     }
 }

@@ -18,11 +18,13 @@ namespace Buffteks.Models
         /// </summary>
         public List<StudentTeam> StudentTeam { get; set; }
 
-        #endregion
+    #endregion
 
     #region Methods
+
         // String representaion of class
         public override string ToString() => $"Name: {FirstName} {LastName} \nEmail: {Email}\nPhone: {PhoneNumber}";
+        
     #endregion
     }
 }

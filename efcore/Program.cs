@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using efcore.Models;
 
 namespace efcore
 {
@@ -6,7 +8,17 @@ namespace efcore
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            using (var ctx = new AppDbContext())
+            {
+               foreach (var p in ctx.Project)
+               {
+                   System.Console.WriteLine(p);
+               }
+               foreach (var s in ctx.Student)
+               {
+                   System.Console.WriteLine(s);
+               }
+            }
         }
     }
 }

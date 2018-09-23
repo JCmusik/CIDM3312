@@ -7,13 +7,18 @@ namespace Buffteks.Models
     /// </summary>
     public abstract class Person
     {
-        [StringLength(50)]
+    #region Properties
+
+        [MaxLength(50)] // sets max length for property
         public string FirstName { get; set; }
-        [StringLength(50)]
+        [MaxLength(50)] // sets max length for property
         public string LastName { get; set; }
-        [StringLength(70)]
-        public string Email { get; set; }
-        [StringLength(20)]
+        [MaxLength(70)] // sets max length for property
+        public string Email { get; set; }        
+        [MaxLength(20)] // sets max length for property
         public string PhoneNumber { get; set; }
+        
+    #endregion
+
     }
 }

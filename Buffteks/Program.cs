@@ -7,7 +7,7 @@ namespace Buffteks
     {
         static void Main(string[] args)
         {
-            // Create new record
+            // Create new record test
             // System.Console.Write("What is your first name: ");
             // var fName = Console.ReadLine();
 
@@ -26,7 +26,7 @@ namespace Buffteks
             //     context.SaveChanges();
             // }
 
-            // Read from Database
+            // Read from Database test
             using(var context = new AppDbContext())
             {
                foreach (var s in context.Student)
@@ -34,10 +34,6 @@ namespace Buffteks
                    System.Console.WriteLine($"\n{s}");
                }
             }
-
-            // Update new record
-
-            // Delete new record
         }
     }
 }

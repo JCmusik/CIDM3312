@@ -20,6 +20,8 @@ namespace Buffteks.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Fluent API's to map PK/FK of the extra entity class to their respective classes
+            /// <see cref="https://docs.microsoft.com/en-us/ef/core/modeling/relationships#many-to-many">
+            
             modelBuilder.Entity<StudentTeam>()
             .HasKey(t => new { t.StudentId, t.TeamId });
 

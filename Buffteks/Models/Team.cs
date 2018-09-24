@@ -21,6 +21,9 @@ namespace Buffteks.Models
 
         public List<Student> Students { get; set; }
 
+        public int StudentId { get; set; }
+        public Student Student { get; set; }
+
         /// <summary>
         /// Used for Many to Many Relationships between Student and Team classes
         /// <see cref="https://docs.microsoft.com/en-us/ef/core/modeling/relationships#many-to-many">

@@ -12,10 +12,9 @@ namespace Buffteks.Models
 
         // Primary Key
         public int ClientId { get; set; }
-        
-        [MaxLength(70)] // sets max length of property
-        public string CompanyName { get; set; }
         public List<Project> Project { get; set; }
+        public int OrgnaizationId { get; set; }
+        public Organization Organization { get; set; }
 
     #endregion
        

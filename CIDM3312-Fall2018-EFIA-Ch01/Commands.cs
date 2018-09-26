@@ -26,6 +26,11 @@ namespace EFIA
             }
         }
 
+
+        /// <summary>
+        /// Prompts user for pertinent infomation to create a new book, stores it to the db, and lists all book in db.
+        /// </summary>
+        /// <remarks> For adding records to db <see cref="https://docs.microsoft.com/en-us/ef/core/saving/basic#adding-data">
         public static void CreateNewRecord()
         {
             // Ask for book Title

@@ -49,7 +49,6 @@ namespace EFIA
 
             using (var db = new AppDbContext())
             {
-                var bookAuth = db.Books.Include(a => a.Author);
                 var book = new Book { Title = title, Description = desc, PublishedOn = pubDate, Author = new Author{Name = author}};
 
                 db.Books.Add(book);

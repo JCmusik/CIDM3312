@@ -6,11 +6,10 @@ namespace EFIA
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(
-                "Commands: c (create new), u (update record) l (list), w (change url), r (resetDb) and e (exit) - add -l to first two for logs");
-            Console.Write(
-                "Checking if database exists... ");
-            Console.WriteLine(Commands.WipeCreateSeed(true) ? "created database and seeded it." : "it exists.");
+            DisplayMenuOptions();
+            
+            CheckForDatabase();
+
             do
             {
                 Console.Write("> ");
@@ -45,6 +44,18 @@ namespace EFIA
                         break;
                 }
             } while (true);            
+        }
+        public static void DisplayMenuOptions()
+        {
+            Console.WriteLine(
+                "Commands: c (create new), u (update record) l (list), w (change url), r (resetDb) and e (exit) - add -l to first two for logs");
+        }
+
+        public static void CheckForDatabase()
+        {
+            Console.Write(
+                "Checking if database exists... ");
+            Console.WriteLine(Commands.WipeCreateSeed(true) ? "created database and seeded it." : "it exists.");
         }
     }
 }

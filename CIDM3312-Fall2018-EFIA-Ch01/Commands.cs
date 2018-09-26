@@ -19,9 +19,10 @@ namespace EFIA
                     .Include(a => a.Author))                 //#C
                 {
                     var webUrl = book.Author.WebUrl ?? "- no web url given -";
-                    Console.WriteLine($"{book.Title} by {book.Author.Name}");
+                    Console.WriteLine($"ID: {book.BookId} {book.Title} by {book.Author.Name}");
+                    Console.WriteLine($"Description: {book.Description}");
                     Console.WriteLine("     Published on " +
-                        $"{book.PublishedOn:dd-MMM-yyyy}. {webUrl}");
+                        $"{book.PublishedOn:dd-MM-yyyy}. {webUrl}");
                 }
             }
         }
@@ -56,6 +57,64 @@ namespace EFIA
                 db.SaveChanges();
                 Console.WriteLine(".. SavedChanges called.");
                 ListAll();
+            }
+        }
+
+        /// <summary>
+        /// Update exisiting record
+        /// </summary>
+        /// <remarks>For updating new records in db see <see cref="https://docs.microsoft.com/en-us/ef/core/saving/basic#updating-data"></remarks>
+        public static void UpdateRecord()
+        {
+            // Display list of books to user
+            Console.WriteLine("Current List of books:\n");
+            ListAll();
+
+            // Prompt user to specifiy which book
+            Console.Write("\nEnter the Id of the book you would like to update: ");
+            var bookToUpdate = Int32.Parse(Console.ReadLine());
+
+            System.Console.Write("Choose option for the field you would like to update. 1) Title 2) Description 3) Date published on 4) Author 5) Web url?) ");
+            var fieldToUpdate = Int32.Parse(Console.ReadLine());
+
+            using (var db = new AppDbContext())
+            {
+                var book = db.Books.Include(a => a.Author).Single(b => b.BookId == bookToUpdate);
+                switch (fieldToUpdate)
+                {
+                    case 1:
+                        Console.Write("Enter new title: ");
+                        var newTitle = Console.ReadLine();
+                        book.Title = newTitle;
+                        break;
+                    case 2:
+                        Console.Write("Enter new description: ");
+                        var newDesc = Console.ReadLine();
+                        book.Description = newDesc;
+                        break;
+                    case 3:
+                        Console.Write("Enter new published on date (DD-MM-YYYY): ");
+                        var newPubDate = DateTime.Parse(Console.ReadLine());
+                        book.PublishedOn = newPubDate;
+                        break;
+                    case 4:
+                        Console.Write("Enter new Author: ");
+                        var newAuthor = Console.ReadLine();
+                        book.Author.Name = newAuthor;
+                        break;
+                    case 5:
+                        Console.Write("Enter new web url: ");
+                        var newWebUrl = Console.ReadLine();
+                        book.Author.WebUrl = newWebUrl;
+                        break;
+                    default:
+                        break;
+                }
+                db.SaveChanges();
+                System.Console.WriteLine("...Changes saved....\n");
+                Console.WriteLine($"{book.Title} by {book.Author.Name}");
+                Console.WriteLine($"Description: {book.Description}");
+                Console.WriteLine($"     published on {book.PublishedOn:dd-MM-YYYY}. {book.Author.WebUrl}");
             }
         }
 

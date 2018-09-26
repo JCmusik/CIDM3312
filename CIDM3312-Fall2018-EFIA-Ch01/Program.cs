@@ -7,7 +7,7 @@ namespace EFIA
         static void Main(string[] args)
         {
             Console.WriteLine(
-                "Commands: c (create new), l (list), u (change url), r (resetDb) and e (exit) - add -l to first two for logs");
+                "Commands: c (create new), u (update record) l (list), w (change url), r (resetDb) and e (exit) - add -l to first two for logs");
             Console.Write(
                 "Checking if database exists... ");
             Console.WriteLine(Commands.WipeCreateSeed(true) ? "created database and seeded it." : "it exists.");
@@ -20,10 +20,13 @@ namespace EFIA
                     case "c":
                         Commands.CreateNewRecord();
                         break;
+                    case "u":
+                        Commands.UpdateRecord();
+                        break;
                     case "l":
                         Commands.ListAll();
                         break;
-                    case "u":
+                    case "w":
                         Commands.ChangeWebUrl();
                         break;
                     case "l -l":

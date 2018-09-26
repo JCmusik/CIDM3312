@@ -57,6 +57,7 @@ namespace EFIA
                 db.SaveChanges();
                 Console.WriteLine(".. SavedChanges called.");
                 ListAll();
+                Program.DisplayMenuOptions();
             }
         }
 

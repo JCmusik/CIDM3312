@@ -9,7 +9,7 @@
 ## Directions for Assignment 03
 #### Update the example to include these features:
 
-1. Create new records -[x]
+1. Create new records
 2. Update data in a record
 3. Search for records
 4. Sort records

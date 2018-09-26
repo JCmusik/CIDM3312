@@ -7,11 +7,9 @@ namespace Buffteks.Models
     /// </summary>
     public class AppDbContext : DbContext
     {
+        public DbSet<Team> Team { get; set; }
         public DbSet<StudentTeam> StudentTeam { get; set; }
         public DbSet<Project> Project { get; set; }
-        public DbSet<Student> Student { get; set; }
-        public DbSet<Client> Client { get; set; }
-        public DbSet<Team> Team { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

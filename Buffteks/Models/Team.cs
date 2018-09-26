@@ -18,11 +18,10 @@ namespace Buffteks.Models
 
         [MaxLength(50)] // sets max length
         public string TeamLeader { get; set; }
-
         public List<Student> Students { get; set; }
 
-        public int StudentId { get; set; }
-        public Student Student { get; set; }
+        // public int StudentId { get; set; }
+        // public Student Student { get; set; }
 
         /// <summary>
         /// Used for Many to Many Relationships between Student and Team classes

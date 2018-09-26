@@ -1,5 +1,6 @@
 ﻿using System;
 using Buffteks.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Buffteks
 {
@@ -7,7 +8,10 @@ namespace Buffteks
     {
         static void Main(string[] args)
         {
-            
+            using (var context = new AppDbContext())
+            {
+                
+            }
         }
     }
 }

@@ -3380,11 +3380,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/johncunningham/Projects/CIDM3312-Fall2018-EFIA-Ch01/EFIA.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/CIDM3312-Fall2018-EFIA-Ch01/EFIA.csproj",
       "projectName": "EFIA",
-      "projectPath": "/Users/johncunningham/Projects/CIDM3312-Fall2018-EFIA-Ch01/EFIA.csproj",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/CIDM3312-Fall2018-EFIA-Ch01/EFIA.csproj",
       "packagesPath": "/Users/johncunningham/.nuget/packages/",
-      "outputPath": "/Users/johncunningham/Projects/CIDM3312-Fall2018-EFIA-Ch01/obj/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/CIDM3312-Fall2018-EFIA-Ch01/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

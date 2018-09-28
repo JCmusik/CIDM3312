@@ -2,6 +2,7 @@
 using Buffteks.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Buffteks
 {
@@ -11,23 +12,44 @@ namespace Buffteks
         {
             using (var context = new AppDbContext())
             {
-                var team = context.Team.AsNoTracking().Include(s => s.Students);
-                
-                
-
-                foreach (var t in team)
+            var Students = new List<Student>();
+               var team = new Team
                 {
-                    var student = new Student{FirstName = "John", LastName="Cunningham"};
-                    var student2 = new Student{FirstName = "Mara", LastName="Kinoff"};
-                    context.Add(student);
-                    context.Add(student2);
-                    context.SaveChanges();
+                    Name ="Boss Squad",
+                    Students = new List<Student>
+                    {
+                        new Student
+                        {
+                            FirstName = "John",
+                            LastName = "Cunningham"
+                        },
+                        new Student
+                        {
+                            FirstName = "Mara",
+                            LastName = "Kinoff"
+                        }
+                    }
+                
+                };
+                context.Add(team);
+                foreach (var s in team.Students)
+                {
+                    Students.Add(s);
                 }
 
-                foreach (var t in team)
+                foreach (var st in Students)
                 {
-                    System.Console.WriteLine($"Team Name: {t.Name}");
-                    System.Console.WriteLine($"{t.Students.FirstName}");
+                    context.Add(st);
+                }
+                context.SaveChanges();
+
+                foreach (var t in context.Team)
+                {
+                    System.Console.WriteLine(t.Name);
+                    foreach (var s in t.Students)
+                    {
+                        System.Console.WriteLine($"{s.FirstName} {s.LastName}");
+                    }
                 }
             }
         }

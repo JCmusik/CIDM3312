@@ -681,28 +681,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/johncunningham/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\John.cunningham\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/inClass/inClass.csproj",
+      "projectUniqueName": "c:\\john\\practice\\CIDM3312\\inClass\\inClass.csproj",
       "projectName": "inClass",
-      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/inClass.csproj",
-      "packagesPath": "/Users/johncunningham/.nuget/packages/",
-      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/obj/",
+      "projectPath": "c:\\john\\practice\\CIDM3312\\inClass\\inClass.csproj",
+      "packagesPath": "C:\\Users\\John.cunningham\\.nuget\\packages\\",
+      "outputPath": "c:\\john\\practice\\CIDM3312\\inClass\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/johncunningham/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\John.cunningham\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

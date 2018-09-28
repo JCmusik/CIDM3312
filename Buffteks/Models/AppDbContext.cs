@@ -25,15 +25,14 @@ namespace Buffteks.Models
             .HasKey(t => new { t.StudentId, t.TeamId });
 
             modelBuilder.Entity<StudentTeam>()
-            .HasOne(s => s.Student)
-            .WithMany(st => st.StudentTeam)
-            .HasForeignKey(s => s.StudentId);
-
-            modelBuilder.Entity<StudentTeam>()
             .HasOne(t => t.Team)
             .WithMany(st => st.StudentTeam)
             .HasForeignKey(t => t.TeamId);
 
+            modelBuilder.Entity<StudentTeam>()
+            .HasOne(s => s.Student)
+            .WithMany(st => st.StudentTeam)
+            .HasForeignKey(s => s.StudentId);
         }
     }
 }

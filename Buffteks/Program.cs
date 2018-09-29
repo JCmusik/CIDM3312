@@ -19,15 +19,15 @@ namespace Buffteks
                         Commands.AddStudents();
                         break;
                     case "read" :
-                        // add method
+                        // TODO: add method
                         Console.WriteLine("Call read method");
                         break;
                     case "update" :
-                        // add method
+                        // TODO: add method
                         Console.WriteLine("Call update method");
                         break;
                     case "delete" :
-                        // add method
+                        // TODO: add method
                         Console.WriteLine("Call delete method");
                         break;
                     case "-help" :
@@ -38,13 +38,6 @@ namespace Buffteks
                 }
                     
             }
-            
-
-            // Read
-
-            // Update
-
-            // Delete
         }
     }
 }

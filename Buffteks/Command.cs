@@ -14,39 +14,60 @@ namespace Buffteks
         // Add new Student
         public static void AddStudents()
         {
-            // Get user's first name
-            Console.Write("Enter your first name: ");
-            var fName = Console.ReadLine();
-            // Get user's last name
-            Console.Write("Enter your last name: ");
-            var lName = Console.ReadLine();
-            // Get user's email
-            Console.Write("Enter your email: ");
-            var email = Console.ReadLine();
-            // Get user's phone number
-            Console.Write("Enter you phone number: ");
-            var phoneNumber = Console.ReadLine();
+            CheckForDatabase();
+            do
+            {
+                // Get user's first name
+                Console.Write("Enter your first name: ");
+                var fName = Console.ReadLine();
+                // Get user's last name
+                Console.Write("Enter your last name: ");
+                var lName = Console.ReadLine();
+                // Get user's email
+                Console.Write("Enter your email: ");
+                var email = Console.ReadLine();
+                // Get user's phone number
+                Console.Write("Enter you phone number: ");
+                var phoneNumber = Console.ReadLine();
 
 
+                using (var context = new AppDbContext())
+                {
+                    var team = context.Projects.Include(t => t.Team).ThenInclude(s => s.Student);
+
+                    foreach (var t in team)
+                    {
+                        t.Team.Student = new Student
+                        {
+                            FirstName = fName,
+                            LastName = lName,
+                            Email = email,
+                            PhoneNumber = phoneNumber
+                        };
+                        context.Add(t.Team.Student);
+                        context.SaveChanges();
+                        Console.WriteLine($"Thank you {t.Team.Student.FirstName}, your info has been saved to the database");
+                    }                    
+                }
+                Console.Write("Would you like to add another student? (enter y or n) ");
+                var response = Console.ReadLine();
+                if (response != "y")
+                    return;
+            } while (true);
+            
+        }
+
+        // Read student data from the database and display back to the user
+        // TODO: Only reads out last record
+        public static void ReadStudentsFromDB()
+        {
             using (var context = new AppDbContext())
             {
-                var team = context.Projects.Include(t => t.Team).ThenInclude(s => s.Student);
-
-                foreach (var t in team)
+                foreach (var s in context.Teams.AsNoTracking().Include(s => s.Student))
                 {
-                    t.Team.Student = new Student
-                    {
-                        FirstName = fName,
-                        LastName = lName,
-                        Email = email,
-                        PhoneNumber = phoneNumber
-                    
-                    };
-                    context.Add(t.Team.Student);
-                    context.SaveChanges();
-                    Console.WriteLine($"Thank you {t.Team.Student.FirstName}, your info has been saved to the database");
+                    Console.WriteLine($"{s.Student.FirstName} {s.Student.LastName}");
+                    Console.WriteLine($"{s.Student.Email} {s.Student.PhoneNumber}");
                 }
-                
             }
         }
 
@@ -90,10 +111,33 @@ namespace Buffteks
                             PhoneNumber = "806-376-5936"
                         }
                 },
+                TotalHours = 400,
                 Team = new Team
                 {
                     Name = "Team 1",
-                    Student =                    
+                    StudentID = 1,
+                    TeamLeader = "Vanessa Valenzuela",
+                    Student = new Student
+                    {
+                        FirstName = "Vanessa",
+                        LastName = "Valenzuela",
+                        Email = "vanessa@email.com",
+                        PhoneNumber = "XXX-XXX-XXXX"
+                    }
+                }                               
+            };
+
+            
+            var students =
+                    new List<Student>
+                    {
+                        new Student
+                        {
+                            FirstName = "Mara",
+                            LastName = "Kinoff",
+                            Email = "mara@email.com",
+                            PhoneNumber = "XXX-XXX-XXXX"
+                        },
                         new Student
                         {
                             FirstName = "John",
@@ -101,41 +145,33 @@ namespace Buffteks
                             Email = "john@email.com",
                             PhoneNumber = "XXX-XXX-XXXX"
                         }
-                    ,
-                    TeamLeader = "Vanessa V"
-                },
-                TotalHours = 400                                
-            };
+                        
+                    };
 
+            
+
+            
             using (var context = new AppDbContext())
             {
                 context.Add(project);
 
-                var students = 
-                new List<Student>
-                {
-                    new Student
-                        {
-                            FirstName = "Mara",
-                            LastName = "Kinoff",
-                            Email = "mara@email.com",
-                            PhoneNumber = "XXX-XXX-XXXX"
-                        },
-                    new Student
-                        {
-                            FirstName = "Vanessa",
-                            LastName = "V",
-                            Email = "vanessa@email.com",
-                            PhoneNumber = "XXX-XXX-XXXX"
-                        }
-                };
-                foreach (var s in students)
-                {
-                    context.Add(s);
-                }
-                                
                 context.SaveChanges();
-                System.Console.WriteLine("Changes saved");
+                System.Console.WriteLine("Project added");
+            }
+
+            using (var context = new AppDbContext())
+            {
+                var team = context.Teams.Where(id => id.StudentID == 1);
+                    foreach (var t in team)
+                    {
+                        foreach (var s in students)
+                        {
+                            t.Student = s;
+                            context.Add(t.Student);
+                        }
+                    }
+                context.SaveChanges();
+                System.Console.WriteLine("Students added");
             }
         }
         public static void HelpMe()

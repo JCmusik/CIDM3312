@@ -20,7 +20,7 @@ namespace Buffteks
                         break;
                     case "read" :
                         // TODO: add method
-                        Console.WriteLine("Call read method");
+                        Commands.ReadStudentsFromDB();
                         break;
                     case "update" :
                         // TODO: add method

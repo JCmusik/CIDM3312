@@ -6,7 +6,7 @@ namespace Buffteks.Models
     {
         public int ProjectId { get; set; }
         public string Name { get; set; }
-        public DateTime TotalHours { get; set; }
+        public double TotalHours { get; set; }
         public int TeamID { get; set; }
         public Team Team { get; set; }
 

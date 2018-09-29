@@ -93,21 +93,66 @@ namespace Buffteks
                 Team = new Team
                 {
                     Name = "Team 1",
-                    Student = new Student
-                    {
-                        FirstName = "John",
-                        LastName = "Cunningham",
-                        Email = "john@email.com",
-                        PhoneNumber = "XXX-XXX-XXXX"
-                    },
-                }                
+                    Student =                    
+                        new Student
+                        {
+                            FirstName = "John",
+                            LastName = "Cunningham",
+                            Email = "john@email.com",
+                            PhoneNumber = "XXX-XXX-XXXX"
+                        }
+                    ,
+                    TeamLeader = "Vanessa V"
+                },
+                TotalHours = 400                                
             };
 
             using (var context = new AppDbContext())
             {
                 context.Add(project);
+
+                var students = 
+                new List<Student>
+                {
+                    new Student
+                        {
+                            FirstName = "Mara",
+                            LastName = "Kinoff",
+                            Email = "mara@email.com",
+                            PhoneNumber = "XXX-XXX-XXXX"
+                        },
+                    new Student
+                        {
+                            FirstName = "Vanessa",
+                            LastName = "V",
+                            Email = "vanessa@email.com",
+                            PhoneNumber = "XXX-XXX-XXXX"
+                        }
+                };
+                foreach (var s in students)
+                {
+                    context.Add(s);
+                }
+                                
                 context.SaveChanges();
+                System.Console.WriteLine("Changes saved");
             }
+        }
+        public static void HelpMe()
+        {
+            Console.WriteLine("\ndotnet run <command>\n");
+            Console.WriteLine("Commands:\n");
+
+            Console.WriteLine("\tcreate\t\tfor adding new student record");
+
+            Console.WriteLine("\tread\t\tfor reading a project and listing the information about it");
+
+            Console.WriteLine("\tupdate\t\tfor updating a student records info");
+
+            Console.WriteLine("\tdelete\t\tfor deleting a student record");
+            
+            Console.WriteLine();
+
         }
     }
 }

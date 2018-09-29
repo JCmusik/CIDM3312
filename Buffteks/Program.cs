@@ -34,6 +34,8 @@ namespace Buffteks
                         Commands.HelpMe();
                         break;
                     default:
+                        Console.Write("-----Command unknown------\n");
+                        Commands.HelpMe();
                         break;
                 }
                     

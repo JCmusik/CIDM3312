@@ -181,7 +181,7 @@ namespace Buffteks
 
             Console.WriteLine("\tcreate\t\tfor adding new student record");
 
-            Console.WriteLine("\tread\t\tfor reading a project and listing the information about it");
+            Console.WriteLine("\tread\t\tfor reading and displaying student records");
 
             Console.WriteLine("\tupdate\t\tfor updating a student records info");
 

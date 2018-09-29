@@ -9,8 +9,31 @@ namespace Buffteks
         {
             Commands.CheckForDatabase();
             
-            // Create
-            Commands.AddStudents();
+            foreach (var item in args)
+            {
+                switch (item)
+                {
+                    case "create" : 
+                        Commands.AddStudents();
+                        break;
+                    case "read" :
+                        // add method
+                        Console.WriteLine("Call read method");
+                        break;
+                    case "update" :
+                        // add method
+                        Console.WriteLine("Call update method");
+                        break;
+                    case "delete" :
+                        // add method
+                        Console.WriteLine("Call delete method");
+                        break;
+                    default:
+                        break;
+                }
+                    
+            }
+            
 
             // Read
 

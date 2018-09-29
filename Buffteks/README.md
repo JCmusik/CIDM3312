@@ -13,14 +13,15 @@ Console app that will be able to
 3. Update\
     To update new student use `dotnet run update`
 4. Delete\
-    To delete a student use `dotnet run delete`
+    To delete a student use `dotnet run delete`\
     [Deleting Data](https://docs.microsoft.com/en-us/ef/core/saving/basic#deleting-data)
 
 ### Upcoming functionality
 5. Order\
-    List Students in descending order.
+    List Students in descending order.\
     [Order By](https://www.learnentityframeworkcore.com/dbset/querying-data)
 
 6. Sort\
+    
     
 

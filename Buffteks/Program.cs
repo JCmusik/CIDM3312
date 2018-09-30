@@ -19,11 +19,12 @@ namespace Buffteks
                         Commands.AddStudents();
                         break;
                     case "read" :
+                        // TODO: add method
                         Commands.ReadStudentsFromDB();
                         break;
                     case "update" :
                         // TODO: add method
-                        Console.WriteLine("Call update method coming soon");
+                        Console.WriteLine("Call update method coming so");
                         break;
                     case "delete" :
                         // TODO: add method

@@ -73,7 +73,7 @@ namespace Buffteks
 
         public static void CheckForDatabase()
         {
-            Console.Write("Checking if database exists... ");
+            Console.Write("Determine if database exists... \n");
             Console.WriteLine(Commands.WipeSeed(true) ? "created database and seeded it." : "already exists.");
         }
         public static bool WipeSeed(bool onlyIfNoDatabase)
@@ -115,7 +115,6 @@ namespace Buffteks
                 Team = new Team
                 {
                     Name = "Team 1",
-                    StudentID = 1,
                     TeamLeader = "Vanessa Valenzuela",
                     Student = new Student
                     {

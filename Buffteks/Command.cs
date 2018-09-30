@@ -160,7 +160,7 @@ namespace Buffteks
 
             using (var context = new AppDbContext())
             {
-                var team = context.Teams.Where(id => id.StudentID == 1);
+                var team = context.Teams;
                     foreach (var t in team)
                     {
                         foreach (var s in students)

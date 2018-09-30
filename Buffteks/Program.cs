@@ -24,7 +24,7 @@ namespace Buffteks
                         break;
                     case "update" :
                         // TODO: add method
-                        Console.WriteLine("Call update method coming so");
+                        Console.WriteLine("Call update method coming soon");
                         break;
                     case "delete" :
                         // TODO: add method

@@ -30,6 +30,9 @@ namespace Buffteks
                         // TODO: add method
                         Console.WriteLine("Call delete method coming soon");
                         break;
+                    case "project" :
+                        Commands.ReadProjectDetails();
+                        break;
                     case "-help" :
                         Commands.HelpMe();
                         break;

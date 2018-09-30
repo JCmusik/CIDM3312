@@ -1,4 +1,4 @@
-# CRUD App
+# CRUD Console App
 
 #### Help Menu
 Use `dotnet run -help` to get specifics on which method you can run from the command line

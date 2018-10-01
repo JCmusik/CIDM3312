@@ -253,7 +253,7 @@ namespace Buffteks
 
             Console.WriteLine("\tread\t\tfor reading and displaying student records");
 
-            Console.WriteLine("\tupdate\t\tfor updating a student records info");
+            Console.WriteLine("\tupdate\t\tfor updating a student phone record info");
 
             Console.WriteLine("\tdelete\t\tfor deleting a student record");
 

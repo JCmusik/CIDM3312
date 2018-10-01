@@ -201,6 +201,7 @@ namespace Buffteks
                
         }
 
+        // Delete student form Db
         public static void DeleteStudent()
         {
             ReadStudentsFromDB();
@@ -218,6 +219,27 @@ namespace Buffteks
                 Console.WriteLine($"Student {response} removed");
             }
 
+            ReadStudentsFromDB();
+        }
+
+        // Update Student Phone #
+        public static void UpdateStudentPhoneNumber()
+        {
+            ReadStudentsFromDB();
+            Console.Write("\nEnter the ID of the student phone # you want to update: ");
+            var studentToUpdate = Int32.Parse(Console.ReadLine());
+            Console.Write("\nEnter the new phone #: ");
+            var newPhoneNumber = Console.ReadLine();
+
+            using (var context = new AppDbContext())
+            {
+                foreach (var s in context.Students.Where(id => id.StudentID == studentToUpdate))
+                {
+                    s.PhoneNumber = newPhoneNumber;
+                }
+                context.SaveChanges();
+                Console.WriteLine($"Phone recored has been updated");
+            }
             ReadStudentsFromDB();
         }
 

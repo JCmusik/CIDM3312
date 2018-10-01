@@ -22,8 +22,7 @@ namespace Buffteks
                         Commands.ReadStudentsFromDB();
                         break;
                     case "update" :
-                        // TODO: add method
-                        Console.WriteLine("Call update method coming soon");
+                        Commands.UpdateStudentPhoneNumber();
                         break;
                     case "delete" :
                         Commands.DeleteStudent();

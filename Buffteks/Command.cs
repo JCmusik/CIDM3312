@@ -75,18 +75,18 @@ namespace Buffteks
         {
             using (var context = new AppDbContext())
             {
-                foreach (var p in context.Projects.Include(c => c.Client).ThenInclude(o => o.Organization))
+                foreach (var p in context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization))
                 {
                     Console.WriteLine($"\nProject Name: {p.Name}\n");
                     Console.WriteLine($"Organization: {p.Client.Organization.Name}");
                     Console.WriteLine($"Client Contact: {p.Client.FirstName} {p.Client.LastName}");
                     Console.WriteLine($"Email: {p.Client.Email}\nPhone #: {p.Client.Organization.PhoneNumber}\n");
                 }
-                foreach (var t in context.Projects.Include(t => t.Team).ThenInclude(s => s.Student))
+                foreach (var t in context.Projects.AsNoTracking().Include(t => t.Team).ThenInclude(s => s.Student))
                 {
                     Console.WriteLine($"Team assigned to project: {t.Team.Name}\n");
                     Console.WriteLine($"Team Leader: {t.Team.TeamLeader}");
-                    Console.WriteLine($"List of team members:\n {t.Team.Student.FirstName} {t.Team.Student.LastName}");
+                    Console.WriteLine($"List of team members:\n{t.Team.Student.FirstName} {t.Team.Student.LastName}");
                     Console.WriteLine($"Email: {t.Team.Student.Email}\nPhone #: {t.Team.Student.PhoneNumber}\n");
 
                 }

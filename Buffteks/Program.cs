@@ -40,6 +40,7 @@ namespace Buffteks
                 }
                     
             }
+            Console.WriteLine("\nUse dotnet run -help to see command options\n");
         }
     }
 }

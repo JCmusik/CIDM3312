@@ -84,12 +84,13 @@ namespace Buffteks
                 }
                 foreach (var t in context.Teams.AsNoTracking())
                 {
-                    Console.WriteLine($"Team assigned to project: {t.Name}\n");
+                    Console.WriteLine($"Team assigned to project: {t.Name}");
                     Console.WriteLine($"Team Leader: {t.TeamLeader}\n");   
                 }
+                Console.WriteLine($"List of team members:\n");
                 foreach (var st in context.Students.AsNoTracking())
                 {
-                    Console.WriteLine($"List of team members:\n\n{st.FirstName} {st.LastName}");
+                    Console.WriteLine($"{st.FirstName} {st.LastName}");
                     Console.WriteLine($"Email: {st.Email}\nPhone #: {st.PhoneNumber}\n");
                 }
             }
@@ -138,7 +139,7 @@ namespace Buffteks
                 TotalHours = 400,
                 Team = new Team
                 {
-                    Name = "Team 1",
+                    Name = "Team Buffteks",
                     TeamLeader = "Vanessa Valenzuela",
                     Student = new Student
                                 {

@@ -6,6 +6,7 @@ namespace Buffteks.Models
     {
         public DbSet<Team> Teams { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

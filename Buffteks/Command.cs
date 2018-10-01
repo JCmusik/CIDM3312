@@ -63,10 +63,10 @@ namespace Buffteks
         {
             using (var context = new AppDbContext())
             {
-                foreach (var s in context.Teams.AsNoTracking().Include(s => s.Student))
+                foreach (var s in context.Students.AsNoTracking())
                 {
-                    Console.WriteLine($"{s.Student.FirstName} {s.Student.LastName}");
-                    Console.WriteLine($"{s.Student.Email} {s.Student.PhoneNumber}");
+                    Console.WriteLine($"{s.FirstName} {s.LastName}");
+                    Console.WriteLine($"{s.Email} {s.PhoneNumber}");
                 }
             }
         }
@@ -82,13 +82,15 @@ namespace Buffteks
                     Console.WriteLine($"Client Contact: {p.Client.FirstName} {p.Client.LastName}");
                     Console.WriteLine($"Email: {p.Client.Email}\nPhone #: {p.Client.Organization.PhoneNumber}\n");
                 }
-                foreach (var t in context.Projects.AsNoTracking().Include(t => t.Team).ThenInclude(s => s.Student))
+                foreach (var t in context.Teams.AsNoTracking())
                 {
-                    Console.WriteLine($"Team assigned to project: {t.Team.Name}\n");
-                    Console.WriteLine($"Team Leader: {t.Team.TeamLeader}");
-                    Console.WriteLine($"List of team members:\n{t.Team.Student.FirstName} {t.Team.Student.LastName}");
-                    Console.WriteLine($"Email: {t.Team.Student.Email}\nPhone #: {t.Team.Student.PhoneNumber}\n");
-
+                    Console.WriteLine($"Team assigned to project: {t.Name}\n");
+                    Console.WriteLine($"Team Leader: {t.TeamLeader}\n");   
+                }
+                foreach (var st in context.Students.AsNoTracking())
+                {
+                    Console.WriteLine($"List of team members:\n\n{st.FirstName} {st.LastName}");
+                    Console.WriteLine($"Email: {st.Email}\nPhone #: {st.PhoneNumber}\n");
                 }
             }
         }
@@ -182,13 +184,12 @@ namespace Buffteks
                 };  
                 using (var db = new AppDbContext())
                 {
-                     foreach (var s in students)
+                    foreach (var st in db.Students)
                     {
-                        foreach (var t in db.Teams)
-                        {
-                            t.Student = s;
-                            db.Add(t.Student);
-                        }
+                       foreach (var s in students)
+                       {
+                           db.Add(s);
+                       }
                     }
                 db.SaveChanges();
                 Console.WriteLine("Students added");

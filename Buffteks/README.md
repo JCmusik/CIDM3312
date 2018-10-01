@@ -12,21 +12,20 @@ Console app that will be able to
     To add new student use `dotnet run create`
 2. Read\
     To read a project use `dotnet run read`
-3. Delete\
+3. Update\
+To update new student use `dotnet run update`
+4. Delete\
 To delete a student use `dotnet run delete`\
 [Deleting Data](https://docs.microsoft.com/en-us/ef/core/saving/basic#deleting-data)
-4.  Project detail\
+5.  Project detail\
     To display project details us `dotnet run project`
 
 ### Upcoming functionality
-1. Update\
-    To update new student use `dotnet run update`
-
-3. Order\
+1. Order\
     List Students in descending order.\
     [Order By](https://www.learnentityframeworkcore.com/dbset/querying-data)
 
-4. Sort\
+2. Sort\
     
     
 

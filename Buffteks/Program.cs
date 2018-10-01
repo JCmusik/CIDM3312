@@ -19,7 +19,6 @@ namespace Buffteks
                         Commands.AddStudents();
                         break;
                     case "read" :
-                        // TODO: add method
                         Commands.ReadStudentsFromDB();
                         break;
                     case "update" :
@@ -27,8 +26,7 @@ namespace Buffteks
                         Console.WriteLine("Call update method coming soon");
                         break;
                     case "delete" :
-                        // TODO: add method
-                        Console.WriteLine("Call delete method coming soon");
+                        Commands.DeleteStudent();
                         break;
                     case "project" :
                         Commands.ReadProjectDetails();

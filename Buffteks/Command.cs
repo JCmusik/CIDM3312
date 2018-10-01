@@ -58,19 +58,20 @@ namespace Buffteks
         }
 
         // Read student data from the database and display back to the user
-        // TODO: Only reads out last record
         public static void ReadStudentsFromDB()
         {
             using (var context = new AppDbContext())
             {
                 foreach (var s in context.Students.AsNoTracking())
                 {
+                    Console.Write($"ID: {s.StudentID} ");
                     Console.WriteLine($"{s.FirstName} {s.LastName}");
                     Console.WriteLine($"{s.Email} {s.PhoneNumber}");
                 }
             }
         }
 
+        // Read and display project details
         public static void ReadProjectDetails()
         {
             using (var context = new AppDbContext())
@@ -119,6 +120,7 @@ namespace Buffteks
             return true;
         }
 
+        // Seeds database with data
         public static void SeedDatabase(this AppDbContext db)
         {
             var project = new Project
@@ -157,7 +159,8 @@ namespace Buffteks
             CreateStudents();
         }
 
-        public static void CreateStudents()
+        // Creates list of students and adds them to the database
+        private static void CreateStudents()
         {
             var students = new List<Student>
                 {
@@ -197,6 +200,28 @@ namespace Buffteks
                 }
                
         }
+
+        public static void DeleteStudent()
+        {
+            ReadStudentsFromDB();
+            Console.Write("\nEnter the ID of the student you want to delete: ");
+            var response = Int32.Parse(Console.ReadLine());
+
+            using (var context = new AppDbContext())
+            {
+                var studentToRemove = context.Students.Where(id => id.StudentID == response);
+                foreach (var st in studentToRemove)
+                {
+                    context.Remove(st);
+                    context.SaveChanges();
+                }
+                Console.WriteLine($"Student {response} removed");
+            }
+
+            ReadStudentsFromDB();
+        }
+
+        // Displays commands to run from the console
         public static void HelpMe()
         {
             Console.WriteLine("\ndotnet run <command>\n");

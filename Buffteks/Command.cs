@@ -146,54 +146,51 @@ namespace Buffteks
                         PhoneNumber = "XXX-XXX-XXXX"
                     }
                 }                               
-            };
-
-            
-            var students =
-                    new List<Student>
-                    {
-                        new Student
-                        {
-                            FirstName = "Mara",
-                            LastName = "Kinoff",
-                            Email = "mara@email.com",
-                            PhoneNumber = "XXX-XXX-XXXX"
-                        },
-                        new Student
-                        {
-                            FirstName = "John",
-                            LastName = "Cunningham",
-                            Email = "john@email.com",
-                            PhoneNumber = "XXX-XXX-XXXX"
-                        }
-                        
-                    };
-
-            
-
-            
+            };                
+        
             using (var context = new AppDbContext())
             {
-                context.Add(project);
+                context.AddRange(project);
 
                 context.SaveChanges();
                 System.Console.WriteLine("Project added");
+                CreateStudents(context);
+
             }
 
-            using (var context = new AppDbContext())
+       
+        }
+
+        private static void CreateStudents(this AppDbContext db)
+        {           
+            var students = new List<Student>
             {
-                var team = context.Teams;
-                    foreach (var t in team)
+                new Student
                     {
-                        foreach (var s in students)
-                        {
-                            t.Student = s;
-                            context.Add(t.Student);
-                        }
+                        FirstName = "Mara",
+                        LastName = "Kinoff",
+                        Email = "mara@email.com",
+                        PhoneNumber = "XXX-XXX-XXXX"
+                    },
+                    new Student
+                    {
+                        FirstName = "John",
+                        LastName = "Cunningham",
+                        Email = "john@email.com",
+                        PhoneNumber = "XXX-XXX-XXXX"
                     }
-                context.SaveChanges();
-                System.Console.WriteLine("Students added");
+            };
+
+            foreach (var s in db.Teams.Include(s => s.Students))
+            {
+                db.AddRange(students);
             }
+
+            
+            db.SaveChanges();
+            Console.WriteLine("Records added");
+           
+
         }
         public static void HelpMe()
         {

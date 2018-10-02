@@ -64,10 +64,12 @@ namespace Buffteks
             {
                 foreach (var s in context.Students.AsNoTracking())
                 {
+                    Console.WriteLine();
                     Console.Write($"ID: {s.StudentID} ");
                     Console.WriteLine($"{s.FirstName} {s.LastName}");
                     Console.WriteLine($"{s.Email} {s.PhoneNumber}");
                 }
+
             }
         }
 
@@ -188,7 +190,7 @@ namespace Buffteks
                 };  
                 using (var db = new AppDbContext())
                 {
-                    foreach (var st in db.Students)
+                    foreach (var st in db.Teams.Include(s => s.Student))
                     {
                        foreach (var s in students)
                        {

@@ -33,20 +33,20 @@ namespace Buffteks
 
                 using (var context = new AppDbContext())
                 {
-                    var team = context.Projects.Include(t => t.Team).ThenInclude(s => s.Student);
+                    var team = context.Teams.Include(s => s.Student);
 
                     foreach (var t in team)
                     {
-                        t.Team.Student = new Student
+                        t.Student = new Student
                         {
                             FirstName = fName,
                             LastName = lName,
                             Email = email,
                             PhoneNumber = phoneNumber
                         };
-                        context.Add(t.Team.Student);
+                        context.Add(t.Student);
                         context.SaveChanges();
-                        Console.WriteLine($"Thank you {t.Team.Student.FirstName}, your info has been saved to the database");
+                        Console.WriteLine($"Thank you {t.Student.FirstName}, your info has been saved to the database");
                     }                    
                 }
                 Console.Write("Would you like to add another student? (enter y or n) ");

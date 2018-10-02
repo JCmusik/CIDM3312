@@ -18,6 +18,7 @@ namespace Buffteks
             do
             {
                 // Get user's first name
+                Console.WriteLine();
                 Console.Write("Enter your first name: ");
                 var fName = Console.ReadLine();
                 // Get user's last name
@@ -33,21 +34,24 @@ namespace Buffteks
 
                 using (var context = new AppDbContext())
                 {
-                    var team = context.Teams.Include(s => s.Student);
+                    
+                    var student = context.Teams.Include(s => s.Student);
 
-                    foreach (var t in team)
+                    foreach (var s in student)
                     {
-                        t.Student = new Student
+                        var std = new Student
                         {
                             FirstName = fName,
                             LastName = lName,
                             Email = email,
                             PhoneNumber = phoneNumber
                         };
-                        context.Add(t.Student);
+                        context.Add(std);
                         context.SaveChanges();
-                        Console.WriteLine($"Thank you {t.Student.FirstName}, your info has been saved to the database");
-                    }                    
+                        Console.WriteLine($"Thank you {std.FirstName}, your info has been saved to the database");  
+                    }             
+                    
+                         
                 }
                 Console.Write("Would you like to add another student? (enter y or n) ");
                 var response = Console.ReadLine();

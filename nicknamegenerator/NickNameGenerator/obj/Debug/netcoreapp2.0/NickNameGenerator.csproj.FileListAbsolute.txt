@@ -45,3 +45,14 @@ U:/CIDM3312/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickName
 /Users/johncunningham/Desktop/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.AssemblyInfo.cs
 /Users/johncunningham/Desktop/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.dll
 /Users/johncunningham/Desktop/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.pdb
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/bin/Debug/netcoreapp2.0/NickNameGenerator.deps.json
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/bin/Debug/netcoreapp2.0/NickNameGenerator.runtimeconfig.json
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/bin/Debug/netcoreapp2.0/NickNameGenerator.runtimeconfig.dev.json
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/bin/Debug/netcoreapp2.0/NickNameGenerator.dll
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/bin/Debug/netcoreapp2.0/NickNameGenerator.pdb
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.csprojAssemblyReference.cache
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.csproj.CoreCompileInputs.cache
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.AssemblyInfoInputs.cache
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.AssemblyInfo.cs
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.dll
+/Users/johncunningham/Projects/git/CIDM3312/nicknamegenerator/NickNameGenerator/obj/Debug/netcoreapp2.0/NickNameGenerator.pdb

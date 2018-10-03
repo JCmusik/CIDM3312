@@ -1,0 +1,20 @@
+TABLE 2 Recipe
+
+Title: Calculating an Interest Rate 
+
+Description: We are looking to determine an interest rate based on inputs of a person’s age, gender, and credit score.
+
+Ingredients:
+                int age;
+                int creditScore;
+                char gender;
+                float interestRate;
+Instructions:
+                1. Create the variables. 
+                2. Get user input for the variables.
+                3. Create a switch statement (?) to determine a base interest rate based of the credit score.
+                4. Create ranges of credit scores that will assign a specific interest rate.
+                5. Minimally adjust the interest rate depending on age. Younger people get higher interest rates. Middle aged people tend to get decent to good rates. Older people tend to get lower interest rates.
+                6. Minimally adjust the interest rate depending on gender. Men tend to require higher interest rates. Women tend to keep the same interest rates, not lower ones. 
+                   
+Completeness:   We’ll know it’s complete when there is a final interest rate.

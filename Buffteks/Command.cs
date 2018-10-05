@@ -64,6 +64,7 @@ namespace Buffteks
         // Read student data from the database and display back to the user
         public static void ReadStudentsFromDB()
         {
+            CheckForDatabase();
             using (var context = new AppDbContext())
             {
                 foreach (var s in context.Students.AsNoTracking())
@@ -80,6 +81,7 @@ namespace Buffteks
         // Read and display project details
         public static void ReadProjectDetails()
         {
+            CheckForDatabase();
             using (var context = new AppDbContext())
             {
                 foreach (var p in context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization))

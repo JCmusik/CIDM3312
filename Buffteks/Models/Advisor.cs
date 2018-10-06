@@ -1,10 +1,20 @@
+using System.Collections.Generic;
+
 namespace Buffteks.Models
 {
     public class Advisor : Person
     {
-        public int AdvisorID { get; set; }
-        public string Title { get; set; }
-        public int StudentID { get; set; }
-        public Student Student { get; set; }
+        #region Properties
+
+            public int AdvisorID { get; set; }
+            public string Title { get; set; }
+            
+        #endregion
+
+        #region Methods
+            
+            public override string ToString() => $"Title: {this.Title}\nName: {this.FirstName} {this.LastName}\nPhone Number: {this.PhoneNumber}\nEmail: {this.Email}";
+
+        #endregion
     }
 }

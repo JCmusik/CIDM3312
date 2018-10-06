@@ -67,10 +67,17 @@ namespace Buffteks
             CheckForDatabase();
             using (var context = new AppDbContext())
             {
-                foreach (var s in context.Students.AsNoTracking())
+                if (!context.Students.Any())
                 {
-                    Console.WriteLine();
-                    Console.Write(s);
+                    Console.WriteLine("No students in the database\n");
+                }
+                else
+                {
+                    foreach (var s in context.Students.AsNoTracking())
+                    {
+                        Console.WriteLine();
+                        Console.Write(s);
+                    }
                 }
 
             }
@@ -82,24 +89,32 @@ namespace Buffteks
             CheckForDatabase();
             using (var context = new AppDbContext())
             {
-                foreach (var p in context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization))
+                if(!context.Projects.Any())
                 {
-                    Console.WriteLine(p);
-                    Console.WriteLine(p.Client);
+                    Console.WriteLine("No project exists");
                 }
-                foreach (var a in context.Advisors)
+                else
                 {
-                    Console.WriteLine("---Advisor---");
-                    Console.WriteLine(a);
-                }
-                foreach (var t in context.Teams.AsNoTracking())
-                {
-                    Console.WriteLine(t);
-                }
-                Console.WriteLine($"----List of team members----");
-                foreach (var st in context.Students.AsNoTracking())
-                {
-                    Console.WriteLine(st);
+                    foreach (var p in context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization))
+                    {
+                        Console.WriteLine(p);
+                        Console.WriteLine(p.Client);
+                    }
+                    foreach (var a in context.Advisors)
+                    {
+                        Console.WriteLine("---Advisor---");
+                        Console.WriteLine(a);
+                    }
+                    foreach (var t in context.Teams.AsNoTracking())
+                    {
+                        Console.WriteLine(t);
+                    }
+                    Console.WriteLine($"----List of team members----");
+                    foreach (var st in context.Students.AsNoTracking())
+                    {
+                        Console.WriteLine(st);
+                    }
+
                 }
             }
         }
@@ -222,18 +237,18 @@ namespace Buffteks
         // Delete student form Db
         public static void DeleteStudent()
         {
-            ReadStudentsFromDB();
-            Console.Write("\nEnter the ID of the student you want to delete: ");
-            var response = Int32.Parse(Console.ReadLine());
 
             using (var context = new AppDbContext())
             {
                 if(!context.Students.Any())
                 {
-                    Console.WriteLine("No students in database");
+                    Console.WriteLine("No students in database\n");
                 }
                 else
                 {
+                    ReadStudentsFromDB();
+                    Console.Write("\nEnter the ID of the student you want to delete: ");
+                    var response = Int32.Parse(Console.ReadLine());
                     var studentToRemove = context.Students.Where(id => id.StudentID == response);
                     foreach (var st in studentToRemove)
                     {
@@ -252,22 +267,29 @@ namespace Buffteks
         // Update Student Phone #
         public static void UpdateStudentPhoneNumber()
         {
-            ReadStudentsFromDB();
-            Console.Write("\nEnter the ID of the student phone # you want to update: ");
-            var studentToUpdate = Int32.Parse(Console.ReadLine());
-            Console.Write("\nEnter the new phone #: ");
-            var newPhoneNumber = Console.ReadLine();
-
             using (var context = new AppDbContext())
             {
-                foreach (var s in context.Students.Where(id => id.StudentID == studentToUpdate))
+                if (!context.Students.Any())
                 {
-                    s.PhoneNumber = newPhoneNumber;
+                    Console.WriteLine("No students in the database\n");
                 }
-                context.SaveChanges();
-                Console.WriteLine($"Phone recored has been updated");
+                else
+                {
+                    ReadStudentsFromDB();
+                    Console.Write("\nEnter the ID of the student phone # you want to update: ");
+                    var studentToUpdate = Int32.Parse(Console.ReadLine());
+                    Console.Write("\nEnter the new phone #: ");
+                    var newPhoneNumber = Console.ReadLine();
+
+                    foreach (var s in context.Students.Where(id => id.StudentID == studentToUpdate))
+                    {
+                        s.PhoneNumber = newPhoneNumber;
+                    }
+                    context.SaveChanges();
+                    Console.WriteLine($"Phone recored has been updated");
+                }
+
             }
-            ReadStudentsFromDB();
         }
 
         // Displays commands to run from the console

@@ -8,7 +8,7 @@ namespace Buffteks.Models
 
         #region Methods
 
-        public override string ToString() => $"Name: {this.FirstName} {this.LastName}\nPhone Number: {this.PhoneNumber}\n Email: {this.Email}\n";
+        public override string ToString() => $"ID: {this.StudentID} Name: {this.FirstName} {this.LastName}\nPhone Number: {this.PhoneNumber}\n Email: {this.Email}\n";
 
         #endregion
     }

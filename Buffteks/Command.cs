@@ -228,16 +228,25 @@ namespace Buffteks
 
             using (var context = new AppDbContext())
             {
-                var studentToRemove = context.Students.Where(id => id.StudentID == response);
-                foreach (var st in studentToRemove)
+                if(!context.Students.Any())
                 {
-                    context.Remove(st);
-                    context.SaveChanges();
+                    Console.WriteLine("No students in database");
                 }
-                Console.WriteLine($"Student {response} removed");
-            }
+                else
+                {
+                    var studentToRemove = context.Students.Where(id => id.StudentID == response);
+                    foreach (var st in studentToRemove)
+                    {
+                        context.Remove(st);
+                        context.SaveChanges();
+                    }
+                    Console.WriteLine($"Student {response} removed");
+                    if (!context.Students.Any()){}
+                    else
+                        ReadStudentsFromDB();
 
-            ReadStudentsFromDB();
+                }
+            }
         }
 
         // Update Student Phone #

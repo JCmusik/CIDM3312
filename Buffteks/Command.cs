@@ -70,9 +70,7 @@ namespace Buffteks
                 foreach (var s in context.Students.AsNoTracking())
                 {
                     Console.WriteLine();
-                    Console.Write($"ID: {s.StudentID} ");
-                    Console.WriteLine($"{s.FirstName} {s.LastName}");
-                    Console.WriteLine($"{s.Email} {s.PhoneNumber}");
+                    Console.Write(s);
                 }
 
             }
@@ -86,21 +84,22 @@ namespace Buffteks
             {
                 foreach (var p in context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization))
                 {
-                    Console.WriteLine($"\nProject Name: {p.Name}\n");
-                    Console.WriteLine($"Organization: {p.Client.Organization.Name}");
-                    Console.WriteLine($"Client Contact: {p.Client.FirstName} {p.Client.LastName}");
-                    Console.WriteLine($"Email: {p.Client.Email}\nPhone #: {p.Client.Organization.PhoneNumber}\n");
+                    Console.WriteLine(p);
+                    Console.WriteLine(p.Client);
+                }
+                foreach (var a in context.Advisors)
+                {
+                    Console.WriteLine("---Advisor---");
+                    Console.WriteLine(a);
                 }
                 foreach (var t in context.Teams.AsNoTracking())
                 {
-                    Console.WriteLine($"Team assigned to project: {t.Name}");
-                    Console.WriteLine($"Team Leader: {t.TeamLeader}\n");   
+                    Console.WriteLine(t);
                 }
-                Console.WriteLine($"List of team members:\n");
+                Console.WriteLine($"----List of team members----");
                 foreach (var st in context.Students.AsNoTracking())
                 {
-                    Console.WriteLine($"{st.FirstName} {st.LastName}");
-                    Console.WriteLine($"Email: {st.Email}\nPhone #: {st.PhoneNumber}\n");
+                    Console.WriteLine(st);
                 }
             }
         }
@@ -108,7 +107,7 @@ namespace Buffteks
         public static void CheckForDatabase()
         {
             Console.Write("Determine if database exists... \n");
-            Console.WriteLine(Commands.WipeSeed(true) ? "created database and seeded it." : "already exists.");
+            Console.WriteLine(Commands.WipeSeed(true) ? "created database and seeded it." : "already exists.\n");
         }
         public static bool WipeSeed(bool onlyIfNoDatabase)
         {
@@ -156,7 +155,7 @@ namespace Buffteks
                                     FirstName = "Vanessa",
                                     LastName = "Valenzuela",
                                     Email = "vanessa@email.com",
-                                    PhoneNumber = "XXX-XXX-XXXX",
+                                    PhoneNumber = "XXX-XXX-XXXX"
                                 }               
                 }                               
             };  
@@ -170,6 +169,7 @@ namespace Buffteks
         // Creates list of students and adds them to the database
         private static void CreateStudents()
         {
+
             var students = new List<Student>
                 {
                     new Student
@@ -177,7 +177,7 @@ namespace Buffteks
                             FirstName = "Gabrielle",
                             LastName = "Ashley",
                             Email = "gabrielle@email.com",
-                            PhoneNumber = "XXX-XXX-XXXX",
+                            PhoneNumber = "XXX-XXX-XXXX"
                         },
                     new Student
                         {
@@ -200,8 +200,7 @@ namespace Buffteks
                     FirstName = "Jeffry",
                     LastName = "Babb",
                     Email = "jbabb@wtamu.edu",
-                    PhoneNumber = "806-651-2440",
-                    Title = "Professor"
+                    PhoneNumber = "806-651-2440"
                 };
 
                 using (var db = new AppDbContext())
@@ -213,11 +212,7 @@ namespace Buffteks
                            db.Add(s);
                        }
                     }
-                    
-                    foreach (var a in db.Advisors)
-                    {
-                        db.Add(a);
-                    }
+                db.Advisors.Add(advisor);
                 db.SaveChanges();
                 Console.WriteLine("Students added");
                 }

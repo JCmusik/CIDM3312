@@ -11,7 +11,6 @@ namespace Buffteks
             if(args.Length == 0)
             {
                 Commands.CheckForDatabase();
-                string[] input = {"create","read", "update", "delete", "project"}; 
                 do
                 {
                     Console.WriteLine("Menu Options");

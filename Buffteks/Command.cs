@@ -194,6 +194,16 @@ namespace Buffteks
                             PhoneNumber = "XXX-XXX-XXXX",
                         }
                 };  
+
+                var advisor = new Advisor
+                {
+                    FirstName = "Jeffry",
+                    LastName = "Babb",
+                    Email = "jbabb@wtamu.edu",
+                    PhoneNumber = "806-651-2440",
+                    Title = "Professor"
+                };
+
                 using (var db = new AppDbContext())
                 {
                     foreach (var st in db.Teams.Include(s => s.Student))
@@ -202,6 +212,11 @@ namespace Buffteks
                        {
                            db.Add(s);
                        }
+                    }
+                    
+                    foreach (var a in db.Advisors)
+                    {
+                        db.Add(a);
                     }
                 db.SaveChanges();
                 Console.WriteLine("Students added");

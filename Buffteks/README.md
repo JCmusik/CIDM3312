@@ -20,15 +20,15 @@ To delete a student use `dotnet run delete`\
 5.  Project detail\
     To display project details us `dotnet run project`
 
-### Upcoming functionality
+### Potential functionality
 1. Find()\
     Find records in a database using Linq
 
-1. Order\
+2. Order\
     List Students in descending order.\
     [Order By](https://www.learnentityframeworkcore.com/dbset/querying-data)
 
-2. Sort\
+3. Sort
     
     
 

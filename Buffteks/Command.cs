@@ -280,5 +280,38 @@ namespace Buffteks
             Console.WriteLine();
 
         }
+
+        public static void OneShotCommands(string[] args)
+        {
+            foreach (var item in args)
+                {
+                    switch (item)
+                    {
+                        case "create" : 
+                            AddStudents();
+                            break;
+                        case "read" :
+                            ReadStudentsFromDB();
+                            break;
+                        case "update" :
+                            UpdateStudentPhoneNumber();
+                            break;
+                        case "delete" :
+                            DeleteStudent();
+                            break;
+                        case "project" :
+                            ReadProjectDetails();
+                            break;
+                        case "-help" :
+                            HelpMe();
+                            break;
+                        default:
+                            Console.Write("-----Command unknown------\n");
+                            HelpMe();
+                            break;
+                    }
+                        
+                }
+        }
     }
 }

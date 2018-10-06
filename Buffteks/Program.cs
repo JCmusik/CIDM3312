@@ -9,38 +9,50 @@ namespace Buffteks
         static void Main(string[] args)
         {
             if(args.Length == 0)
-                Commands.CheckForDatabase();
-            
-            foreach (var item in args)
             {
-                switch (item)
+                Commands.CheckForDatabase();
+                string[] input = {"create","read", "update", "delete", "project"}; 
+                do
                 {
-                    case "create" : 
+                    Console.WriteLine("Menu Options");
+                    Console.WriteLine("c (create new student) r (read student) u (update student phone #) d (delete student) p (project details) clr (clear console) e (exit)");
+                    Console.Write("> ");
+                    var option =  Console.ReadLine();
+
+                    switch (option)
+                    {
+                        case "c":
                         Commands.AddStudents();
                         break;
-                    case "read" :
+                        case "r":
                         Commands.ReadStudentsFromDB();
                         break;
-                    case "update" :
+                        case "u":
                         Commands.UpdateStudentPhoneNumber();
                         break;
-                    case "delete" :
+                        case "d":
                         Commands.DeleteStudent();
                         break;
-                    case "project" :
+                        case "p":
                         Commands.ReadProjectDetails();
                         break;
-                    case "-help" :
-                        Commands.HelpMe();
+                        case "e":
+                        return;
+                        case "clr":
+                        Console.Clear();
                         break;
-                    default:
-                        Console.Write("-----Command unknown------\n");
-                        Commands.HelpMe();
+                        default:
+                        System.Console.WriteLine("Command unknown\n");
                         break;
-                }
+                    }
                     
+                } while (true);
+                
             }
-            Console.WriteLine("\nUse dotnet run -help to see command options\n");
+            else
+            {
+                Commands.OneShotCommands(args);
+            }
         }
     }
 }

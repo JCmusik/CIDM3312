@@ -103,7 +103,7 @@ namespace Buffteks
                     foreach (var a in context.Advisors)
                     {
                         Console.WriteLine("---Advisor---");
-                        Console.WriteLine(a);
+                        Console.WriteLine($"{a.FirstName} {a.LastName}");
                     }
                     foreach (var t in context.Teams.AsNoTracking())
                     {

@@ -1,7 +1,8 @@
-Buffteks/bin
-Buffteks/obj
-Buffteks/Buffteks.db
-Buffteks/Migrations
-Buffteks/.gitignore
-Buffteks/.vscode
-Buffteks/.vs/Buffteks
+Assignments/Buffteks/bin
+Assignments/Buffteks/obj
+Assignments/Buffteks/Buffteks.db
+Assignments/Buffteks/Migrations
+Assignments/Buffteks/.gitignore
+Assignments/Buffteks/.vscode
+Assignments/Buffteks/.vs/Buffteks
+.gitignore

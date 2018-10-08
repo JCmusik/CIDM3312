@@ -3415,11 +3415,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/Buffteks/Buffteks.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/Assignments/Buffteks/Buffteks.csproj",
       "projectName": "Buffteks",
-      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/Buffteks/Buffteks.csproj",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/Assignments/Buffteks/Buffteks.csproj",
       "packagesPath": "/Users/johncunningham/.nuget/packages/",
-      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/Buffteks/obj/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/Assignments/Buffteks/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

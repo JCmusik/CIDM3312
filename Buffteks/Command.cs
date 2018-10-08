@@ -62,11 +62,9 @@ namespace Buffteks
         }
 
         // Read student data from the database and display back to the user
-        public static void ReadStudentsFromDB()
+        public static void ReadStudentsFromDB(AppDbContext context)
         {
             CheckForDatabase();
-            using (var context = new AppDbContext())
-            {
                 if (!context.Students.Any())
                 {
                     Console.WriteLine("No students in the database\n");
@@ -79,8 +77,6 @@ namespace Buffteks
                         Console.Write(s);
                     }
                 }
-
-            }
         }
 
         // Read and display project details
@@ -99,6 +95,7 @@ namespace Buffteks
                     {
                         Console.WriteLine(p);
                         Console.WriteLine(p.Client);
+                        Console.WriteLine($"Organization Phone Number: {p.Client.Organization.PhoneNumber}\n");
                     }
                     foreach (var a in context.Advisors)
                     {
@@ -246,7 +243,7 @@ namespace Buffteks
                 }
                 else
                 {
-                    ReadStudentsFromDB();
+                    ReadStudentsFromDB(context);
                     Console.Write("\nEnter the ID of the student you want to delete: ");
                     var response = Int32.Parse(Console.ReadLine());
                     var studentToRemove = context.Students.Where(id => id.StudentID == response);
@@ -258,25 +255,48 @@ namespace Buffteks
                     Console.WriteLine($"Student {response} removed");
                     if (!context.Students.Any()){}
                     else
-                        ReadStudentsFromDB();
+                        ReadStudentsFromDB(context);
 
                 }
             }
         }
 
+        public static void Update()
+        {
+            do
+            {
+                Console.Write("Would you like to update a student or an organization phone number? ");
+                var response = Console.ReadLine();
+
+                switch (response)
+                {
+                    case "student":
+                    UpdateStudentPhoneNumber();
+                    return;
+                    case "organization":
+                    UpdateOrganizationPhoneNumber();
+                    return;
+                    default:
+                    Console.WriteLine("Please enter student or organization");
+                    break;
+                }
+                
+            } while (true);
+            
+        }
         // Update Student Phone #
-        public static void UpdateStudentPhoneNumber()
+        private static void UpdateStudentPhoneNumber()
         {
             using (var context = new AppDbContext())
             {
-                if (!context.Students.Any())
+                if (!context.Teams.Include(s => s.Student).Any())
                 {
                     Console.WriteLine("No students in the database\n");
                 }
                 else
                 {
-                    ReadStudentsFromDB();
-                    Console.Write("\nEnter the ID of the student phone # you want to update: ");
+                    ReadStudentsFromDB(context);
+                    Console.Write("\nEnter the ID of the student's phone # you want to update: ");
                     var studentToUpdate = Int32.Parse(Console.ReadLine());
                     Console.Write("\nEnter the new phone #: ");
                     var newPhoneNumber = Console.ReadLine();
@@ -290,6 +310,55 @@ namespace Buffteks
                 }
 
             }
+        }
+
+        private static void UpdateOrganizationPhoneNumber()
+        {
+            using (var context = new AppDbContext())
+            {
+                if (!context.Projects.Include(c => c.Client).ThenInclude(o => o.Organization).Any())
+                {
+                    Console.WriteLine("No records in the database to update\n");
+                }
+                else
+                {
+                    ReadOrganizationFromDB(context);
+                    Console.WriteLine();
+                    Console.Write("\nEnter the ID of the organization's phone # you want to update: ");
+                    var organizationToUpdate = Int32.Parse(Console.ReadLine());
+                    Console.Write("\nEnter the new phone #: ");
+                    var newPhoneNumber = Console.ReadLine();
+
+                    foreach (var o in context.Projects.Include(c => c.Client).ThenInclude(o => o.Organization).Where(id => id.Client.OrganizationID == organizationToUpdate))
+                    {
+                        o.Client.PhoneNumber = newPhoneNumber;
+                    }
+
+                    context.SaveChanges();
+                    Console.WriteLine($"Phone recored has been updated");
+
+            }
+
+        }
+        }
+
+        private static void ReadOrganizationFromDB(AppDbContext db)
+        {            
+            var organization = db.Projects.Include(c => c.Client).ThenInclude(o => o.Organization);
+           
+           
+                if (!organization.Any())
+                {
+                    Console.WriteLine("No records in the database\n");
+                }
+                else
+                {
+                    foreach (var o in db.Projects.Include(c => c.Client).ThenInclude(o => o.Organization).AsNoTracking())
+                    {
+                        Console.WriteLine();
+                        Console.Write(o.Client.Organization);
+                    }
+                }
         }
 
         // Displays commands to run from the console
@@ -322,10 +391,13 @@ namespace Buffteks
                             AddStudents();
                             break;
                         case "read" :
-                            ReadStudentsFromDB();
+                            using (var context = new AppDbContext())
+                            {
+                                ReadStudentsFromDB(context);
+                            }
                             break;
                         case "update" :
-                            UpdateStudentPhoneNumber();
+                            Update();
                             break;
                         case "delete" :
                             DeleteStudent();

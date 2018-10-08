@@ -24,10 +24,13 @@ namespace Buffteks
                         Commands.AddStudents();
                         break;
                         case "r":
-                        Commands.ReadStudentsFromDB();
+                        using (var context = new AppDbContext())
+                        {
+                            Commands.ReadStudentsFromDB(context);
+                        }
                         break;
                         case "u":
-                        Commands.UpdateStudentPhoneNumber();
+                        Commands.Update();
                         break;
                         case "d":
                         Commands.DeleteStudent();

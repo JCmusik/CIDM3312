@@ -76,6 +76,7 @@ namespace Buffteks
                         Console.WriteLine();
                         Console.Write(s);
                     }
+                    Console.WriteLine();
                 }
         }
 
@@ -361,6 +362,52 @@ namespace Buffteks
                 }
         }
 
+        public static void Search()
+        {
+            using (var db = new AppDbContext())
+            {
+                do
+                {
+                    Console.Write("Search for a student or an organization? ");
+                    var response = Console.ReadLine();
+
+                    switch (response)
+                    {
+                        case "student":
+                        SearchForStudentRercord();
+                        return;
+                        case "organization":
+                        // Search for Organization method
+                        return;
+                        default:
+                        Console.WriteLine("Please enter student or organization");
+                        break;
+                    }
+                    
+                } while (true);
+            }
+        }
+
+        private static void SearchForStudentRercord()
+        {
+            Console.Write("Please enter the first name of the student you would like to search for: ");
+            var nameofStudent = Console.ReadLine();
+
+            using (var db = new AppDbContext())
+            {
+                var student = db.Teams.Include(s => s.Student);
+
+                foreach (var s in student.Where(s => s.Student.FirstName == nameofStudent))
+                {
+                    Console.WriteLine(s.Student);
+                }
+                
+                
+                
+            }
+        }
+            
+
         // Displays commands to run from the console
         public static void HelpMe()
         {
@@ -404,6 +451,9 @@ namespace Buffteks
                             break;
                         case "project" :
                             ReadProjectDetails();
+                            break;
+                        case "search":
+                            Search();
                             break;
                         case "-help" :
                             HelpMe();

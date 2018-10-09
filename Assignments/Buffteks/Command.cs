@@ -223,6 +223,7 @@ namespace Buffteks
         // Delete student form Db
         public static void DeleteStudent()
         {
+            CheckForDatabase();
 
             using (var context = new AppDbContext())
             {
@@ -252,6 +253,7 @@ namespace Buffteks
 
         public static void Update()
         {
+            CheckForDatabase();
             do
             {
                 Console.Write("Would you like to update a student or an organization phone number? ");
@@ -353,6 +355,7 @@ namespace Buffteks
 
         public static void Search()
         {
+            CheckForDatabase();
             using (var db = new AppDbContext())
             {
                 do
@@ -433,6 +436,7 @@ namespace Buffteks
 
         public static void SortRecords()
         {
+            CheckForDatabase();
             using (var db = new AppDbContext())
             {
                 Console.WriteLine("Students sorted by Last Name in ascending order\n");
@@ -447,6 +451,7 @@ namespace Buffteks
 
         public static void RecordsGroupBy()
         {
+            CheckForDatabase();
             using (var db = new AppDbContext())
             {
                 Console.WriteLine("Students grouped by Table #");

@@ -5,6 +5,7 @@ namespace Buffteks.Models
     public class Student : Person
     {
         public int StudentID { get; set; }
+        public byte TableNumber { get; set; }
         public int TeamID { get; set; }
         public Team Team { get; set; }
 

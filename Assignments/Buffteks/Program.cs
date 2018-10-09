@@ -14,7 +14,7 @@ namespace Buffteks
                 do
                 {
                     Console.WriteLine("Menu Options");
-                    Console.WriteLine("c (create new student) r (read student) u (update student phone #) d (delete student) p (project details) clr (clear console) e (exit)");
+                    Console.WriteLine("c (create new student) r (read student) u (update student phone #) d (delete student) p (project details) s (search) clr (clear console) e (exit)");
                     Console.Write("> ");
                     var option =  Console.ReadLine();
 
@@ -24,16 +24,22 @@ namespace Buffteks
                         Commands.AddStudents();
                         break;
                         case "r":
-                        Commands.ReadStudentsFromDB();
+                        using (var context = new AppDbContext())
+                        {
+                            Commands.ReadStudentsFromDB(context);
+                        }
                         break;
                         case "u":
-                        Commands.UpdateStudentPhoneNumber();
+                        Commands.Update();
                         break;
                         case "d":
                         Commands.DeleteStudent();
                         break;
                         case "p":
                         Commands.ReadProjectDetails();
+                        break;
+                        case "s":
+                        Commands.Search();
                         break;
                         case "e":
                         return;

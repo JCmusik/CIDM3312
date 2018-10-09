@@ -21,3 +21,13 @@ To delete a student use `dotnet run delete`\
     To display project details us `dotnet run project`
 
 
+## Update the example to include these features:
+
+1. Create new records for Student/Team and Client/Organization\
+    (note: these pairs are foreign key relationships)
+2. Update data in a record for Student/Team and Client/Organization
+3. Search for records for Student/Team and Client/Organization
+4. Sort records 
+5. Group records
+
+

@@ -35,7 +35,7 @@ namespace Buffteks
                 using (var context = new AppDbContext())
                 {
                     
-                    var student = context.Teams.Include(s => s.Student);
+                    var student = context.Students.Include(s => s.Team);
 
                     foreach (var s in student)
                     {
@@ -62,12 +62,14 @@ namespace Buffteks
         }
 
         // Read student data from the database and display back to the user
-        public static void ReadStudentsFromDB()
+        public static void ReadStudentsFromDB(AppDbContext context)
         {
             CheckForDatabase();
-            using (var context = new AppDbContext())
-            {
+<<<<<<< HEAD:Buffteks/Command.cs
                 if (!context.Students.Any())
+=======
+                if (!context.Students.Include(s => s.Team).Any())
+>>>>>>> test:Assignments/Buffteks/Command.cs
                 {
                     Console.WriteLine("No students in the database\n");
                 }
@@ -78,9 +80,8 @@ namespace Buffteks
                         Console.WriteLine();
                         Console.Write(s);
                     }
+                    Console.WriteLine();
                 }
-
-            }
         }
 
         // Read and display project details
@@ -95,18 +96,18 @@ namespace Buffteks
                 }
                 else
                 {
-                    foreach (var p in context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization))
+                    var  projectDetails = context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization);
+                    foreach (var p in projectDetails)
                     {
                         Console.WriteLine(p);
                         Console.WriteLine(p.Client);
+                        Console.WriteLine($"Organization Phone Number: {p.Client.Organization.PhoneNumber}\n");
                     }
-                    foreach (var a in context.Advisors)
+
+                    foreach (var t in context.Teams.AsNoTracking().Include(a => a.Advisor))
                     {
                         Console.WriteLine("---Advisor---");
-                        Console.WriteLine($"{a.FirstName} {a.LastName}");
-                    }
-                    foreach (var t in context.Teams.AsNoTracking())
-                    {
+                        Console.WriteLine(t.Advisor);
                         Console.WriteLine(t);
                     }
                     Console.WriteLine($"----List of team members----");
@@ -153,6 +154,7 @@ namespace Buffteks
                     FirstName = "Craig",
                     LastName = "Willfong",
                     Email = "cwilfong@kidsinc.org",
+                    PhoneNumber = "XXX-XXX-XXXX",
                     Organization = new Organization
                         {
                             Name = "Kids Inc.",
@@ -165,29 +167,24 @@ namespace Buffteks
                 {
                     Name = "Team Buffteks",
                     TeamLeader = "Vanessa Valenzuela",
-                    Student = new Student
-                                {
-                                    FirstName = "Vanessa",
-                                    LastName = "Valenzuela",
-                                    Email = "vanessa@email.com",
-                                    PhoneNumber = "XXX-XXX-XXXX"
-                                }               
-                }                               
-            };  
-
-            db.Add(project);
-            db.SaveChanges();
-            System.Console.WriteLine("Project added");
-            CreateStudents();
-        }
-
-        // Creates list of students and adds them to the database
-        private static void CreateStudents()
-        {
-
-            var students = new List<Student>
-                {
-                    new Student
+                    Advisor = new Advisor
+                    {
+                        Title = "Professor",
+                        FirstName = "Jeffry",
+                        LastName = "Babb",
+                        Email = "jbabb@wtamu.edu",
+                        PhoneNumber = "806-651-2440"
+                    },
+                    Students = new List<Student>
+                    {
+                        new Student
+                        {
+                            FirstName = "Vanessa",
+                            LastName = "Valenzuela",
+                            Email = "vanessa@email.com",
+                            PhoneNumber = "XXX-XXX-XXXX"
+                        },
+                        new Student
                         {
                             FirstName = "Gabrielle",
                             LastName = "Ashley",
@@ -208,31 +205,16 @@ namespace Buffteks
                             Email = "john@email.com",
                             PhoneNumber = "XXX-XXX-XXXX",
                         }
-                };  
+                    },
 
-                var advisor = new Advisor
-                {
-                    FirstName = "Jeffry",
-                    LastName = "Babb",
-                    Email = "jbabb@wtamu.edu",
-                    PhoneNumber = "806-651-2440"
-                };
+                }                               
+            };  
 
-                using (var db = new AppDbContext())
-                {
-                    foreach (var st in db.Teams.Include(s => s.Student))
-                    {
-                       foreach (var s in students)
-                       {
-                           db.Add(s);
-                       }
-                    }
-                db.Advisors.Add(advisor);
-                db.SaveChanges();
-                Console.WriteLine("Students added");
-                }
-               
+            db.Add(project);
+            db.SaveChanges();
+            System.Console.WriteLine("Project added");
         }
+
 
         // Delete student form Db
         public static void DeleteStudent()
@@ -246,7 +228,7 @@ namespace Buffteks
                 }
                 else
                 {
-                    ReadStudentsFromDB();
+                    ReadStudentsFromDB(context);
                     Console.Write("\nEnter the ID of the student you want to delete: ");
                     var response = Int32.Parse(Console.ReadLine());
                     var studentToRemove = context.Students.Where(id => id.StudentID == response);
@@ -258,25 +240,52 @@ namespace Buffteks
                     Console.WriteLine($"Student {response} removed");
                     if (!context.Students.Any()){}
                     else
-                        ReadStudentsFromDB();
+                        ReadStudentsFromDB(context);
 
                 }
             }
         }
 
+        public static void Update()
+        {
+            do
+            {
+                Console.Write("Would you like to update a student or an organization phone number? ");
+                var response = Console.ReadLine();
+
+                switch (response)
+                {
+                    case "student":
+                    UpdateStudentPhoneNumber();
+                    return;
+                    case "organization":
+                    UpdateOrganizationPhoneNumber();
+                    return;
+                    default:
+                    Console.WriteLine("Please enter student or organization");
+                    break;
+                }
+                
+            } while (true);
+            
+        }
         // Update Student Phone #
-        public static void UpdateStudentPhoneNumber()
+        private static void UpdateStudentPhoneNumber()
         {
             using (var context = new AppDbContext())
             {
-                if (!context.Students.Any())
+<<<<<<< HEAD:Buffteks/Command.cs
+                if (!context.Teams.Include(s => s.Student).Any())
+=======
+                if (!context.Students.Include(s => s.Team).Any())
+>>>>>>> test:Assignments/Buffteks/Command.cs
                 {
                     Console.WriteLine("No students in the database\n");
                 }
                 else
                 {
-                    ReadStudentsFromDB();
-                    Console.Write("\nEnter the ID of the student phone # you want to update: ");
+                    ReadStudentsFromDB(context);
+                    Console.Write("\nEnter the ID of the student's phone # you want to update: ");
                     var studentToUpdate = Int32.Parse(Console.ReadLine());
                     Console.Write("\nEnter the new phone #: ");
                     var newPhoneNumber = Console.ReadLine();
@@ -291,6 +300,115 @@ namespace Buffteks
 
             }
         }
+
+        private static void UpdateOrganizationPhoneNumber()
+        {
+            using (var context = new AppDbContext())
+            {
+                if (!context.Projects.Include(c => c.Client).ThenInclude(o => o.Organization).Any())
+                {
+                    Console.WriteLine("No records in the database to update\n");
+                }
+                else
+                {
+                    ReadOrganizationFromDB(context);
+                    Console.WriteLine();
+                    Console.Write("\nEnter the ID of the organization's phone # you want to update: ");
+                    var organizationToUpdate = Int32.Parse(Console.ReadLine());
+                    Console.Write("\nEnter the new phone #: ");
+                    var newPhoneNumber = Console.ReadLine();
+
+                    foreach (var o in context.Projects.Include(c => c.Client).ThenInclude(o => o.Organization).Where(id => id.Client.OrganizationID == organizationToUpdate))
+                    {
+                        o.Client.PhoneNumber = newPhoneNumber;
+                    }
+
+                    context.SaveChanges();
+                    Console.WriteLine($"Phone recored has been updated");
+
+            }
+
+        }
+        }
+
+        private static void ReadOrganizationFromDB(AppDbContext db)
+        {            
+            var organization = db.Projects.Include(c => c.Client).ThenInclude(o => o.Organization);
+           
+           
+                if (!organization.Any())
+                {
+                    Console.WriteLine("No records in the database\n");
+                }
+                else
+                {
+                    foreach (var o in db.Projects.Include(c => c.Client).ThenInclude(o => o.Organization).AsNoTracking())
+                    {
+                        Console.WriteLine();
+                        Console.Write(o.Client.Organization);
+                    }
+                }
+        }
+
+        public static void Search()
+        {
+            using (var db = new AppDbContext())
+            {
+                do
+                {
+                    Console.Write("Search for a student or an organization? ");
+                    var response = Console.ReadLine();
+
+                    switch (response)
+                    {
+                        case "student":
+                        SearchForStudentRercord();
+                        return;
+                        case "organization":
+                        // Search for Organization method
+                        return;
+                        default:
+                        Console.WriteLine("Please enter student or organization");
+                        break;
+                    }
+                    
+                } while (true);
+            }
+        }
+
+        private static void SearchForStudentRercord()
+        {
+            Console.Write("Please enter the first name of the student you would like to search for: ");
+            var nameofStudent = Console.ReadLine();
+
+            using (var db = new AppDbContext())
+            {
+
+<<<<<<< HEAD:Buffteks/Command.cs
+                var student = db.Teams.Include(s => s.Student).ToList();
+                var studentFiltered = student.Where(s => s.Student.FirstName == nameofStudent);
+
+                foreach (var s in studentFiltered)
+                {
+                    Console.WriteLine(s.Student);
+                }
+                
+                
+                
+=======
+                var student = db.Students.Include(s => s.Team);
+                var studentFiltered = student.Where(s => s.FirstName == nameofStudent);
+                Console.WriteLine();
+
+                foreach (var s in studentFiltered)
+                {
+                    Console.WriteLine(s);
+                }
+                
+>>>>>>> test:Assignments/Buffteks/Command.cs
+            }
+        }
+            
 
         // Displays commands to run from the console
         public static void HelpMe()
@@ -322,16 +440,22 @@ namespace Buffteks
                             AddStudents();
                             break;
                         case "read" :
-                            ReadStudentsFromDB();
+                            using (var context = new AppDbContext())
+                            {
+                                ReadStudentsFromDB(context);
+                            }
                             break;
                         case "update" :
-                            UpdateStudentPhoneNumber();
+                            Update();
                             break;
                         case "delete" :
                             DeleteStudent();
                             break;
                         case "project" :
                             ReadProjectDetails();
+                            break;
+                        case "search":
+                            Search();
                             break;
                         case "-help" :
                             HelpMe();

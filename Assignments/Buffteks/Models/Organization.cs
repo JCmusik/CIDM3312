@@ -1,10 +1,12 @@
 namespace Buffteks.Models
 {
-    public class Organization : Person
+    public class Organization
     {
         #region Properties
             
             public int OrganizationID { get; set; }
+            public string PhoneNumber { get; set; }
+            public string Email { get; set; }
             public string Name { get; set; }
 
         #endregion

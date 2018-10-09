@@ -35,7 +35,7 @@ namespace Buffteks
                 using (var context = new AppDbContext())
                 {
                     
-                    var student = context.Teams.Include(s => s.Student);
+                    var student = context.Students.Include(s => s.Team);
 
                     foreach (var s in student)
                     {
@@ -65,7 +65,7 @@ namespace Buffteks
         public static void ReadStudentsFromDB(AppDbContext context)
         {
             CheckForDatabase();
-                if (!context.Students.Any())
+                if (!context.Students.Include(s => s.Team).Any())
                 {
                     Console.WriteLine("No students in the database\n");
                 }
@@ -99,13 +99,11 @@ namespace Buffteks
                         Console.WriteLine(p.Client);
                         Console.WriteLine($"Organization Phone Number: {p.Client.Organization.PhoneNumber}\n");
                     }
-                    foreach (var a in context.Advisors)
+
+                    foreach (var t in context.Teams.AsNoTracking().Include(a => a.Advisor))
                     {
                         Console.WriteLine("---Advisor---");
-                        Console.WriteLine($"{a.FirstName} {a.LastName}");
-                    }
-                    foreach (var t in context.Teams.AsNoTracking())
-                    {
+                        Console.WriteLine(t.Advisor);
                         Console.WriteLine(t);
                     }
                     Console.WriteLine($"----List of team members----");
@@ -152,6 +150,7 @@ namespace Buffteks
                     FirstName = "Craig",
                     LastName = "Willfong",
                     Email = "cwilfong@kidsinc.org",
+                    PhoneNumber = "XXX-XXX-XXXX",
                     Organization = new Organization
                         {
                             Name = "Kids Inc.",
@@ -164,29 +163,24 @@ namespace Buffteks
                 {
                     Name = "Team Buffteks",
                     TeamLeader = "Vanessa Valenzuela",
-                    Student = new Student
-                                {
-                                    FirstName = "Vanessa",
-                                    LastName = "Valenzuela",
-                                    Email = "vanessa@email.com",
-                                    PhoneNumber = "XXX-XXX-XXXX"
-                                }               
-                }                               
-            };  
-
-            db.Add(project);
-            db.SaveChanges();
-            System.Console.WriteLine("Project added");
-            CreateStudents();
-        }
-
-        // Creates list of students and adds them to the database
-        private static void CreateStudents()
-        {
-
-            var students = new List<Student>
-                {
-                    new Student
+                    Advisor = new Advisor
+                    {
+                        Title = "Professor",
+                        FirstName = "Jeffry",
+                        LastName = "Babb",
+                        Email = "jbabb@wtamu.edu",
+                        PhoneNumber = "806-651-2440"
+                    },
+                    Students = new List<Student>
+                    {
+                        new Student
+                        {
+                            FirstName = "Vanessa",
+                            LastName = "Valenzuela",
+                            Email = "vanessa@email.com",
+                            PhoneNumber = "XXX-XXX-XXXX"
+                        },
+                        new Student
                         {
                             FirstName = "Gabrielle",
                             LastName = "Ashley",
@@ -207,31 +201,16 @@ namespace Buffteks
                             Email = "john@email.com",
                             PhoneNumber = "XXX-XXX-XXXX",
                         }
-                };  
+                    },
 
-                var advisor = new Advisor
-                {
-                    FirstName = "Jeffry",
-                    LastName = "Babb",
-                    Email = "jbabb@wtamu.edu",
-                    PhoneNumber = "806-651-2440"
-                };
+                }                               
+            };  
 
-                using (var db = new AppDbContext())
-                {
-                    foreach (var st in db.Teams.Include(s => s.Student))
-                    {
-                       foreach (var s in students)
-                       {
-                           db.Add(s);
-                       }
-                    }
-                db.Advisors.Add(advisor);
-                db.SaveChanges();
-                Console.WriteLine("Students added");
-                }
-               
+            db.Add(project);
+            db.SaveChanges();
+            System.Console.WriteLine("Project added");
         }
+
 
         // Delete student form Db
         public static void DeleteStudent()
@@ -291,7 +270,7 @@ namespace Buffteks
         {
             using (var context = new AppDbContext())
             {
-                if (!context.Teams.Include(s => s.Student).Any())
+                if (!context.Students.Include(s => s.Team).Any())
                 {
                     Console.WriteLine("No students in the database\n");
                 }
@@ -397,12 +376,13 @@ namespace Buffteks
             using (var db = new AppDbContext())
             {
 
-                var student = db.Teams.Include(s => s.Student);
-                var studentFiltered = student.Where(s => s.Student.FirstName == nameofStudent);
+                var student = db.Students.Include(s => s.Team);
+                var studentFiltered = student.Where(s => s.FirstName == nameofStudent);
+                Console.WriteLine();
 
                 foreach (var s in studentFiltered)
                 {
-                    Console.WriteLine(s.Student);
+                    Console.WriteLine(s);
                 }
                 
             }

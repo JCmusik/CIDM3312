@@ -9,8 +9,8 @@ namespace Buffteks.Models
             public int TeamID { get; set; }
             public string Name { get; set; }
             public string TeamLeader { get; set; }
-            public int StudentID { get; set; }
-            public Student Student { get; set; }
+            public int AdvisorID { get; set; }
+            public Advisor Advisor { get; set; }
             public List<Student> Students { get; set; }
             
         #endregion

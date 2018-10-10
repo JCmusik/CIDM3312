@@ -1,4 +1,5 @@
 ﻿using System;
+using LINQPractice.Models;
 
 namespace LINQPractice
 {
@@ -6,7 +7,11 @@ namespace LINQPractice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Check for database existence
+            // if not found seed the database
+            Command.SeedDatabase();
+
+            
         }
     }
 }

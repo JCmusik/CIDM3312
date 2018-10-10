@@ -10,6 +10,6 @@ namespace LINQPractice.Models
             optionsBuilder.UseSqlite(connectionString);
         }
 
-        
+        public DbSet<Student> Students { get; set; }
     }
 }

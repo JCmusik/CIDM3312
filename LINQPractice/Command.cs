@@ -55,5 +55,51 @@ namespace LINQPractice
                 }
             }
         }
+
+        // students who are not seniors
+        public static void StudentsNotSeniorsQuerySyntax()
+        {
+            using (var db = new AppDbContext())
+            {
+                
+            }
+        }
+        public static void StudentsNotSeniorsMethodSyntax()
+        {
+            
+        }
+
+        //students whose first names begin with letters 'M' or lower
+        public static void StudentsFirstNameMQuerySyntax()
+        {
+            
+        }
+        public static void StudentsFirstNameMMethodSyntax()
+        {
+            
+        }
+
+        // students whose first names begin with letters 'L' or lower
+        public static void StudentsFirstNameLQuerySyntax()
+        {
+            
+        }
+        public static void StudentsFirstNameMLethodSyntax()
+        {
+            
+        }
+
+        // Connect to the database and show all students who have taken CIDM3350 previously (hint: maybe you need to refactor
+        public static void StudentTakenCIDM3350querysyntax()
+        {
+            
+        }
+
+        public static void StudentTakenCIDM3350methodsyntax()
+        {
+            
+        }
+
+
     }
 }

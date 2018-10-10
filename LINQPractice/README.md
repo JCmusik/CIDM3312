@@ -1,8 +1,8 @@
-##LINQ Practice
+## LINQ Practice
 
 Here are some activities for you to practice LINQ with. Please utilize a 50%/50% blend of Method and Query syntax.
 
-###Preliminary Activities
+### Preliminary Activities
 
 1. Create a class called Student
 
@@ -12,7 +12,7 @@ Here are some activities for you to practice LINQ with. Please utilize a 50%/50%
 
 4. Seed the database with the names and information for all students in the class today
 
-###Where Practice
+### Where Practice
 
 1. Connect to the database and show all records in the Students table
 
@@ -24,7 +24,7 @@ Here are some activities for you to practice LINQ with. Please utilize a 50%/50%
 
 5. Connect to the database and show all students who have taken CIDM3350 previously (hint: maybe you need to refactor?.
 
-###Find Practice
+### Find Practice
 
 1. Connect to the database and find a student named "John" and print that record to the screen
 
@@ -36,7 +36,7 @@ Here are some activities for you to practice LINQ with. Please utilize a 50%/50%
 
 5.  Connect to the database and find a student who has the shortest last name but also has the longest first name and print that record to the screen
 
-###Sort Practice
+### Sort Practice
 
 1. Connect to the database and show all students sorted by first name
 
@@ -48,7 +48,7 @@ Here are some activities for you to practice LINQ with. Please utilize a 50%/50%
 
 5. Connect to the database and show students who are NOT Seniors and sorted by first name descending
 
-###Group Practice
+### Group Practice
 
 1. Connect to the database and show all students Grouped by class rank
 
@@ -56,7 +56,7 @@ Here are some activities for you to practice LINQ with. Please utilize a 50%/50%
 
 3. Connect to the database and show all students Grouped by the first letter of their last name and sorted by first name
 
-###How to submit this work
+### How to submit this work
 
 1. Create or add to an existing repository at Github and push your final solution to that repository.  Please then submit the URL to your repo here.
 

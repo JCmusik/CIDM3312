@@ -284,14 +284,29 @@ namespace LINQPractice
             using (var db = new AppDbContext())
             {
                 var students = db.Students;
-                // TODO:
+                var studentsFiltered = students.OrderBy( l => l.LastName.Length).ThenByDescending(f => f.FirstName.Length).Take(1);
+
+                PrintToConsole(studentsFiltered);
 
             }
         }
         
         public static void StudentShortestLNameLongestFNameQuery()
         {  
-            // TODO:
+             using (var db = new AppDbContext())
+            {
+                var students = db.Students;
+
+                var studentFiltered = (from s in students
+                                        orderby s.LastName.Length ascending, s.FirstName.Length descending
+                                        select s).Take(1);
+
+                PrintToConsole(studentFiltered);
+
+                
+
+            }
+
         }
 
         // 1. Connect to the database and show all students sorted by first name

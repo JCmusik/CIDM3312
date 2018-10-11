@@ -34,9 +34,10 @@ namespace LINQPractice
 
             //Command.StudentShortestLNameMethod();
 
-            
+            //Command.StudentShortestLNameLongestFNameMethod();
 
-            
+            //Command.StudentShortestLNameLongestFNameQuery();
+
             //Command.SortByFirstNameMethod();
 
             //Command.SortByFirstNameQuery();

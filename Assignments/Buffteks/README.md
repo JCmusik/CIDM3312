@@ -16,17 +16,13 @@ Console app that will be able to
     One Shot command: `dotnet run update`
 4. Delete\
     One Shot command:  `dotnet run delete`\
-[Deleting Data](https://docs.microsoft.com/en-us/ef/core/saving/basic#deleting-data)
 5.  Project detail\
     One Shot command: `dotnet run project`
-
-
-## Assignment 4 includes these additional features:
-
-6. Search for records for Student/Team and Client/Organization\
+6. Search for Student via First Name\
     One Shot command: ` dotnet run search `
-7. Sort records
-    One Shot command: ` dotnet run  sort `
-8. Group records
+7. Sort Student or Organizational records\
+    One Shot command: ` dotnet run sort `
+8. Search for records for Student/Team and Client/Organization\
+    One Shot command: ` dotnet run search `
+9. Group records by table number\
     One Shot command: ` dotnet run group `
-

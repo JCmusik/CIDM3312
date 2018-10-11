@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buffteks", "Buffteks.csproj", "{8EA269B7-B88F-4CB1-AC3C-4A4FB49738DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buffteks.Models", "Buffteks.Models\Buffteks.Models.csproj", "{9BBA0239-6987-413C-9AFB-F5A91F96F29E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

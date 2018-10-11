@@ -1,0 +1,12 @@
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\DataAccess.deps.json
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\DataAccess.dll
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\DataAccess.pdb
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.1\DataAccess.csprojAssemblyReference.cache
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.1\DataAccess.csproj.CoreCompileInputs.cache
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.1\DataAccess.AssemblyInfoInputs.cache
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.1\DataAccess.AssemblyInfo.cs
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.1\DataAccess.csproj.CopyComplete
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.1\DataAccess.dll
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.1\DataAccess.pdb
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\Models.dll
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\Models.pdb

@@ -1,0 +1,11 @@
+C:\john\practice\CIDM3312\Assignments\Buffteks\obj\Debug\netcoreapp2.1\Buffteks.csprojAssemblyReference.cache
+C:\john\practice\CIDM3312\Assignments\Buffteks\obj\Debug\netcoreapp2.1\Buffteks.csproj.CoreCompileInputs.cache
+C:\john\practice\CIDM3312\Assignments\Buffteks\obj\Debug\netcoreapp2.1\Buffteks.AssemblyInfoInputs.cache
+C:\john\practice\CIDM3312\Assignments\Buffteks\obj\Debug\netcoreapp2.1\Buffteks.AssemblyInfo.cs
+C:\john\practice\CIDM3312\Assignments\Buffteks\bin\Debug\netcoreapp2.1\Buffteks.deps.json
+C:\john\practice\CIDM3312\Assignments\Buffteks\bin\Debug\netcoreapp2.1\Buffteks.runtimeconfig.json
+C:\john\practice\CIDM3312\Assignments\Buffteks\bin\Debug\netcoreapp2.1\Buffteks.runtimeconfig.dev.json
+C:\john\practice\CIDM3312\Assignments\Buffteks\bin\Debug\netcoreapp2.1\Buffteks.dll
+C:\john\practice\CIDM3312\Assignments\Buffteks\bin\Debug\netcoreapp2.1\Buffteks.pdb
+C:\john\practice\CIDM3312\Assignments\Buffteks\obj\Debug\netcoreapp2.1\Buffteks.dll
+C:\john\practice\CIDM3312\Assignments\Buffteks\obj\Debug\netcoreapp2.1\Buffteks.pdb

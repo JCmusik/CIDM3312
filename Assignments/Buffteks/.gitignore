@@ -1,0 +1,10 @@
+obj
+bin
+Buffteks.db
+.vscode
+
+Dataccess/bin
+Dataccess/obj
+
+Models/bin
+Models/obj

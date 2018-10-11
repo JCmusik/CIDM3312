@@ -40,7 +40,6 @@ namespace LINQPractice
 
             using (var db = new AppDbContext())
             {
-                //db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
                 
                 if(!db.Students.Any())
@@ -58,8 +57,10 @@ namespace LINQPractice
             }
         }
 
+
+
        
-        // students who are not seniors
+        // 2. Connect to the database and show all records of students who are not seniors
         public static void StudentsNotSeniorsQuerySyntax()
         {
             using (var db = new AppDbContext())
@@ -87,7 +88,7 @@ namespace LINQPractice
             
         }
 
-        //students whose first names begin with letters 'M' or lower
+        // 3. Connect to the database and show all students whose first names begin with letters 'M' or lower
         public static void StudentsFirstNameMQuerySyntax()
         {
              using (var db = new AppDbContext())
@@ -111,7 +112,7 @@ namespace LINQPractice
             }
         }
 
-        // students whose first names begin with letters 'L' or lower
+        // 4. Connect to the database and show all students whose last names begin with letters "L" or higher and whose first names are longer than 6 characters
         public static void StudentsFirstNameLQuerySyntax()
         {
             using (var db = new AppDbContext())
@@ -120,8 +121,11 @@ namespace LINQPractice
                 var studentsM = from s in students
                                 where s.FirstName[0] >= 'M'
                                 select s;
+                var fNameLonger6Char = from s in studentsM
+                                            where s.FirstName.Length > 6
+                                            select s;
 
-                PrintToConsole(studentsM);
+                PrintToConsole(fNameLonger6Char);
             }
         }
         public static void StudentsFirstNameLMethodSyntax()
@@ -130,13 +134,17 @@ namespace LINQPractice
             {
                 var students = db.Students;
                 var studentsL = students.Where(f => f.FirstName[0] <= 'L');
+                var fNameLonger6Char = studentsL.Where( l => l.FirstName.Length > 6);
 
-                PrintToConsole(studentsL);
+                PrintToConsole(fNameLonger6Char);
                 
             }
         }
 
-        // Connect to the database and show all students who have taken CIDM3350 previously (hint: maybe you need to refactor
+        
+
+        
+        // 5. Connect to the database and show all students who have taken CIDM3350 previously
         public static void StudentTakenCIDM3350querysyntax()
         {
             using (var db = new AppDbContext())
@@ -150,8 +158,6 @@ namespace LINQPractice
                 
             }
         }
-        
-        //Connect to the database and show all students who have taken CIDM3350 previously.
 
         public static void StudentTakenCIDM3350methodsyntax()
         {
@@ -165,7 +171,7 @@ namespace LINQPractice
         }
 
 
-        //Connect to the database and find a student named "John" and print that record to the screen
+        // 1. Connect to the database and find a student named "John" and print that record to the screen
         public static void StudentNamedJohnMethod()
         {
             using (var db = new AppDbContext())
@@ -217,8 +223,6 @@ namespace LINQPractice
         }
 
         // 3. Connect to the database and find a student who has the shortest first name and print that record to the screen
-
-        //names.Min(y=>y.Length);
         public static void StudentShortestFNameMethod()
         {
             using (var db = new AppDbContext())
@@ -290,7 +294,7 @@ namespace LINQPractice
             // TODO:
         }
 
-        // Connect to the database and show all students sorted by first name
+        // 1. Connect to the database and show all students sorted by first name
 
         public static void SortByFirstNameMethod()
         {
@@ -374,7 +378,63 @@ namespace LINQPractice
             }
         }
 
-        // Connect to the database and show all students Grouped by class rank
+        // 4.  Connect to the database and show students who are Seniors and sorted by last name
+        public static void SeniorsSortLNameMethod()
+        {
+            using (var db = new AppDbContext())
+            { 
+                var students = db.Students;
+                var studentsNotSenior = students.Where(r => r.ClassRank == ClassRank.Senior).OrderBy(l => l.LastName);
+                
+                PrintToConsole(studentsNotSenior);  
+
+            }
+        }
+
+        public static void SeniorsSortLNameQuery()
+        {
+            using (var db = new AppDbContext())
+            { 
+                var students = db.Students;
+                var studentsNotSenior = from s in students
+                                            where s.ClassRank == ClassRank.Senior
+                                            orderby s.LastName
+                                            select s;
+                
+                PrintToConsole(studentsNotSenior);  
+
+            }
+        }
+        // 5. Connect to the database and show students who are NOT Seniors and sorted by first name descending
+        public static void NotSeniorsSortLNameMethod()
+        {
+            using (var db = new AppDbContext())
+            { 
+                var students = db.Students;
+                var studentsNotSenior = students.Where(r => r.ClassRank != ClassRank.Senior).OrderByDescending(l => l.FirstName);
+                
+                PrintToConsole(studentsNotSenior);  
+
+            }
+        }
+
+        public static void NotSeniorsSortLNameQuery()
+        {
+            using (var db = new AppDbContext())
+            { 
+                var students = db.Students;
+                var studentsNotSenior = from s in students
+                                            where s.ClassRank != ClassRank.Senior
+                                            orderby s.FirstName descending
+                                            select s;
+                
+                PrintToConsole(studentsNotSenior);  
+
+            }
+        }
+
+
+        // 1. Connect to the database and show all students Grouped by class rank
 
         public static void GroupByClassRankMethod()
         {
@@ -405,7 +465,7 @@ namespace LINQPractice
 
                 foreach (var c in classRank)
                 {
-                    Console.WriteLine("--------Grouped by class rank----------\n");
+                    Console.WriteLine($"--------Grouped by {c.Key}----------\n");
                     foreach (var s in c)
                     {
                         Console.WriteLine(s);
@@ -420,24 +480,83 @@ namespace LINQPractice
 
         public static void GroupByRankSortByLNameMethod()
         {
+            using (var db = new AppDbContext())
+            { 
+                var students = db.Students;
+                var classRank = students.OrderBy( l => l.LastName).GroupBy(r => r.ClassRank);
+                
+                foreach (var c in classRank)
+                {
+                    Console.WriteLine($"--------Grouped by {c.Key} ----------\n");
+                    foreach (var s in c)
+                    {
+                        Console.WriteLine(s);
+                    }
+                } 
 
+            }
         }
 
         public static void GroupByRankSortByLNameQuery()
         {
-
+            using (var db = new AppDbContext())
+            { 
+                var students = db.Students;
+                var classRank = from s in students
+                                    orderby s.LastName
+                                    group s by s.ClassRank;
+                
+                foreach (var c in classRank)
+                {
+                    Console.WriteLine($"--------Grouped by {c.Key} ----------\n");
+                    foreach (var s in c)
+                    {
+                        Console.WriteLine(s);
+                    }
+                } 
+            }
         }
 
         // 3. Connect to the database and show all students Grouped by the first letter of their last name and sorted by first name
 
         public static void GroupByFLetterLnameSortFNameMethod()
         {
-
+            using (var db = new AppDbContext())
+            { 
+                var students = db.Students;
+                var classRank = students.OrderBy( l => l.FirstName).GroupBy(r => r.LastName[0]);
+                                    
+                
+                foreach (var c in classRank)
+                {
+                    Console.WriteLine($"--------Grouped by {c.Key} ----------\n");
+                    foreach (var s in c)
+                    {
+                        Console.WriteLine(s);
+                    }
+                } 
+            }
         }
 
         public static void GroupByFLetterLnameSortFNameQuery()
         {
-
+            using (var db = new AppDbContext())
+            { 
+                var students = db.Students;
+                var classRank = from st in students
+                                    orderby st.FirstName
+                                    group st by st.LastName[0];
+                                    
+                
+                foreach (var c in classRank)
+                {
+                    Console.WriteLine($"--------Grouped by {c.Key} ----------\n");
+                    foreach (var s in c)
+                    {
+                        Console.WriteLine(s);
+                    }
+                } 
+            }
         }
 
          // print to console

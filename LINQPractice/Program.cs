@@ -9,13 +9,14 @@ namespace LINQPractice
         {
             // Check for database existence
             // if not found seed the database
-            //Command.SeedDatabase();
+            // 1. Connect to the database and show all records in the Students table
+            Command.SeedDatabase();
 
             //Command.StudentsNotSeniorsMethodSyntax();
 
             //Command.StudentsNotSeniorsQuerySyntax();
 
-            //Command.StudentsFirstNameMQuerySyntax();
+            //Command.StudentsFirstNameLQuerySyntax();
 
             //Command.StudentsFirstNameMMethodSyntax();
 
@@ -46,9 +47,25 @@ namespace LINQPractice
 
             //Command.SortByRankMethod();
 
+            //Command.SeniorsSortLNameMethod();
+
+            //Command.SeniorsSortLNameQuery();
+
+            //Command.NotSeniorsSortLNameMethod();
+
+            //Command.NotSeniorsSortLNameQuery();
+
             //Command.GroupByClassRankMethod();
 
             //Command.GroupByClassRankQuery();
+
+            //Command.GroupByRankSortByLNameMethod();
+
+            //Command.GroupByRankSortByLNameQuery();
+
+            //Command.GroupByFLetterLnameSortFNameMethod();
+            
+            //Command.GroupByFLetterLnameSortFNameQuery();
 
             
 

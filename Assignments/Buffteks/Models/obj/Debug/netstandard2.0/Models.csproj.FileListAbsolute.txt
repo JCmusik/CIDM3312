@@ -1,9 +1,0 @@
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\obj\Debug\netstandard2.0\Models.csprojAssemblyReference.cache
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\obj\Debug\netstandard2.0\Models.csproj.CoreCompileInputs.cache
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\bin\Debug\netstandard2.0\Models.deps.json
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\bin\Debug\netstandard2.0\Models.dll
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\bin\Debug\netstandard2.0\Models.pdb
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\obj\Debug\netstandard2.0\Models.dll
-C:\john\practice\CIDM3312\Assignments\Buffteks\Models\obj\Debug\netstandard2.0\Models.pdb

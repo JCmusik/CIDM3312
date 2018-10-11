@@ -10,3 +10,5 @@ C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.
 C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\obj\Debug\netcoreapp2.1\DataAccess.pdb
 C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\Models.dll
 C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\Models.pdb
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\DataAccess.runtimeconfig.json
+C:\john\practice\CIDM3312\Assignments\Buffteks\DataAccess\bin\Debug\netcoreapp2.1\DataAccess.runtimeconfig.dev.json

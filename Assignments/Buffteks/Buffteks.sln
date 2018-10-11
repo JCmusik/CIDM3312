@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buffteks", "Buffteks.csproj", "{8EA269B7-B88F-4CB1-AC3C-4A4FB49738DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{84AA5682-BF55-4D0D-8BE2-95E5BF7AA78D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{A201B25B-A8C4-488F-AFF8-34752127502E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,5 +21,13 @@ Global
 		{9BBA0239-6987-413C-9AFB-F5A91F96F29E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BBA0239-6987-413C-9AFB-F5A91F96F29E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BBA0239-6987-413C-9AFB-F5A91F96F29E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84AA5682-BF55-4D0D-8BE2-95E5BF7AA78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84AA5682-BF55-4D0D-8BE2-95E5BF7AA78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84AA5682-BF55-4D0D-8BE2-95E5BF7AA78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84AA5682-BF55-4D0D-8BE2-95E5BF7AA78D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A201B25B-A8C4-488F-AFF8-34752127502E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A201B25B-A8C4-488F-AFF8-34752127502E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A201B25B-A8C4-488F-AFF8-34752127502E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A201B25B-A8C4-488F-AFF8-34752127502E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

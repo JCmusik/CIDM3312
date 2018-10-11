@@ -29,8 +29,8 @@ Console app that will be able to
 7. Sort Student or Organizational records\
     One Shot command: ` dotnet run sort `
 
-8. Search for records for Student/Team and Client/Organization\
+8. Search for Student or Organizational records\
     One Shot command: ` dotnet run search `
-    
+
 9. Group records by table number\
     One Shot command: ` dotnet run group `

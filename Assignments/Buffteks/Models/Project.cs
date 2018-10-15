@@ -1,6 +1,6 @@
 using System;
 
-namespace Buffteks.Models
+namespace Models.Models
 {
     public class Project
     {

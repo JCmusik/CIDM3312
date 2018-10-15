@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Buffteks.Models
+namespace Models.Models
 {
     public class Team
     {

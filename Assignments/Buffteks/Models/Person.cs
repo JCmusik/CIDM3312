@@ -1,4 +1,4 @@
-namespace Buffteks.Models
+namespace Models.Models
 {
     public abstract class Person
     {

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using Models.Models;
 
-namespace Buffteks.Models
+namespace DataAccess.Models
 {
     public class AppDbContext : DbContext
     {

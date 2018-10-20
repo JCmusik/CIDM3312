@@ -210,9 +210,8 @@ namespace Buffteks
                             PhoneNumber = "XXX-XXX-XXXX",
                             TableNumber = 2
                         }
-                    },
-
-                }                               
+                    }
+                }
             };  
 
             db.Add(project);
@@ -277,7 +276,7 @@ namespace Buffteks
             
         }
         // Update Student Phone #
-        private static void UpdateStudentPhoneNumber()
+        static void UpdateStudentPhoneNumber()
         {
             using (var context = new AppDbContext())
             {
@@ -305,7 +304,7 @@ namespace Buffteks
             }
         }
 
-        private static void UpdateOrganizationPhoneNumber()
+        static void UpdateOrganizationPhoneNumber()
         {
             using (var context = new AppDbContext())
             {
@@ -331,27 +330,27 @@ namespace Buffteks
 
                     context.SaveChanges();
                     Console.WriteLine($"Phone recored has been updated");
+                }
+
             }
-
-        }
         }
 
-        private static void ReadOrganizationFromDB(AppDbContext db)
-        {            
+        static void ReadOrganizationFromDB(AppDbContext db)
+        {
             var organization = db.Projects.Include(c => c.Client).ThenInclude(o => o.Organization).AsNoTracking();
-           
-                if (!organization.Any())
+
+            if (!organization.Any())
+            {
+                Console.WriteLine("No records in the database\n");
+            }
+            else
+            {
+                foreach (var o in organization)
                 {
-                    Console.WriteLine("No records in the database\n");
+                    Console.WriteLine();
+                    Console.Write(o.Client.Organization);
                 }
-                else
-                {
-                    foreach (var o in organization)
-                    {
-                        Console.WriteLine();
-                        Console.Write(o.Client.Organization);
-                    }
-                }
+            }
         }
 
         public static void Search()
@@ -381,7 +380,7 @@ namespace Buffteks
             }
         }
 
-        private static void SearchForStudentRecord()
+        static void SearchForStudentRecord()
         {
             Console.Write("Please enter the first name of the student you would like to search for: ");
             var nameofStudent = Console.ReadLine();
@@ -401,12 +400,12 @@ namespace Buffteks
                 }
                 else
                 {
-                   Console.WriteLine("Student not found.\n");
+                    Console.WriteLine("Student not found.\n");
                 }
             }
         }
 
-        private static void SearchOrganizationRecord()
+        static void SearchOrganizationRecord()
         {
             Console.Write("Please enter the name of the organization you would like to search for: ");
             var nameofOrganization = Console.ReadLine();
@@ -418,7 +417,7 @@ namespace Buffteks
                 var oraganizationFiltered = organization.Where(o => o.Client.Organization.Name == nameofOrganization);
                 Console.WriteLine();
 
-                if(oraganizationFiltered.Count() != 0)
+                if (oraganizationFiltered.Count() != 0)
                 {
                     foreach (var o in organization)
                     {
@@ -430,8 +429,8 @@ namespace Buffteks
                 {
                     Console.WriteLine("Organization not found.\n");
                 }
-                
-                
+
+
             }
         }
 

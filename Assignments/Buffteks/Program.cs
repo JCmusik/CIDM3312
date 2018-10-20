@@ -59,10 +59,7 @@ namespace Buffteks
                 } while (true);
                 
             }
-            else
-            {
                 Commands.OneShotCommands(args);
-            }
         }
     }
 }

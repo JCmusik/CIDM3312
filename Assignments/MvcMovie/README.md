@@ -1,4 +1,4 @@
-# Assignment5
+# Assignment 5
 ### Introduction to ASP.NET Core MVC on macOS, Linux, or Windows
 
 #### Tutorial Link

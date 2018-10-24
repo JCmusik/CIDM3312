@@ -15,24 +15,24 @@ You will use query string parameters to send the units and unit data into the co
 dotnet add package Newtonsoft.Json --version 11.0.2
 
 ### Temperatures
-##### Celsius to Fahrenheit
+#### Celsius to Fahrenheit
 Multiply the Celsius temperature by 9
 Divide the answer by 5
 Add 32
 
-##### Fahrenheit to Celsius
+#####Fahrenheit to Celsius
 Subtract 32 from the Fahrenheit temperature
 Divide the answer by 9
 Multiply that answer by 5
 
-##### Celsius to Kelvin
+#### Celsius to Kelvin
 K = °C + 273.15
 
-##### Kelvin to Celsius
+#### Kelvin to Celsius
 °C = K - 273.15
 
-##### Fahernheit to Kelvin
+#### Fahernheit to Kelvin
 T(K) = (T(°F) + 459.67)× 5/9
 
-##### Kelvin to Fahernheit
+#### Kelvin to Fahernheit
 T(°F) = T(K) × 9/5 - 459.67

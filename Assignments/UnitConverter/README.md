@@ -20,7 +20,7 @@ Multiply the Celsius temperature by 9
 Divide the answer by 5
 Add 32
 
-#####Fahrenheit to Celsius
+#### Fahrenheit to Celsius
 Subtract 32 from the Fahrenheit temperature
 Divide the answer by 9
 Multiply that answer by 5

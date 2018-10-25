@@ -77,7 +77,7 @@ Yards * 3
 
 #### Ounces to Pound
 
-Ounces * 0.062500
+Ounce * 0.062500
 
 #### Pound to Ounce 
 

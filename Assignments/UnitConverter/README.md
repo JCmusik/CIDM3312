@@ -2,9 +2,9 @@
 
 ### Assignment Six
 
-Please write a simple ASP.NET MVC Core application that serves as a unit converter.\
+Please write a simple ASP.NET MVC Core application that serves as a unit converter.
 
-Please convert between the following unit types:\
+Please convert between the following unit types:
 
 * Temperatures - Celsius, Fahrenheit, Kelvin
 * Length - Meters, Feet, Yards

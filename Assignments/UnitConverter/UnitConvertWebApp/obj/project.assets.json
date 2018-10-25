@@ -4333,6 +4333,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "ConverterLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/ConverterLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ConverterLib.dll": {}
+        }
       }
     }
   },
@@ -11491,10 +11501,16 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "ConverterLib/1.0.0": {
+      "type": "project",
+      "path": "../ConverterLib/ConverterLib.csproj",
+      "msbuildProject": "../ConverterLib/ConverterLib.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "ConverterLib >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0"
@@ -11527,7 +11543,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/ConverterLib/ConverterLib.csproj": {
+              "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/ConverterLib/ConverterLib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

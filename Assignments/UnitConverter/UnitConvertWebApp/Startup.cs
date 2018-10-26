@@ -56,7 +56,7 @@ namespace UnitConvertWebApp
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Conversion}/{action=Index}/{id?}");
             });
         }
     }

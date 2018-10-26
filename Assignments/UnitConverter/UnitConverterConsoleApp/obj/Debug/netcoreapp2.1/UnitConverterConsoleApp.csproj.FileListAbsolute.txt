@@ -9,3 +9,8 @@
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/UnitConverterConsoleApp/obj/Debug/netcoreapp2.1/UnitConverterConsoleApp.AssemblyInfo.cs
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/UnitConverterConsoleApp/obj/Debug/netcoreapp2.1/UnitConverterConsoleApp.dll
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/UnitConverterConsoleApp/obj/Debug/netcoreapp2.1/UnitConverterConsoleApp.pdb
+/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/UnitConverterConsoleApp/bin/Debug/netcoreapp2.1/ConverterLib.dll
+/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/UnitConverterConsoleApp/bin/Debug/netcoreapp2.1/DataAccess.dll
+/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/UnitConverterConsoleApp/bin/Debug/netcoreapp2.1/ConverterLib.pdb
+/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/UnitConverterConsoleApp/bin/Debug/netcoreapp2.1/DataAccess.pdb
+/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/UnitConverterConsoleApp/obj/Debug/netcoreapp2.1/UnitConverterConsoleApp.csproj.CopyComplete

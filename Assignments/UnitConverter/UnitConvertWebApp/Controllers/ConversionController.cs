@@ -10,5 +10,26 @@ using DataAccess;
 
 namespace UnitConvertWebApp.Controllers
 {
+    public class ConversionController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
 
+        public IActionResult TempConvert()
+        {
+            return View();
+        }
+
+        public IActionResult LengthConvert()
+        {
+            return View();
+        }
+
+        public IActionResult MassConvert()
+        {
+            return View();
+        }
+    }
 }

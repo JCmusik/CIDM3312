@@ -12,6 +12,11 @@ namespace UnitConvertWebApp.Controllers
 {
     public class ConversionController : Controller
     {
+        private IDataAccess dataAccess;
+        public ConversionController(IDataAccess db)
+        {
+            dataAccess = db;
+        }
         public IActionResult Index()
         {
             return View();

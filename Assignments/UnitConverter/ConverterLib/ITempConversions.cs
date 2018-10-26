@@ -1,6 +1,6 @@
 namespace ConverterLib
 {
-    interface ITempConversions
+    public interface ITempConversions
     {
         // Celsius to Fahrenheit
         decimal CelsiusToFahrenheit(int TempC);

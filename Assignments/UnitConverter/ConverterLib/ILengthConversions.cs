@@ -1,6 +1,6 @@
 namespace ConverterLib
 {
-    interface ILengthConversions
+    public interface ILengthConversions
     {
         decimal MetersToFeet(int Meters);
 

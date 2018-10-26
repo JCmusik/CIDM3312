@@ -1,6 +1,6 @@
 namespace ConverterLib
 {
-    interface IMassConversions
+    public interface IMassConversions
     {
         decimal OunceToPound(int Ounce);
 

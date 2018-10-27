@@ -1,13 +1,15 @@
 using Microsoft.EntityFrameworkCore;
-using ConverterLib;
 using System.Linq;
+using ConverterLib.TempModels;
+using ConverterLib.MassModels;
+using ConverterLib.LengthModels;
 
 namespace UnitConvertWebApp.Models
 {
     public interface IDataAccess
     {
-        IQueryable<TempConversions> TempConversions { get; }
-        IQueryable<MassConversions> MassConversions { get; }
-        IQueryable<LengthConversions> LengthConversions { get; }
+        IQueryable<ITempConversions> TempConversions { get; }
+        IQueryable<IMassConversions> MassConversions { get; }
+        IQueryable<ILengthConversions> LengthConversions { get; }
     }
 }

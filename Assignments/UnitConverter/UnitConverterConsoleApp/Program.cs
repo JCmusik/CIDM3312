@@ -1,5 +1,7 @@
 ﻿using System;
-using ConverterLib;
+using ConverterLib.TempModels;
+using ConverterLib.MassModels;
+using ConverterLib.LengthModels;
 
 namespace UnitConverterConsoleApp
 {
@@ -7,69 +9,84 @@ namespace UnitConverterConsoleApp
     {
         static void Main(string[] args)
         {
-            // Temperature Conversions
+            #region Temp Conversions
+
             Console.WriteLine("---------------Temperature Conversions----------------");
 
-            ITempConversions tempConvert = new TempConversions();
+            // Instantiate new objects that implement ITempConversions
+            ITempConversions cToF = new CelsiusToFahrenheit();
+            ITempConversions fToC = new FahrenheitToCelsius();
+            ITempConversions cToK = new CelsiusToKelvin();
+            ITempConversions kToC = new KelvinToCelsius();
+            ITempConversions fToK = new FahrenheitToKelvin();
+            ITempConversions kToF = new KelvinToFahrenheit();
 
-            Console.WriteLine(tempConvert.CelsiusToFahrenheit(15));
+            // Write to the Console the return of the GetTemp method
+            Console.WriteLine(Math.Round(cToF.GetTemp(15), 2));
+            Console.WriteLine(Math.Round(fToC.GetTemp(15), 2));
+            Console.WriteLine(Math.Round(cToK.GetTemp(15), 2));
+            Console.WriteLine(Math.Round(kToC.GetTemp(15), 2));
+            Console.WriteLine(Math.Round(fToK.GetTemp(15), 2));
+            Console.WriteLine(Math.Round(kToF.GetTemp(15), 2));
 
-            Console.WriteLine(tempConvert.FahrenheitToCelsius(59));
+            #endregion
 
-            Console.WriteLine(tempConvert.CelsiusToKelvin(15));
 
-            Console.WriteLine(tempConvert.KelvinToCelsius(300));
+            #region Mass Conversions
 
-            Console.WriteLine(tempConvert.FahernheitToKelvin(400));
-
-            Console.WriteLine(tempConvert.KelvinToFahrenheit(0));
-
-            // Mass Conversions
             Console.WriteLine("\n--------------Mass Conversions----------------------");
+            IMassConversions gToK = new GramToKilogram();
+            IMassConversions kToG = new KilogramToGram();
+            IMassConversions gToO = new GramToOunce();
+            IMassConversions oToG = new OunceToGram();
+            IMassConversions gToP = new GramToPound();
+            IMassConversions pToG = new PoundToGram();
+            IMassConversions pToO = new PoundToOunce();
+            IMassConversions oToP = new OunceToPounds();
+            IMassConversions kToO = new KilogramToOunce();
+            IMassConversions oToK = new OunceToKilogram();
+            IMassConversions pToK = new PoundToKilogram();
+            IMassConversions kToP = new KilogramToPound();
 
-            IMassConversions massConvert = new MassConversions();
+            Console.WriteLine(Math.Round(gToK.GetMass(50), 2));
+            Console.WriteLine(Math.Round(kToG.GetMass(50), 2));
+            Console.WriteLine(Math.Round(gToO.GetMass(50), 2));
+            Console.WriteLine(Math.Round(oToG.GetMass(50), 2));
+            Console.WriteLine(Math.Round(gToP.GetMass(50), 2));
+            Console.WriteLine(Math.Round(pToG.GetMass(50), 2));
+            Console.WriteLine(Math.Round(pToO.GetMass(50), 2));
+            Console.WriteLine(Math.Round(oToP.GetMass(50), 2));
+            Console.WriteLine(Math.Round(kToO.GetMass(50), 2));
+            Console.WriteLine(Math.Round(oToK.GetMass(50), 2));
+            Console.WriteLine(Math.Round(pToK.GetMass(50), 2));
+            Console.WriteLine(Math.Round(kToP.GetMass(50), 2));
 
-            Console.WriteLine(massConvert.OunceToPound(16));
 
-            Console.WriteLine(massConvert.PoundToOunce(1));
 
-            Console.WriteLine(massConvert.OunceToGram(16));
+            #endregion
 
-            Console.WriteLine(massConvert.GramToOunce(100));
 
-            Console.WriteLine(massConvert.OunceToKilogram(100));
+            #region Length Conversions
 
-            Console.WriteLine(massConvert.KilogramToOunce(1000));
-
-            Console.WriteLine(massConvert.PoundToGram(10));
-
-            Console.WriteLine(massConvert.GramToPound(200));
-
-            Console.WriteLine(massConvert.PoundToKilogram(10));
-
-            Console.WriteLine(massConvert.KilogramToPound(2000));
-
-            Console.WriteLine(massConvert.GramToKilogram(1000));
-
-            Console.WriteLine(massConvert.KilogramToGram(1000));
-
-            // Length Conversions
             Console.WriteLine("\n--------------Length Conversions----------------------");
 
-            ILengthConversions lengthConvert = new LengthConversions();
+            ILengthConversions fToM = new FeetToMeters();
+            ILengthConversions mToF = new MetersToFeet();
+            ILengthConversions fToY = new FeetToYards();
+            ILengthConversions yToF = new YardsToFeet();
+            ILengthConversions yToM = new YardsToMeters();
+            ILengthConversions mToY = new MetersToYards();
 
-            Console.WriteLine(lengthConvert.MetersToFeet(6));
+            Console.WriteLine(Math.Round(fToM.GetLength(25), 2));
+            Console.WriteLine(Math.Round(mToF.GetLength(25), 2));
+            Console.WriteLine(Math.Round(fToY.GetLength(25), 2));
+            Console.WriteLine(Math.Round(yToF.GetLength(25), 2));
+            Console.WriteLine(Math.Round(yToM.GetLength(25), 2));
+            Console.WriteLine(Math.Round(mToY.GetLength(25), 2));
 
-            Console.WriteLine(lengthConvert.FeetToMeters(6));
+            #endregion
 
-            Console.WriteLine(lengthConvert.MetersToYards(10));
-
-            Console.WriteLine(lengthConvert.YardsToMeters(15));
-
-            Console.WriteLine(lengthConvert.FeetToYards(6));
-
-            Console.WriteLine(lengthConvert.YardsToFeet(25));
-
+            Console.WriteLine();
         }
     }
 }

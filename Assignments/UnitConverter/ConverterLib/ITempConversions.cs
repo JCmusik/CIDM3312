@@ -3,22 +3,22 @@ namespace ConverterLib
     public interface ITempConversions
     {
         // Celsius to Fahrenheit
-        decimal CelsiusToFahrenheit(int TempC);
+        decimal CelsiusToFahrenheit(decimal TempC);
 
         // Fahrenheit to Celsius
-        decimal FahrenheitToCelsius(int TempF);
+        decimal FahrenheitToCelsius(decimal TempF);
 
         // Celsius to Kelvin 
-        decimal CelsiusToKelvin(int TempC);
+        decimal CelsiusToKelvin(decimal TempC);
 
         // Kelvin to Celsius
-        decimal KelvinToCelsius(int TempK);
+        decimal KelvinToCelsius(decimal TempK);
 
         // Fahernheit to Kelvin
-        decimal FahernheitToKelvin(int TempF);
+        decimal FahernheitToKelvin(decimal TempF);
 
         // Kelvin to Fahernheit
-        decimal KelvinToFahrenheit(int TempK);
+        decimal KelvinToFahrenheit(decimal TempK);
 
     }
 }

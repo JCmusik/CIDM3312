@@ -2,16 +2,16 @@ namespace ConverterLib
 {
     public interface ILengthConversions
     {
-        decimal MetersToFeet(int Meters);
+        decimal MetersToFeet(decimal Meters);
 
-        decimal FeetToMeters(int Feet);
+        decimal FeetToMeters(decimal Feet);
 
-        decimal MetersToYards(int Meters);
+        decimal MetersToYards(decimal Meters);
 
-        decimal YardsToMeters(int Yards);
+        decimal YardsToMeters(decimal Yards);
 
-        decimal FeetToYards(int Feet);
+        decimal FeetToYards(decimal Feet);
 
-        decimal YardsToFeet(int Yards);
+        decimal YardsToFeet(decimal Yards);
     }
 }

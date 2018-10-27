@@ -2,29 +2,29 @@ namespace ConverterLib
 {
     public interface IMassConversions
     {
-        decimal OunceToPound(int Ounce);
+        decimal OunceToPound(decimal Ounce);
 
-        decimal PoundToOunce(int Pound);
+        decimal PoundToOunce(decimal Pound);
 
-        decimal OunceToGram(int Ounce);
+        decimal OunceToGram(decimal Ounce);
 
-        decimal GramToOunce(int Gram);
+        decimal GramToOunce(decimal Gram);
 
-        decimal OunceToKilogram(int Ounce);
+        decimal OunceToKilogram(decimal Ounce);
 
-        decimal KilogramToOunce(int Kilogram);
+        decimal KilogramToOunce(decimal Kilogram);
 
-        decimal PoundToGram(int Pound);
+        decimal PoundToGram(decimal Pound);
 
-        decimal GramToPound(int Gram);
+        decimal GramToPound(decimal Gram);
 
-        decimal PoundToKilogram(int Pound);
+        decimal PoundToKilogram(decimal Pound);
 
-        decimal KilogramToPound(int Kilogram);
+        decimal KilogramToPound(decimal Kilogram);
 
-        decimal GramToKilogram(int Gram);
+        decimal GramToKilogram(decimal Gram);
 
-        decimal KilogramToGram(int Kilogram);
+        decimal KilogramToGram(decimal Kilogram);
 
     }
 }

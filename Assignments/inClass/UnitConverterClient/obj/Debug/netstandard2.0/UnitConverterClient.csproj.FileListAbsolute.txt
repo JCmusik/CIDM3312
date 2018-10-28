@@ -1,9 +1,0 @@
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/bin/Debug/netstandard2.0/UnitConverterClient.deps.json
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/bin/Debug/netstandard2.0/UnitConverterClient.dll
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/bin/Debug/netstandard2.0/UnitConverterClient.pdb
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/obj/Debug/netstandard2.0/UnitConverterClient.csprojAssemblyReference.cache
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/obj/Debug/netstandard2.0/UnitConverterClient.csproj.CoreCompileInputs.cache
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/obj/Debug/netstandard2.0/UnitConverterClient.AssemblyInfoInputs.cache
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/obj/Debug/netstandard2.0/UnitConverterClient.AssemblyInfo.cs
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/obj/Debug/netstandard2.0/UnitConverterClient.dll
-/Users/johncunningham/Projects/git/CIDM3312/Assignments/inClass/UnitConverterClient/obj/Debug/netstandard2.0/UnitConverterClient.pdb

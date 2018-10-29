@@ -1,5 +1,16 @@
 ## Unit Converter App
 
+## Reference a .dll directly
+The following XML should be added to the .csproj file from which you want to reference another project using just the .dll
+```xml
+    <ItemGroup>
+        <Reference Include="YourLibraryName">
+        <HintPath>full/path/projectfolder/obj/Debug/targetframework/YourLibraryName.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+```
+
+
 ### Assignment Six
 
 Please write a simple ASP.NET MVC Core application that serves as a unit converter.

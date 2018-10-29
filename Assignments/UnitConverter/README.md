@@ -5,7 +5,7 @@ The following XML should be added to the .csproj file from which you want to ref
 ```xml
     <ItemGroup>
         <Reference Include="YourLibraryName">
-        <HintPath>full/path/projectfolder/obj/Debug/targetframework/YourLibraryName.dll</HintPath>
+            <HintPath>full/path/projectfolder/obj/Debug/targetframework/YourLibraryName.dll</HintPath>
         </Reference>
     </ItemGroup>
 ```

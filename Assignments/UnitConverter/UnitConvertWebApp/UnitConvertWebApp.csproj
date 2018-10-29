@@ -14,11 +14,9 @@
     <Reference Include="ConverterLib">
       <HintPath>/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/ConverterLib/obj/Debug/netstandard2.0/ConverterLib.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <!-- <ProjectReference Include="..\ConverterLib\ConverterLib.csproj" /> -->
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <Reference Include="DataAccess">
+      <HintPath>/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/DataAccess/obj/Debug/netstandard2.0/DataAccess.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

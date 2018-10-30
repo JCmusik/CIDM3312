@@ -5,9 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.All" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,7 +14,7 @@
       <HintPath>/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/ConverterLib/obj/Debug/netstandard2.0/ConverterLib.dll</HintPath>
     </Reference>
     <Reference Include="DataAccess">
-      <HintPath>/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/DataAccess/obj/Debug/netstandard2.0/DataAccess.dll</HintPath>
+      <HintPath>/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverter/DataAccess/bin/Debug/netstandard2.0/DataAccess.dll</HintPath>
     </Reference>
   </ItemGroup>
 

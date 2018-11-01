@@ -7,10 +7,12 @@ namespace MidTerm
     {
         static void Main(string[] args)
         {
+            Console.Clear();
             SeedDatabase.Seed();
 
             do
             {
+
                 Console.WriteLine("\nChoose an option: ");
                 Console.WriteLine("s (show all books)\na (books by APress)\nshort (shortest author first name)\nadam (book auth first name Adam)\n1000 (pages greater than 1000)\nsrtLname (sort by Author last name)\ntitleDesc (sort by title descending)\ngrpByPub (group by pub)\ngrpSrt (group by pub, sort by auth last name)\nclr (clear console)\ne (to exit)");
                 Console.Write("> ");

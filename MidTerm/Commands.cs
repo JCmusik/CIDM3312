@@ -106,6 +106,7 @@ namespace MidTerm
                 foreach (var book in srtLName)
                 {
                     Console.WriteLine(book);
+                    Console.WriteLine();
                 }
 
             }
@@ -125,6 +126,7 @@ namespace MidTerm
                 foreach (var book in sortByTitleDesc)
                 {
                     Console.WriteLine(book);
+                    Console.WriteLine();
                 }
             }
         }
@@ -138,15 +140,17 @@ namespace MidTerm
                 var grpBook = books.GroupBy(p => p.Publisher);
 
                 Console.Clear();
-                Console.WriteLine("--Books Grouped by Publisher------");
                 Console.WriteLine();
 
                 foreach (var book in grpBook)
                 {
+                    Console.WriteLine($"--Books Grouped by {book.Key}------\n");
                     foreach (var b in book)
                     {
                         Console.WriteLine(b);
+                        Console.WriteLine();
                     }
+                    Console.WriteLine();
                 }
 
             }
@@ -158,18 +162,19 @@ namespace MidTerm
             using (var db = new AppDbContext())
             {
                 var books = db.Books.Include(a =>  a.Author);
-                var bookSrt = books.OrderBy(a => a.Author.LastName);
-                var booksGrp = bookSrt.GroupBy(p => p.Publisher);
+                var bookSrt = books.OrderBy(a => a.Author.LastName).GroupBy(p => p.Publisher);
 
                 Console.Clear();
                 Console.WriteLine("------Books Grouped by publisher and Sorted by Author's Last name------");
                 Console.WriteLine();
 
-                foreach (var book in booksGrp)
+                foreach (var book in bookSrt)
                 {
-                    foreach (var b in bookSrt)
+                    Console.WriteLine($"------Grouped by: {book.Key}------\n");
+                    foreach (var b in book)
                     {
                         Console.WriteLine(b);
+                        Console.WriteLine();
                     }
                 }
             }

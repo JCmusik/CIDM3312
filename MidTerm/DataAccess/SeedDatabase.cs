@@ -11,17 +11,19 @@ namespace DataAccess
         {
             using (var db = new AppDbContext())
             {
-                //db.Database.EnsureDeleted();
+                db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
 
                 var adamFreeman = new Author
                 {
-                    Name = "Adam Freeman"
+                    FirstName = "Adam",
+                    LastName = "Freeman"
                 };
 
                 var haishiBai = new Author
                 {
-                    Name = "Haishi Bai"
+                    FirstName = "Haishi",
+                    LastName = "Bai"
                 };
 
                 var books = new List<Book>
@@ -45,7 +47,7 @@ namespace DataAccess
                     new Book
                     {
                         Title = "Pro Angular 6 3rd Edition",
-                        Publisher = "Apress",
+                        Publisher = "Microsoft Press",
                         PublishDate = new DateTime(2018/05/25),
                         Pages = 528,
                         Author = haishiBai

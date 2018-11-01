@@ -12,6 +12,6 @@ namespace BookLibrary
         public int AuthorId { get; set; }
         public Author Author { get; set; }
 
-        public override string ToString() => $"Title: {this.Title}\nPublisher: {this.Publisher}\nPublish Date: {this.PublishDate}\nPages: {this.Pages}";
+        public override string ToString() => $"Title: {this.Title}\nPublisher: {this.Publisher}\nPublish Date: {this.PublishDate}\nPages: {this.Pages}\n{this.Author}";
     }
 }

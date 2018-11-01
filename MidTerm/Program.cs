@@ -9,7 +9,7 @@ namespace MidTerm
         {
             SeedDatabase.Seed();
             Console.WriteLine("\nChoose an option: ");
-            Console.WriteLine("s (show all books)");
+            Console.WriteLine("s (show all books) a (books by APress) short (shortest author first name) clr (clear console)");
 
             do
             {
@@ -21,6 +21,17 @@ namespace MidTerm
                     case "s":
                         // Display all books to console
                         Commands.ShowAllBooks();
+                        break;
+                    case "a":
+                        //show all records of Books Published by "APress"
+                        Commands.BooksByAPress();
+                        break;
+                    case "short":
+                        //show all records of Books whose author's first name is the shortest
+                        Commands.ShortestFirstName();
+                        break;
+                    case "clr":
+                        Console.Clear();
                         break;
                     case "e":
                         return;

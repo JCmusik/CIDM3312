@@ -2844,11 +2844,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "c:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\John.cunningham\\.nuget\\packages\\",
-      "outputPath": "c:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\obj\\",
+      "outputPath": "C:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2868,8 +2868,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "c:\\john\\practice\\CIDM3312\\MidTerm\\BookLibrary\\BookLibrary.csproj": {
-              "projectPath": "c:\\john\\practice\\CIDM3312\\MidTerm\\BookLibrary\\BookLibrary.csproj"
+            "C:\\john\\practice\\CIDM3312\\MidTerm\\BookLibrary\\BookLibrary.csproj": {
+              "projectPath": "C:\\john\\practice\\CIDM3312\\MidTerm\\BookLibrary\\BookLibrary.csproj"
             }
           }
         }

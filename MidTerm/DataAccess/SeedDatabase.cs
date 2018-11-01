@@ -46,7 +46,7 @@ namespace DataAccess
                     },
                     new Book
                     {
-                        Title = "Pro Angular 6 3rd Edition",
+                        Title = "Programming Microsoft Azure Service Fabric (Developer Reference) 2nd Edition",
                         Publisher = "Microsoft Press",
                         PublishDate = new DateTime(2018/05/25),
                         Pages = 528,

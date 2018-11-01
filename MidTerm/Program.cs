@@ -8,11 +8,11 @@ namespace MidTerm
         static void Main(string[] args)
         {
             SeedDatabase.Seed();
-            Console.WriteLine("\nChoose an option: ");
-            Console.WriteLine("s (show all books) a (books by APress) short (shortest author first name) clr (clear console)");
 
             do
             {
+                Console.WriteLine("\nChoose an option: ");
+                Console.WriteLine("s (show all books)\na (books by APress)\nshort (shortest author first name)\nadam (book auth first name Adam)\n>1000 (pages greater than 1000)\nsrtLname (sort by Author last name)\ntitleDesc (sort by title descending)\nclr (clear console)");
                 Console.Write("> ");
                 var response = Console.ReadLine();
 
@@ -29,6 +29,21 @@ namespace MidTerm
                     case "short":
                         //show all records of Books whose author's first name is the shortest
                         Commands.ShortestFirstName();
+                        break;
+                    case "adam":
+                        Commands.FindFirstBookAuthorNamedAdam();
+                        break;
+                    case ">1000":
+                        // first book whose page count is greater than 1000
+                        Commands.PagesGreaterThan1000();
+                        break;
+                    case "srtLname":
+                        // show all Books sorted by Author's last name
+                        Commands.SortByAuthLastName();
+                        break;
+                    case "titleDesc":
+                        // show all Books sorted by book title descending
+                        Commands.SortByTitleDescending();
                         break;
                     case "clr":
                         Console.Clear();

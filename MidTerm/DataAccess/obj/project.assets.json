@@ -1246,11 +1246,10 @@
       ]
     },
     "System.Buffers/4.4.0": {
-      "sha512": "VCJfpWcYG1gT3WwivZWgT0KaqY678MQBvrOI2si6V8GHeQOtuW+wpiv5ss4KyfGG+cFFdPNaI+nw2/kExCtGgQ==",
+      "sha512": "AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
       "type": "package",
       "path": "system.buffers/4.4.0",
       "files": [
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netcoreapp2.0/_._",
@@ -1931,11 +1930,10 @@
       ]
     },
     "System.Numerics.Vectors/4.4.0": {
-      "sha512": "ZhdgJiihSOGD325jClouHy8WSPtwFSj6K1OymoEyN0Wc9Y6X2OVxn65VKfTWHQOYM+QljlVSreporVNvZm8rEA==",
+      "sha512": "UiLzLW+Lw6HLed1Hcg+8jSRttrbuXv7DANVj0DkL9g6EnnzbL75EB7EWsw5uRbhxd/4YdG8li5XizGWepmG3PQ==",
       "type": "package",
       "path": "system.numerics.vectors/4.4.0",
       "files": [
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
@@ -2838,38 +2836,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\John.cunningham\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/johncunningham/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/DataAccess/DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\John.cunningham\\.nuget\\packages\\",
-      "outputPath": "C:\\john\\practice\\CIDM3312\\MidTerm\\DataAccess\\obj\\",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/DataAccess/DataAccess.csproj",
+      "packagesPath": "/Users/johncunningham/.nuget/packages/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/DataAccess/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\John.cunningham\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/johncunningham/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://csiseg.pkgs.visualstudio.com/_packaging/Main/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\john\\practice\\CIDM3312\\MidTerm\\BookLibrary\\BookLibrary.csproj": {
-              "projectPath": "C:\\john\\practice\\CIDM3312\\MidTerm\\BookLibrary\\BookLibrary.csproj"
+            "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/BookLibrary.csproj": {
+              "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/BookLibrary.csproj"
             }
           }
         }

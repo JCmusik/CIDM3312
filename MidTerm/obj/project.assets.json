@@ -3374,32 +3374,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\John.cunningham\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/johncunningham/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\john\\practice\\CIDM3312\\MidTerm\\MidTerm.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/MidTerm.csproj",
       "projectName": "MidTerm",
-      "projectPath": "c:\\john\\practice\\CIDM3312\\MidTerm\\MidTerm.csproj",
-      "packagesPath": "C:\\Users\\John.cunningham\\.nuget\\packages\\",
-      "outputPath": "c:\\john\\practice\\CIDM3312\\MidTerm\\obj\\",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/MidTerm.csproj",
+      "packagesPath": "/Users/johncunningham/.nuget/packages/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\John.cunningham\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/johncunningham/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://csiseg.pkgs.visualstudio.com/_packaging/Main/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {

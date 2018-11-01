@@ -6,7 +6,6 @@ C:\john\practice\CIDM3312\MidTerm\DataAccess\bin\Debug\netstandard2.0\BookLibrar
 C:\john\practice\CIDM3312\MidTerm\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
 C:\john\practice\CIDM3312\MidTerm\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
 C:\john\practice\CIDM3312\MidTerm\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
-C:\john\practice\CIDM3312\MidTerm\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
 C:\john\practice\CIDM3312\MidTerm\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CopyComplete
 C:\john\practice\CIDM3312\MidTerm\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
 C:\john\practice\CIDM3312\MidTerm\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb

@@ -11,7 +11,6 @@ namespace DataAccess
         {
             using (var db = new AppDbContext())
             {
-                db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
 
                 var adamFreeman = new Author

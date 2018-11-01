@@ -12,7 +12,7 @@ namespace MidTerm
             do
             {
                 Console.WriteLine("\nChoose an option: ");
-                Console.WriteLine("s (show all books)\na (books by APress)\nshort (shortest author first name)\nadam (book auth first name Adam)\n>1000 (pages greater than 1000)\nsrtLname (sort by Author last name)\ntitleDesc (sort by title descending)\nclr (clear console)");
+                Console.WriteLine("s (show all books)\na (books by APress)\nshort (shortest author first name)\nadam (book auth first name Adam)\n>1000 (pages greater than 1000)\nsrtLname (sort by Author last name)\ntitleDesc (sort by title descending)\ngrpByPub (group by pub)\ngrpSrt (group by pub, sort by auth last name)\nclr (clear console)");
                 Console.Write("> ");
                 var response = Console.ReadLine();
 
@@ -44,6 +44,14 @@ namespace MidTerm
                     case "titleDesc":
                         // show all Books sorted by book title descending
                         Commands.SortByTitleDescending();
+                        break;
+                    case "grpByPub":
+                        // show all Books Grouped by publisher
+                        Commands.BooksGroupedByPublisher();
+                        break;
+                    case "grpSrt":
+                        // show all Books Grouped by publisher and sorted by Author's last name
+                        Commands.GrpByPubSortByAuthLName();
                         break;
                     case "clr":
                         Console.Clear();

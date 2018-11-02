@@ -69,7 +69,7 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
         },
         "build": {
-          "build/netcoreapp2.0/Microsoft.EntityFrameworkCore.Design.props": {}
+          "build/netcoreapp2.0/_._": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/2.1.4": {
@@ -934,6 +934,32 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
+        }
+      },
+      "BookLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BookLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BookLibrary.dll": {}
+        }
+      },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BookLibrary": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "2.1.4",
+          "Microsoft.EntityFrameworkCore.Design": "2.1.4",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
         }
       }
     }
@@ -3363,13 +3389,21 @@
         "system.threading.tasks.4.0.11.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "BookLibrary/1.0.0": {
+      "type": "project",
+      "path": "BookLibrary/BookLibrary.csproj",
+      "msbuildProject": "BookLibrary/BookLibrary.csproj"
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "DataAccess/DataAccess.csproj",
+      "msbuildProject": "DataAccess/DataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
-      "Microsoft.EntityFrameworkCore >= 2.1.4",
-      "Microsoft.EntityFrameworkCore.Design >= 2.1.4",
-      "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.4",
+      "DataAccess >= 1.0.0",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -3400,7 +3434,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/DataAccess/DataAccess.csproj": {
+              "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm/DataAccess/DataAccess.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3412,18 +3450,6 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[2.1.4, )"
-          },
-          "Microsoft.EntityFrameworkCore.Design": {
-            "target": "Package",
-            "version": "[2.1.4, )"
-          },
-          "Microsoft.EntityFrameworkCore.Sqlite": {
-            "target": "Package",
-            "version": "[2.1.4, )"
-          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "[2.1.0, )",

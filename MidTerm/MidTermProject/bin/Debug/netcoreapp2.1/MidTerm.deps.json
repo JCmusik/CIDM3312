@@ -8,9 +8,7 @@
     ".NETCoreApp,Version=v2.1": {
       "MidTerm/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.1.4",
-          "Microsoft.EntityFrameworkCore.Design": "2.1.4",
-          "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4"
+          "DataAccess": "1.0.0"
         },
         "runtime": {
           "MidTerm.dll": {}
@@ -522,6 +520,22 @@
         "dependencies": {
           "System.Runtime": "4.1.0"
         }
+      },
+      "BookLibrary/1.0.0": {
+        "runtime": {
+          "BookLibrary.dll": {}
+        }
+      },
+      "DataAccess/1.0.0": {
+        "dependencies": {
+          "BookLibrary": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "2.1.4",
+          "Microsoft.EntityFrameworkCore.Design": "2.1.4",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4"
+        },
+        "runtime": {
+          "DataAccess.dll": {}
+        }
       }
     }
   },
@@ -908,6 +922,16 @@
       "sha512": "sha512-k1S4Gc6IGwtHGT8188RSeGaX86Qw/wnrgNLshJvsdNUOPP9etMmo8S07c+UlOAx4K/xLuN9ivA1bD0LVurtIxQ==",
       "path": "system.threading.tasks/4.0.11",
       "hashPath": "system.threading.tasks.4.0.11.nupkg.sha512"
+    },
+    "BookLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

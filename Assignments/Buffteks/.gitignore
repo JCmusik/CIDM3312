@@ -1,4 +1,13 @@
-bin
-obj
 .vscode
 Buffteks.db
+
+.gitignore
+
+ConsoleUI/bin
+ConsoleUI/obj
+
+DataAccess/bin
+DataAccess/obj
+
+Models/bin
+Models/obj

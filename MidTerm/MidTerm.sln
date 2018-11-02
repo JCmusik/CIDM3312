@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MidTerm", "MidTerm.csproj", "{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{ACE1666B-3745-4116-939F-AC7E4CAB972B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookLibrary", "BookLibrary\BookLibrary.csproj", "{A2050848-45B0-46A7-9F7D-0FA05F8DE37D}"
@@ -22,18 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Debug|x64.Build.0 = Debug|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Debug|x86.Build.0 = Debug|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Release|x64.ActiveCfg = Release|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Release|x64.Build.0 = Release|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Release|x86.ActiveCfg = Release|Any CPU
-		{3EDA3FBE-06B0-4948-A0F9-869EB55A18E2}.Release|x86.Build.0 = Release|Any CPU
 		{ACE1666B-3745-4116-939F-AC7E4CAB972B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACE1666B-3745-4116-939F-AC7E4CAB972B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACE1666B-3745-4116-939F-AC7E4CAB972B}.Debug|x64.ActiveCfg = Debug|Any CPU

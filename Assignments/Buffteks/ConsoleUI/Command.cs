@@ -34,54 +34,54 @@ namespace Buffteks
                 Console.Write("Enter your table number: ");
                 var tableNumber = byte.Parse(Console.ReadLine());
 
-                
+
                 using (var context = new AppDbContext())
                 {
                     var std = new Student
-                        {
-                            TeamID = 1,
-                            FirstName = fName,
-                            LastName = lName,
-                            Email = email,
-                            PhoneNumber = phoneNumber,
-                            TableNumber = tableNumber
-                        };
+                    {
+                        TeamID = 1,
+                        FirstName = fName,
+                        LastName = lName,
+                        Email = email,
+                        PhoneNumber = phoneNumber,
+                        TableNumber = tableNumber
+                    };
 
                     var students = context.Teams.Include(s => s.Students);
-                    
+
                     foreach (var t in students)
                     {
                         context.Add(std);
-                    }             
+                    }
                     context.SaveChanges();
                     Console.WriteLine($"Thank you {std.FirstName}, your info has been saved to the database");
-                         
+
                 }
                 Console.Write("Would you like to add another student? (enter y or n) ");
                 var response = Console.ReadLine();
                 if (response != "y")
                     return;
             } while (true);
-            
+
         }
 
         // Read student data from the database and display back to the user
         public static void ReadStudentsFromDB(AppDbContext context)
         {
             CheckForDatabase();
-                if (!context.Students.Include(s => s.Team).Any())
+            if (!context.Students.Include(s => s.Team).Any())
+            {
+                Console.WriteLine("No students in the database\n");
+            }
+            else
+            {
+                foreach (var s in context.Students.AsNoTracking())
                 {
-                    Console.WriteLine("No students in the database\n");
-                }
-                else
-                {
-                    foreach (var s in context.Students.AsNoTracking())
-                    {
-                        Console.WriteLine();
-                        Console.Write(s);
-                    }
                     Console.WriteLine();
+                    Console.Write(s);
                 }
+                Console.WriteLine();
+            }
         }
 
         // Read and display project details
@@ -90,13 +90,13 @@ namespace Buffteks
             CheckForDatabase();
             using (var context = new AppDbContext())
             {
-                if(!context.Projects.Any())
+                if (!context.Projects.Any())
                 {
                     Console.WriteLine("No project exists");
                 }
                 else
                 {
-                    var  projectDetails = context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization);
+                    var projectDetails = context.Projects.AsNoTracking().Include(c => c.Client).ThenInclude(o => o.Organization);
                     foreach (var p in projectDetails)
                     {
                         Console.WriteLine(p);
@@ -156,11 +156,11 @@ namespace Buffteks
                     Email = "cwilfong@kidsinc.org",
                     PhoneNumber = "XXX-XXX-XXXX",
                     Organization = new Organization
-                        {
-                            Name = "Kids Inc.",
-                            Email = "info@kidsinc.org",
-                            PhoneNumber = "806-376-5936"
-                        }
+                    {
+                        Name = "Kids Inc.",
+                        Email = "info@kidsinc.org",
+                        PhoneNumber = "806-376-5936"
+                    }
                 },
                 TotalHours = 400,
                 Team = new Team
@@ -211,8 +211,8 @@ namespace Buffteks
                         }
                     },
 
-                }                               
-            };  
+                }
+            };
 
             db.Add(project);
             db.SaveChanges();
@@ -227,7 +227,7 @@ namespace Buffteks
 
             using (var context = new AppDbContext())
             {
-                if(!context.Students.Any())
+                if (!context.Students.Any())
                 {
                     Console.WriteLine("No students in database\n");
                 }
@@ -243,7 +243,7 @@ namespace Buffteks
                         context.SaveChanges();
                     }
                     Console.WriteLine($"Student {response} removed");
-                    if (!context.Students.Any()){}
+                    if (!context.Students.Any()) { }
                     else
                         ReadStudentsFromDB(context);
 
@@ -262,18 +262,18 @@ namespace Buffteks
                 switch (response)
                 {
                     case "student":
-                    UpdateStudentPhoneNumber();
-                    return;
+                        UpdateStudentPhoneNumber();
+                        return;
                     case "organization":
-                    UpdateOrganizationPhoneNumber();
-                    return;
+                        UpdateOrganizationPhoneNumber();
+                        return;
                     default:
-                    Console.WriteLine("Please enter student or organization");
-                    break;
+                        Console.WriteLine("Please enter student or organization");
+                        break;
                 }
-                
+
             } while (true);
-            
+
         }
         // Update Student Phone #
         private static void UpdateStudentPhoneNumber()
@@ -330,27 +330,27 @@ namespace Buffteks
 
                     context.SaveChanges();
                     Console.WriteLine($"Phone recored has been updated");
-            }
+                }
 
-        }
+            }
         }
 
         private static void ReadOrganizationFromDB(AppDbContext db)
-        {            
+        {
             var organization = db.Projects.Include(c => c.Client).ThenInclude(o => o.Organization).AsNoTracking();
-           
-                if (!organization.Any())
+
+            if (!organization.Any())
+            {
+                Console.WriteLine("No records in the database\n");
+            }
+            else
+            {
+                foreach (var o in organization)
                 {
-                    Console.WriteLine("No records in the database\n");
+                    Console.WriteLine();
+                    Console.Write(o.Client.Organization);
                 }
-                else
-                {
-                    foreach (var o in organization)
-                    {
-                        Console.WriteLine();
-                        Console.Write(o.Client.Organization);
-                    }
-                }
+            }
         }
 
         public static void Search()
@@ -366,16 +366,16 @@ namespace Buffteks
                     switch (response)
                     {
                         case "student":
-                        SearchForStudentRecord();
-                        return;
+                            SearchForStudentRecord();
+                            return;
                         case "organization":
-                        SearchOrganizationRecord();
-                        return;
+                            SearchOrganizationRecord();
+                            return;
                         default:
-                        Console.WriteLine("Please enter student or organization");
-                        break;
+                            Console.WriteLine("Please enter student or organization");
+                            break;
                     }
-                    
+
                 } while (true);
             }
         }
@@ -400,7 +400,7 @@ namespace Buffteks
                 }
                 else
                 {
-                   Console.WriteLine("Student not found.\n");
+                    Console.WriteLine("Student not found.\n");
                 }
             }
         }
@@ -417,7 +417,7 @@ namespace Buffteks
                 var oraganizationFiltered = organization.Where(o => o.Client.Organization.Name == nameofOrganization);
                 Console.WriteLine();
 
-                if(oraganizationFiltered.Count() != 0)
+                if (oraganizationFiltered.Count() != 0)
                 {
                     foreach (var o in organization)
                     {
@@ -429,8 +429,8 @@ namespace Buffteks
                 {
                     Console.WriteLine("Organization not found.\n");
                 }
-                
-                
+
+
             }
         }
 
@@ -469,10 +469,10 @@ namespace Buffteks
                     Console.WriteLine();
                 }
 
-                
+
             }
         }
-            
+
 
         // Displays commands to run from the console
         public static void HelpMe()
@@ -489,7 +489,7 @@ namespace Buffteks
             Console.WriteLine("\tdelete\t\tfor deleting a student record");
 
             Console.WriteLine("\tproject\t\tdisplay list of project details");
-            
+
             Console.WriteLine();
 
         }
@@ -497,46 +497,46 @@ namespace Buffteks
         public static void OneShotCommands(string[] args)
         {
             foreach (var item in args)
+            {
+                switch (item)
                 {
-                    switch (item)
-                    {
-                        case "create" : 
-                            AddStudents();
-                            break;
-                        case "read" :
-                            using (var context = new AppDbContext())
-                            {
-                                ReadStudentsFromDB(context);
-                            }
-                            break;
-                        case "update" :
-                            Update();
-                            break;
-                        case "delete" :
-                            DeleteStudent();
-                            break;
-                        case "project" :
-                            ReadProjectDetails();
-                            break;
-                        case "search":
-                            Search();
-                            break;
-                        case "sort":
-                            SortRecords();
-                            break;
-                        case "group":
-                            RecordsGroupBy();
-                            break;
-                        case "-help" :
-                            HelpMe();
-                            break;
-                        default:
-                            Console.Write("-----Command unknown------\n");
-                            HelpMe();
-                            break;
-                    }
-                        
+                    case "create":
+                        AddStudents();
+                        break;
+                    case "read":
+                        using (var context = new AppDbContext())
+                        {
+                            ReadStudentsFromDB(context);
+                        }
+                        break;
+                    case "update":
+                        Update();
+                        break;
+                    case "delete":
+                        DeleteStudent();
+                        break;
+                    case "project":
+                        ReadProjectDetails();
+                        break;
+                    case "search":
+                        Search();
+                        break;
+                    case "sort":
+                        SortRecords();
+                        break;
+                    case "group":
+                        RecordsGroupBy();
+                        break;
+                    case "-help":
+                        HelpMe();
+                        break;
+                    default:
+                        Console.Write("-----Command unknown------\n");
+                        HelpMe();
+                        break;
                 }
+
+            }
         }
     }
 }

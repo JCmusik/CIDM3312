@@ -20,3 +20,14 @@
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.AssemblyInfo.cs
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.dll
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.pdb
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/bin/Debug/netcoreapp2.1/InterestRate.deps.json
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/bin/Debug/netcoreapp2.1/InterestRate.runtimeconfig.json
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/bin/Debug/netcoreapp2.1/InterestRate.runtimeconfig.dev.json
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/bin/Debug/netcoreapp2.1/InterestRate.dll
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/bin/Debug/netcoreapp2.1/InterestRate.pdb
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.csprojAssemblyReference.cache
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.csproj.CoreCompileInputs.cache
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.AssemblyInfoInputs.cache
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.AssemblyInfo.cs
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.dll
+/Users/johncunningham/Projects/git/CIDM3312/inClass/InterestRateCalculator/obj/Debug/netcoreapp2.1/InterestRate.pdb

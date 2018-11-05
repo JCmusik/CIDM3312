@@ -4,7 +4,7 @@ namespace ConverterLib.TempModels
     {
         public decimal GetTemp(decimal tempIn)
         {
-            return tempIn * (9M / 5M) + 32;
+            return ((tempIn * 9M) / 5M) + 32;
         }
     }
 }

@@ -14,7 +14,3 @@
 * Pushing this code to github
 * Zipping up the solution directory and uploading that to this box.
 * Demonstrating that a randomly-selected method works when I visit you to inspect the work.
-
-
-#### RELEASE VERSION
-* Figure out how to change to release version versus debug

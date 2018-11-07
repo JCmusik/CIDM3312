@@ -1,6 +1,6 @@
 ## Unit Converter App
 
-### Assignment Six
+### Assignment Seven
 
 Please write a simple ASP.NET MVC Core application that serves as a unit converter.
 

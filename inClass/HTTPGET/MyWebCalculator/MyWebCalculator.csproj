@@ -13,7 +13,7 @@
         however I still need to add the path i.e. /usr/local/bin
         which is esentially the same as the referencing the full path
         with the exception that when I build the project again this
-        reference type won't include the new build changes  -->
+        reference won't include the new build changes  -->
   <!-- <ItemGroup>
     <Reference Include="/usr/local/bin/MathLibrary.dll" />
   </ItemGroup> -->

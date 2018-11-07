@@ -9,8 +9,20 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>
 
-  <ItemGroup>
+  <!-- This referenced a the dll file that I copied into my path
+        however I still need to add the path i.e. /usr/local/bin
+        which is esentially the same as the referencing the full path
+        with the exception that when I build the project again this
+        reference type won't include the new build changes  -->
+  <!-- <ItemGroup>
     <Reference Include="/usr/local/bin/MathLibrary.dll" />
+  </ItemGroup> -->
+
+  <!-- This is an improved version of referencing the dll where building
+       includes any new changes to the library.
+       There's also no need for <HintPath> -->
+  <ItemGroup>
+    <Reference Include="/Users/johncunningham/Projects/git/CIDM3312/inClass/HTTPGET/MathLibrary/bin/Debug/netstandard2.0/MathLibrary.dll" />
   </ItemGroup>
 
 </Project>

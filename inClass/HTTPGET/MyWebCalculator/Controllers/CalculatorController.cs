@@ -47,9 +47,19 @@ namespace MyWebCalculator.Controllers
         {
             ViewData["num1"] = Convert.ToString(num1);
             ViewData["num2"] = Convert.ToString(num2);
-            ViewData["result"] = MathRoutines.Divide(num1, num2);
 
-            return View();
+            if (num2 != 0)
+            {
+                ViewData["result"] = MathRoutines.Divide(num1, num2);
+
+                return View();
+            }
+            else
+            {
+                ViewData["result"] = "Please Enter a number other than 0 for num2";
+                return View();
+            }
+
         }
 
         public IActionResult Power(double num1, double num2)

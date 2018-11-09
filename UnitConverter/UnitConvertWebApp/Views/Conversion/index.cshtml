@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Conversion Home Page";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div class="container">
+    <div class="row">
+        <ul>
+            <li><a asp-area="" asp-controller="Conversion" asp-action="TempConvert">Temp Conversion</a></li>
+            <li><a asp-area="" asp-controller="Conversion" asp-action="LengthConvert">Length Conversion</a></li>
+            <li><a asp-area="" asp-controller="Conversion" asp-action="MassConvert">Mass Conversion</a></li>
+        </ul>
+        <h4>Instructions</h4>
+        <p>Copy the following query string:  ?numIn=15 <br />Click on one of the converter links,<br />
+         then paste it at the end of the url.<br />
+         You can also change the number 15 at the end of query string to obtain new conversion results
+         </p>
+    </div>
+</div>

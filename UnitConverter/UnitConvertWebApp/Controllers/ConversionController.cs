@@ -31,6 +31,8 @@ namespace UnitConvertWebApp.Controllers
             ITempConversions tempConvert = new TempConverter();
 
             var result = tempConvert.GetTemp(type, numIn);
+            ViewData["numIn"] = numIn;
+            ViewData["result"] = result;
 
             return View();
         }
@@ -46,7 +48,9 @@ namespace UnitConvertWebApp.Controllers
         {
             ILengthConversions lengthConvert = new LengthConverter();
 
-            var restul = lengthConvert.GetLength(type, numIn);
+            var result = lengthConvert.GetLength(type, numIn);
+            ViewData["numIn"] = numIn;
+            ViewData["result"] = result;
 
             return View();
         }
@@ -63,6 +67,8 @@ namespace UnitConvertWebApp.Controllers
             IMassConversions massConvert = new MassConverter();
 
             var result = massConvert.GetMass(type, numIn);
+            ViewData["numIn"] = numIn;
+            ViewData["result"] = result;
 
             return View();
         }

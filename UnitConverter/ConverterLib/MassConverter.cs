@@ -8,29 +8,29 @@ namespace ConverterLib
         {
             switch (type)
             {
-                case "g2k":
+                case "G to K":
                     return GramToKilogram.Convert(massIn);
-                case "k2g":
+                case "K to G":
                     return KilogramToGram.Convert(massIn);
-                case "g2o":
+                case "G to Oz":
                     return GramToOunce.Convert(massIn);
-                case "o2g":
+                case "Oz to G":
                     return OunceToGram.Convert(massIn);
-                case "g2p":
+                case "G to Lb":
                     return GramToPound.Convert(massIn);
-                case "p2g":
+                case "Lb to G":
                     return PoundToGram.Convert(massIn);
-                case "k2o":
+                case "Kg to Oz":
                     return KilogramToOunce.Convert(massIn);
-                case "o2k":
+                case "Oz to Kg":
                     return OunceToKilogram.Convert(massIn);
-                case "k2p":
+                case "Kg to Lb":
                     return KilogramToPound.Convert(massIn);
-                case "p2k":
+                case "Lb to Kg":
                     return PoundToKilogram.Convert(massIn);
-                case "p2o":
+                case "Lb to Oz":
                     return PoundToOunce.Convert(massIn);
-                case "o2p":
+                case "Oz to Lb":
                     return OunceToPounds.Convert(massIn);
                 default:
                     return massIn;

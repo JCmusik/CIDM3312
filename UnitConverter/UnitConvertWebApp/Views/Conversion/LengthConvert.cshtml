@@ -4,24 +4,33 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<div id="container">
-<table class="table table-striped">
-    <th class="tableHeader">
-        <td>Meters to Feet</td>
-        <td>Feet to Meters</td>
-        <td>Meters to Yards</td>
-        <td>Yards to Meters</td>
-        <td>Feet to Yards</td>
-        <td>Yards to Feet</td>
-    </th>
-        <tr>
-            <td></td>
-            <td>@ViewData["NumInput"] M to @ViewData["MtoF"] Ft.</td>
-            <td>@ViewData["NumInput"] Ft. to @ViewData["FtoM"] M</td>
-            <td>@ViewData["NumInput"] M to @ViewData["MtoY"] Yds.</td>
-            <td>@ViewData["NumInput"] Yds. to @ViewData["YtoM"] M</td>
-            <td>@ViewData["NumInput"] Ft. to @ViewData["FtoY"] Yds.</td>
-            <td>@ViewData["NumInput"] Yds. to @ViewData["YtoF"] Ft.</td>        
-        </tr>    
-</table>
-</div>
+<div class="container">
+<div class="row">    
+    <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+        <form action="TempConvert" method="post">
+            <div class="form-group">
+                <label for="numIn">Enter Length: </label>
+                <input placeholder=@ViewData["numIn"] type="text" class="form-control" id="numIn" name="numIn">
+            </div>
+            <div class="form-group">
+                <label for="type">Conversion Type:</label>
+                <select class="form-control" id="type" name="type">
+                    <option>Meters to Feet</option>
+                    <option>Feet to Meters</option>
+                    <option>Meters to Yards</option>
+                    <option>Yards to Meters</option>
+                    <option>Feet to Yards</option>
+                    <option>Yards to Feet</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Convert</button>
+            </div>
+            <h2 style="float: right">Converts to: @ViewData["result"]</h2>
+        </form>
+        </div>
+        <div class="col-xs-4"></div>
+</div><!-- end of row -->
+</div><!-- end of container -->
+    

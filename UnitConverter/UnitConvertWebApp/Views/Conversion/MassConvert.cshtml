@@ -4,36 +4,39 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<div id="container">
-<table class="table table-striped">
-    <th class="tableHeader">
-        <td>Oz to Lb</td>
-        <td>Lb to Oz</td>
-        <td>Oz to G</td>
-        <td>G to Oz</td>
-        <td>Oz to Kg</td>
-        <td>Kg to Oz</td>
-        <td>Lb to G</td>
-        <td>G to Lb</td>
-        <td>Lb to Kg</td>
-        <td>Kg to Lb</td>
-        <td>G to K</td>
-        <td>K to G</td>
-    </th>
-        <tr>
-            <td></td>
-            <td>@ViewData["NumInput"] Oz. to @ViewData["OtoL"] Lbs.</td>
-            <td>@ViewData["NumInput"] Lbs. to @ViewData["LtoO"] Oz.</td>
-            <td>@ViewData["NumInput"] Oz to @ViewData["OtoG"] G</td>
-            <td>@ViewData["NumInput"] G to @ViewData["GtoO"] Oz.</td>
-            <td>@ViewData["NumInput"] Oz to @ViewData["OtoK"] Kgs.</td>
-            <td>@ViewData["NumInput"] Kgs. to @ViewData["KtoO"] Oz.</td>
-            <td>@ViewData["NumInput"] Lbs. to @ViewData["LtoG"] G</td>
-            <td>@ViewData["NumInput"] G to @ViewData["GtoL"] Lbs.</td>
-            <td>@ViewData["NumInput"] Lbs. to @ViewData["LtoK"] Kgs.</td>
-            <td>@ViewData["NumInput"] K to @ViewData["KtoL"] Lbs.</td>   
-            <td>@ViewData["NumInput"] G to @ViewData["GtoK"] K</td>
-            <td>@ViewData["NumInput"] Kgs. to @ViewData["KtoG"] G</td>     
-        </tr>    
-</table>
-</div>
+<div class="container">
+<div class="row">    
+    <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+        <form action="TempConvert" method="post">
+            <div class="form-group">
+                <label for="numIn">Enter Mass: </label>
+                <input placeholder=@ViewData["numIn"] type="text" class="form-control" id="numIn" name="numIn">
+            </div>
+            <div class="form-group">
+                <label for="type">Conversion Type:</label>
+                <select class="form-control" id="type" name="type">
+                    <option>Oz to Lb</option>
+                    <option>Lb to Oz</option>
+                    <option>Oz to G</option>
+                    <option>G to Oz</option>
+                    <option>Oz to Kg</option>
+                    <option>Kg to Oz</option>
+                    <option>Lb to G</option>
+                    <option>G to Lb</option>
+                    <option>Lb to Kg</option>
+                    <option>Kg to Lb</option>
+                    <option>G to K</option>
+                    <option>K to G</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Convert</button>
+            </div>
+            <h2 style="float: right">Converts to: @ViewData["result"]</h2>
+        </form>
+        </div>
+        <div class="col-xs-4"></div>
+</div><!-- end of row -->
+</div><!-- end of container -->
+   

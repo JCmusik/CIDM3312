@@ -4,24 +4,33 @@
 
 <h2>@ViewData["Title"]</h2>
 
-<div id="container">
-<table class="table table-striped">
-    <th class="tableHeader">
-        <td>Celsius to Fahrenheit</td>
-        <td>Fahrenheit to Celsius</td>
-        <td>Celsius to Kelvin</td>
-        <td>Kelvin to Celsius</td>
-        <td>Fahrenheit to Kelvin</td>
-        <td>Kelvin to Fahrenheit</td>
-    </th>
-        <tr>
-            <td></td>
-            <td>@ViewData["NumInput"] C to @ViewData["CtoF"] F</td>
-            <td>@ViewData["NumInput"] F to @ViewData["FtoC"] C</td>
-            <td>@ViewData["NumInput"] C to @ViewData["CtoK"] K</td>
-            <td>@ViewData["NumInput"] K to @ViewData["KtoC"] C</td>
-            <td>@ViewData["NumInput"] F to @ViewData["FtoK"] K</td>
-            <td>@ViewData["NumInput"] K to @ViewData["KtoF"] F</td>
-        </tr>    
-</table>
-</div>
+<div class="container">
+<div class="row">    
+    <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+        <form action="TempConvert" method="post">
+            <div class="form-group">
+                <label for="numIn">Enter Temperature: </label>
+                <input placeholder=@ViewData["numIn"] type="text" class="form-control" id="numIn" name="numIn">
+            </div>
+            <div class="form-group">
+                <label for="type">Conversion Type:</label>
+                <select class="form-control" id="type" name="type">
+                    <option>Celsius to Fahrenheit</option>
+                    <option>Fahrenheit to Celsius</option>
+                    <option>Celsius to Kelvin</option>
+                    <option>Kelvin to Celsius</option>
+                    <option>Celsius to Kelvin</option>
+                    <option>Fahrenheit to Kelvin</option>
+                    <option>Kelvin to Fahrenheit</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Convert</button>
+            </div>
+            <h2 style="float: right">Converts to: @ViewData["result"]</h2>
+        </form>
+        </div>
+        <div class="col-xs-4"></div>
+</div><!-- end of row -->
+</div><!-- end of container -->

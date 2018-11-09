@@ -1,11 +1,26 @@
 @{
     ViewData["Title"] = "Power";
 }
-
-<h1>@ViewData["Title"]</h1>
-<h3>Power of query string numbers</h3>
-<ul>
-    <li>Number 1: <b>@ViewData["num1"]</b></li>
-    <li>Number 2: <b>@ViewData["num2"]</b></li>
-    <li>Result: <b>@ViewData["result"]</b></li>
-</ul>
+<div class="container">
+<div class="row">    
+    <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+        <h3>Power</h3>
+        <form action="Power" method="post">
+            <div class="form-group">
+                <label for="num1">Number 1</label>
+                <input type="text" class="form-control" id="num1" name="num1">
+            </div>
+            <div class="form-group">
+                <label for="num2">Number 2</label>
+                <input type="text" class="form-control" id="num2" name="num2">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Calculate</button>
+            </div>
+            <h2 style="float: right">= @ViewData["result"]</h2>
+        </form>
+        </div>
+        <div class="col-xs-4"></div>
+</div><!-- end of row -->
+</div><!-- end of container -->

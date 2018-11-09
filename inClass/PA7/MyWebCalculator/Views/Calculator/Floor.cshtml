@@ -1,10 +1,22 @@
 @{
     ViewData["Title"] = "Floor";
 }
-
-<h1>@ViewData["Title"]</h1>
-<h3>Floor of query string numbers</h3>
-<ul>
-    <li>Number 1: <b>@ViewData["num1"]</b></li>
-    <li>Result: <b>@ViewData["result"]</b></li>
-</ul>
+<div class="container">
+<div class="row">    
+    <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+        <h3>Floor</h3>
+        <form action="Floor" method="post">
+            <div class="form-group">
+                <label for="num1">Number 1</label>
+                <input type="text" class="form-control" id="num1" name="num1">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">Calculate</button>
+            </div>
+            <h2 style="float: right">= @ViewData["result"]</h2>
+        </form>
+        </div>
+        <div class="col-xs-4"></div>
+</div><!-- end of row -->
+</div><!-- end of container -->

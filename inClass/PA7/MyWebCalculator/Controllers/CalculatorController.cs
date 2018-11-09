@@ -15,7 +15,13 @@ namespace MyWebCalculator.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View();
+        }
 
+        [HttpPost]
         public IActionResult Add(decimal num1, decimal num2)
         {
             ViewData["num1"] = Convert.ToString(num1);
@@ -25,6 +31,14 @@ namespace MyWebCalculator.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Subtract()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Subtract(decimal num1, decimal num2)
         {
             ViewData["num1"] = Convert.ToString(num1);
@@ -34,6 +48,13 @@ namespace MyWebCalculator.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Multiply()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Multiply(decimal num1, decimal num2)
         {
             ViewData["num1"] = Convert.ToString(num1);
@@ -43,6 +64,13 @@ namespace MyWebCalculator.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Divide()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Divide(decimal num1, decimal num2)
         {
             ViewData["num1"] = Convert.ToString(num1);
@@ -56,12 +84,19 @@ namespace MyWebCalculator.Controllers
             }
             else
             {
-                ViewData["result"] = "Please Enter a number other than 0 for num2";
+                ViewData["result"] = "Please Enter a number other than 0 for Number 2";
                 return View();
             }
 
         }
 
+        [HttpGet]
+        public IActionResult Power()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Power(double num1, double num2)
         {
             ViewData["num1"] = Convert.ToString(num1);
@@ -71,6 +106,13 @@ namespace MyWebCalculator.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Ceiling()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Ceiling(decimal num1)
         {
             ViewData["num1"] = Convert.ToString(num1);
@@ -78,6 +120,13 @@ namespace MyWebCalculator.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Floor()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Floor(decimal num1)
         {
             ViewData["num1"] = Convert.ToString(num1);

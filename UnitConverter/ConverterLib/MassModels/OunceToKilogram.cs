@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.MassModels
 {
-    public class OunceToKilogram : IMassConversions
+    public class OunceToKilogram
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
-            return massIn / 35.274M;
+            return Math.Round((massIn / 35.274M), 2);
         }
     }
 }

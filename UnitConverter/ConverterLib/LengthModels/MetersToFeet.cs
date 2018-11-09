@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.LengthModels
 {
-    public class MetersToFeet : ILengthConversions
+    public class MetersToFeet
     {
-        public decimal GetLength(decimal lenghtIn)
+        public static decimal Convert(decimal lenghtIn)
         {
-            return lenghtIn / 0.3048M;
+            return Math.Round((lenghtIn / 0.3048M), 2);
         }
     }
 }

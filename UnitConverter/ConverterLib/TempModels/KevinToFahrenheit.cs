@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.TempModels
 {
-    public class KelvinToFahrenheit : ITempConversions
+    public class KelvinToFahrenheit
     {
-        public decimal GetTemp(decimal tempIn)
+        public static decimal Convert(decimal tempIn)
         {
-            return tempIn * (9M / 5M) - 459.67M;
+            return Math.Round((tempIn * (9M / 5M) - 459.67M), 2);
         }
     }
 }

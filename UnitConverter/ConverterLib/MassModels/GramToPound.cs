@@ -1,8 +1,8 @@
 namespace ConverterLib.MassModels
 {
-    public class GramToPound : IMassConversions
+    public class GramToPound
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
             return massIn * 0.0022046M;
         }

@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.MassModels
 {
-    public class KilogramToGram : IMassConversions
+    public class KilogramToGram
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
-            return massIn / 1000M;
+            return Math.Round((massIn / 1000M), 2);
         }
     }
 }

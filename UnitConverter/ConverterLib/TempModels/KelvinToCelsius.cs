@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.TempModels
 {
-    public class KelvinToCelsius : ITempConversions
+    public class KelvinToCelsius
     {
-        public decimal GetTemp(decimal tempIn)
+        public static decimal Convert(decimal tempIn)
         {
-            return tempIn - 273.15M;
+            return Math.Round((tempIn - 273.15M), 2);
         }
     }
 }

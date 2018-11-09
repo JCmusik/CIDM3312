@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.MassModels
 {
-    public class OunceToPounds : IMassConversions
+    public class OunceToPounds
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
-            return massIn * 0.062500M;
+            return Math.Round((massIn * 0.062500M), 2);
         }
     }
 }

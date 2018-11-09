@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.MassModels
 {
-    public class KilogramToOunce : IMassConversions
+    public class KilogramToOunce
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
-            return massIn * 35.274M;
+            return Math.Round((massIn * 35.274M), 2);
         }
     }
 }

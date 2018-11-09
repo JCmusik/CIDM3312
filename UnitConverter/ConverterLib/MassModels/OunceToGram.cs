@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.MassModels
 {
-    public class OunceToGram : IMassConversions
+    public class OunceToGram
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
-            return massIn / 0.035274M;
+            return Math.Round((massIn / 0.035274M), 2);
         }
     }
 }

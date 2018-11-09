@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.MassModels
 {
-    public class GramToKilogram : IMassConversions
+    public class GramToKilogram
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
-            return massIn * 1000M;
+            return Math.Round((massIn * 1000M), 2);
         }
     }
 }

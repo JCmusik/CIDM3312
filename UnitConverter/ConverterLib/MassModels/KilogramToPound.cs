@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.MassModels
 {
-    public class KilogramToPound : IMassConversions
+    public class KilogramToPound
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
-            return massIn * 2.2046M;
+            return Math.Round((massIn * 2.2046M), 2);
         }
     }
 }

@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.TempModels
 {
-    public class FahrenheitToCelsius : ITempConversions
+    public class FahrenheitToCelsius
     {
-        public decimal GetTemp(decimal tempIn)
+        public static decimal Convert(decimal tempIn)
         {
-            return (tempIn - 32) / 9M * 5M;
+            return Math.Round(((tempIn - 32) / 9M * 5M), 2);
         }
     }
 }

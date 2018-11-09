@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.MassModels
 {
-    public class PoundToGram : IMassConversions
+    public class PoundToGram
     {
-        public decimal GetMass(decimal massIn)
+        public static decimal Convert(decimal massIn)
         {
-            return massIn / 0.0022046M;
+            return Math.Round((massIn / 0.0022046M), 2);
         }
     }
 }

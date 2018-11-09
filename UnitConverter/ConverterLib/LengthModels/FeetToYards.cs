@@ -1,10 +1,12 @@
+using System;
+
 namespace ConverterLib.LengthModels
 {
-    public class FeetToYards : ILengthConversions
+    public class FeetToYards
     {
-        public decimal GetLength(decimal lenghtIn)
+        public static decimal Convert(decimal lenghtIn)
         {
-            return lenghtIn * 0.3333333333M;
+            return Math.Round((lenghtIn * 0.3333333333M), 2);
         }
     }
 }

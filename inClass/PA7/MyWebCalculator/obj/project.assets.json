@@ -11507,11 +11507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/inClass/HTTPGET/MyWebCalculator/MyWebCalculator.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/inClass/PA7/MyWebCalculator/MyWebCalculator.csproj",
       "projectName": "MyWebCalculator",
-      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/HTTPGET/MyWebCalculator/MyWebCalculator.csproj",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/PA7/MyWebCalculator/MyWebCalculator.csproj",
       "packagesPath": "/Users/johncunningham/.nuget/packages/",
-      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/HTTPGET/MyWebCalculator/obj/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/PA7/MyWebCalculator/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

@@ -22,7 +22,7 @@
         includes any new changes to the library.
         There's also no need for <HintPath> -->
   <ItemGroup>
-    <Reference Include="/Users/johncunningham/Projects/git/CIDM3312/inClass/HTTPGET/MathLibrary/bin/Debug/netstandard2.0/MathLibrary.dll" />
+    <Reference Include="/Users/johncunningham/Projects/git/CIDM3312/inClass/PA7/MathLibrary/bin/Debug/netstandard2.0/MathLibrary.dll" />
   </ItemGroup>
 
 </Project>

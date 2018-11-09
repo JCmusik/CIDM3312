@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/inClass/HTTPGET/MathLibrary/MathLibrary.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/inClass/PA7/MathLibrary/MathLibrary.csproj",
       "projectName": "MathLibrary",
-      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/HTTPGET/MathLibrary/MathLibrary.csproj",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/PA7/MathLibrary/MathLibrary.csproj",
       "packagesPath": "/Users/johncunningham/.nuget/packages/",
-      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/HTTPGET/MathLibrary/obj/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/inClass/PA7/MathLibrary/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

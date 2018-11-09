@@ -74,7 +74,7 @@ Write(ViewData["Title"]);
             WriteLiteral("</h2>\n<div class=\"container\">\n    <div class=\"row\">\n        <ul>\n            <li>");
             EndContext();
             BeginContext(157, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "118b73c8f46e42edbff8f4d0aa9a6880", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37a24dcd69944f46b118448e866aa963", async() => {
                 BeginContext(225, 15, true);
                 WriteLiteral("Temp Conversion");
                 EndContext();
@@ -100,7 +100,7 @@ Write(ViewData["Title"]);
             WriteLiteral("</li>\n            <li>");
             EndContext();
             BeginContext(266, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30a0614c17fd4c7ab37f6ff0eaca0a7c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fec8cabd02804b23992651d2510087ca", async() => {
                 BeginContext(336, 17, true);
                 WriteLiteral("Length Conversion");
                 EndContext();
@@ -126,7 +126,7 @@ Write(ViewData["Title"]);
             WriteLiteral("</li>\n            <li>");
             EndContext();
             BeginContext(379, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "568ac146758147b787164e2fa32eb18c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6fb007385bd46228967547ff2eb1868", async() => {
                 BeginContext(447, 15, true);
                 WriteLiteral("Mass Conversion");
                 EndContext();

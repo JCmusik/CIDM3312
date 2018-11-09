@@ -8,7 +8,7 @@
 <div class="row">    
     <div class="col-xs-4"></div>
         <div class="col-xs-4">
-        <form action="TempConvert" method="post">
+        <form action="LengthConvert" method="post">
             <div class="form-group">
                 <label for="numIn">Enter Length: </label>
                 <input placeholder=@ViewData["numIn"] type="text" class="form-control" id="numIn" name="numIn">
@@ -16,12 +16,12 @@
             <div class="form-group">
                 <label for="type">Conversion Type:</label>
                 <select class="form-control" id="type" name="type">
-                    <option>Meters to Feet</option>
-                    <option>Feet to Meters</option>
-                    <option>Meters to Yards</option>
-                    <option>Yards to Meters</option>
-                    <option>Feet to Yards</option>
-                    <option>Yards to Feet</option>
+                    <option value="m2f">Meters to Feet</option>
+                    <option value="f2m">Feet to Meters</option>
+                    <option value="m2y">Meters to Yards</option>
+                    <option value="y2m">Yards to Meters</option>
+                    <option value="f2y">Feet to Yards</option>
+                    <option value="y2f">Yards to Feet</option>
                 </select>
             </div>
             <div class="form-group">

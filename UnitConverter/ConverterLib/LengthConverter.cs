@@ -8,17 +8,17 @@ namespace ConverterLib
         {
             switch (type)
             {
-                case "Feet to Meters":
+                case "f2m":
                     return FeetToMeters.Convert(tempIn);
-                case "Meters to Feet":
+                case "m2f":
                     return MetersToFeet.Convert(tempIn);
-                case "Feet to Yards":
+                case "f2y":
                     return FeetToYards.Convert(tempIn);
-                case "yYards to Feet2f":
+                case "y2f":
                     return YardsToFeet.Convert(tempIn);
-                case "Meters to Yards":
+                case "m2y":
                     return MetersToYards.Convert(tempIn);
-                case "Yards to Meters":
+                case "y2m":
                     return YardsToMeters.Convert(tempIn);
                 default:
                     return tempIn;

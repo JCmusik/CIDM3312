@@ -8,17 +8,17 @@ namespace ConverterLib
         {
             switch (type)
             {
-                case "Celsius to Fahrenheit":
+                case "c2f":
                     return CelsiusToFahrenheit.Convert(tempIn);
-                case "Fahrenheit to Celsius":
+                case "f2c":
                     return FahrenheitToCelsius.Convert(tempIn);
-                case "Celsius to Kelvin":
+                case "c2k":
                     return CelsiusToKelvin.Convert(tempIn);
-                case "Kelvin to Celsius":
+                case "k2c":
                     return KelvinToCelsius.Convert(tempIn);
-                case "Fahrenheit to Kelvin":
+                case "f2k":
                     return FahrenheitToKelvin.Convert(tempIn);
-                case "Kelvin to Fahrenheit":
+                case "k2f":
                     return KelvinToFahrenheit.Convert(tempIn);
                 default:
                     return tempIn;

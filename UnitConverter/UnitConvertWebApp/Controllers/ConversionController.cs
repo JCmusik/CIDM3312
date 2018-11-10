@@ -31,7 +31,6 @@ namespace UnitConvertWebApp.Controllers
             ITempConversions tempConvert = new TempConverter();
 
             var result = tempConvert.GetTemp(type, numIn);
-            ViewData["numIn"] = numIn;
             ViewData["result"] = result;
 
             return View();
@@ -49,7 +48,6 @@ namespace UnitConvertWebApp.Controllers
             ILengthConversions lengthConvert = new LengthConverter();
 
             var result = lengthConvert.GetLength(type, numIn);
-            ViewData["numIn"] = numIn;
             ViewData["result"] = result;
 
             return View();
@@ -64,10 +62,10 @@ namespace UnitConvertWebApp.Controllers
         [HttpPost]
         public IActionResult MassConvert(string type, decimal numIn)
         {
+            ViewData["length"] = "Result: ";
             IMassConversions massConvert = new MassConverter();
 
             var result = massConvert.GetMass(type, numIn);
-            ViewData["numIn"] = numIn;
             ViewData["result"] = result;
 
             return View();

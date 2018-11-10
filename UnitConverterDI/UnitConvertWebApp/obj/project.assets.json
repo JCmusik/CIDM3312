@@ -11508,11 +11508,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/UnitConvertWebApp/UnitConvertWebApp.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/UnitConverterDI/UnitConvertWebApp/UnitConvertWebApp.csproj",
       "projectName": "UnitConvertWebApp",
-      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/UnitConvertWebApp/UnitConvertWebApp.csproj",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/UnitConverterDI/UnitConvertWebApp/UnitConvertWebApp.csproj",
       "packagesPath": "/Users/johncunningham/.nuget/packages/",
-      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/UnitConvertWebApp/obj/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/UnitConverterDI/UnitConvertWebApp/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

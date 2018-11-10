@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ConverterLib;
+using ConverterLib.LengthModels;
+using ConverterLib.MassModels;
+using ConverterLib.TempModels;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,7 +35,9 @@ namespace UnitConvertWebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddTransient<ITempConversions, TempConverter>();
+            services.AddTransient<ILengthConversions, LengthConverter>();
+            services.AddTransient<IMassConversions, MassConverter>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

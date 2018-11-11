@@ -1,0 +1,9 @@
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/bin/Debug/netstandard2.0/BookLibrary.deps.json
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/bin/Debug/netstandard2.0/BookLibrary.dll
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/bin/Debug/netstandard2.0/BookLibrary.pdb
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/obj/Debug/netstandard2.0/BookLibrary.csprojAssemblyReference.cache
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/obj/Debug/netstandard2.0/BookLibrary.csproj.CoreCompileInputs.cache
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/obj/Debug/netstandard2.0/BookLibrary.AssemblyInfoInputs.cache
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/obj/Debug/netstandard2.0/BookLibrary.AssemblyInfo.cs
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/obj/Debug/netstandard2.0/BookLibrary.dll
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm/BookLibrary/obj/Debug/netstandard2.0/BookLibrary.pdb

@@ -14,6 +14,10 @@ namespace UnitConvertWebApp.Controllers
 {
     public class ConversionController : Controller
     {
+        #region Methods
+
+
+
         public IActionResult Index()
         {
             return View();
@@ -28,6 +32,8 @@ namespace UnitConvertWebApp.Controllers
         [HttpPost]
         public IActionResult TempConvert(string type, decimal numIn)
         {
+            ViewData["Type"] = type;
+            ViewData["Anything"] = numIn;
             ITempConversions tempConvert = new TempConverter();
 
             var result = tempConvert.GetTemp(type, numIn);
@@ -70,5 +76,6 @@ namespace UnitConvertWebApp.Controllers
 
             return View();
         }
+        #endregion
     }
 }

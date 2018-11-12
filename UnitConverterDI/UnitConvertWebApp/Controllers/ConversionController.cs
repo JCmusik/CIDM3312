@@ -69,8 +69,6 @@ namespace UnitConvertWebApp.Controllers
         [HttpPost]
         public IActionResult MassConvert(string type, decimal numIn)
         {
-            ViewData["length"] = "Result: ";
-
             var result = _massConversion.GetMass(type, numIn);
             ViewData["result"] = result;
 

@@ -1,9 +1,0 @@
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/bin/Debug/netstandard2.0/ConverterLib.deps.json
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/bin/Debug/netstandard2.0/ConverterLib.dll
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/bin/Debug/netstandard2.0/ConverterLib.pdb
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/obj/Debug/netstandard2.0/ConverterLib.csprojAssemblyReference.cache
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/obj/Debug/netstandard2.0/ConverterLib.csproj.CoreCompileInputs.cache
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/obj/Debug/netstandard2.0/ConverterLib.AssemblyInfoInputs.cache
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/obj/Debug/netstandard2.0/ConverterLib.AssemblyInfo.cs
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/obj/Debug/netstandard2.0/ConverterLib.dll
-/Users/johncunningham/Projects/git/CIDM3312/UnitConverter/ConverterLib/obj/Debug/netstandard2.0/ConverterLib.pdb

@@ -14,14 +14,10 @@ namespace UnitConvertWebApp.Controllers
 {
     public class ConversionController : Controller
     {
-        ITempConversions _tempConversion;
-        ILengthConversions _lengthConversion;
-        IMassConversions _massConversion;
-        public ConversionController(ITempConversions tempConversion, ILengthConversions lengthConversion, IMassConversions massConversion)
+        IConverter _converter;
+        public ConversionController(IConverter converter)
         {
-            _tempConversion = tempConversion;
-            _lengthConversion = lengthConversion;
-            _massConversion = massConversion;
+            _converter = converter;
         }
         public IActionResult Index()
         {
@@ -38,7 +34,7 @@ namespace UnitConvertWebApp.Controllers
         public IActionResult TempConvert(string type, decimal numIn)
         {
 
-            var result = _tempConversion.GetTemp(type, numIn);
+            var result = _converter.GetConversion(type, numIn);
             ViewData["result"] = result;
 
             return View();
@@ -54,7 +50,7 @@ namespace UnitConvertWebApp.Controllers
         public IActionResult LengthConvert(string type, decimal numIn)
         {
 
-            var result = _lengthConversion.GetLength(type, numIn);
+            var result = _converter.GetConversion(type, numIn);
             ViewData["result"] = result;
 
             return View();
@@ -69,7 +65,7 @@ namespace UnitConvertWebApp.Controllers
         [HttpPost]
         public IActionResult MassConvert(string type, decimal numIn)
         {
-            var result = _massConversion.GetMass(type, numIn);
+            var result = _converter.GetConversion(type, numIn);
             ViewData["result"] = result;
 
             return View();

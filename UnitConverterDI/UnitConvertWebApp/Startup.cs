@@ -35,9 +35,7 @@ namespace UnitConvertWebApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddTransient<ITempConversions, TempConverter>();
-            services.AddTransient<ILengthConversions, LengthConverter>();
-            services.AddTransient<IMassConversions, MassConverter>();
+            services.AddTransient<IConverter, Converter>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

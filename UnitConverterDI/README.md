@@ -1,131 +1,30 @@
-## Unit Converter App
+## In-Class Using Simple Razor Views
 
-## Reference a .dll directly
-The following XML should be added to the .csproj file from which you want to reference another project using just the .dll
-```xml
-    <ItemGroup>
-        <Reference Include="full/path/projectfolder/obj/Debug/targetframework/YourLibraryName.dll" />
-    </ItemGroup>
-```
-## Assignment Seven
+This is another in-class assignment that builds on your previous "Math Library" in-class assignment (from the previous week).
 
-#### Please write a simple ASP.NET MVC Core application that serves as a unit converter.  Please convert between the following unit types:
+#### Here are the instructions:
 
-* Temperatures - Celsius, Fahrenheit, Kelvin
-* Length - Meters, Feet, Yards
-* Mass - Ounce, Pound, Gram, Kilogram
-* This will consist of a simple controller.  
+* Understand ALL OF THE SAME STEPS as previous (listed again below for convenience):
 
-You will use an HTML form, expressed in a Razor template, to * * HTTP POST the data base to the controller.\
-Then, when the calculation is complete, we will redirect to show the results in a separate template page.
+* Previous In-Class Practice HTTP GET with ASP.NET MVC Routes and Controllers
 
-#### Submit Work
+1. Create a new ASP.NET MVC Core project called MyWebCalculator
+2. Create a new ASP.NET MVC Controller called CalculatorController
+3. Create Action Methods for Add, Subtract, Multiply, Divide, Power, Ceiling, and Floor
+4. All of the above must be implemented in a separate class library
+5. You will reference the DLL only in your MVC project
+6. Create the required parameters for each of the above methods
 
-Push to github and supply the URL for your work.  Upload your project directory ZIPPED up here.
+#### Updates for this Exercise
 
--------------------------
-### Temperatures
+Now, rather than returning a string, we will return a Razor View.  We will use Bootstrap to show the output in Razor Views.  So, now the updated and additional instructions are:
 
-#### Celsius to Fahrenheit
+1. For each method, return a templated Razor view that constructs a sentence/phrase indicating the operands given and the result of the operation
+2. From a browser, call each method using the appropriate url route and arguments.
+Submission
 
-Multiply the Celsius temperature by 9 Divide the answer by 5 Add 32
+### Submission of this work includes:
 
-#### Fahrenheit to Celsius
-
-Subtract 32 from the Fahrenheit temperature Divide the answer by 9 Multiply that answer by 5
-
-#### Celsius to Kelvin
-
-K = °C + 273.15
-
-#### Kelvin to Celsius
-
-°C = K - 273.15
-
-#### Fahernheit to Kelvin
-
-T(K) = (T(°F) + 459.67)× 5/9
-
-#### Kelvin to Fahernheit
-
-T(°F) = T(K) × 9/5 - 459.67
-
-
------------------------
-### Lengths
-
-#### Meters to Feet
-
-Meters / 0.3048
-
-#### Feet to Meters
-
-Feet * 3.2808
-
-#### Meters to Yards
-
-Meters * 1.0936132983
-
-#### Yards to Meters
-
-Yards * 0.9144
-
-#### Feet to Yards
-
-Feet * 0.3333333333
-
-#### Yards to Feet
-
-Yards * 3
-
-------------------
-### Mass   
-
-#### Ounces to Pound
-
-Ounce * 0.062500
-
-#### Pound to Ounce 
-
-Pound * 16
-
-#### Ounce to Gram
-
-Ounce / 0.035274
-
-#### Gram to Ounce
-
-Gram * 0.035274
-
-#### Ounce to Kilogram
-
-Ounce / 35.274
-
-#### Kilogram to Ounce
-
-Kilogram * 35.274
-
-#### Pound to Gram
-
-Pound / 0.0022046
-
-#### Gram to Pound
-
-Gram * 0.0022046
-
-#### Pound to Kilogram
-
-Pound / 2.2046
-
-#### Kilogram to Pound
-
-Kilogram * 2.2046
-
-#### Gram to Kilogram
-
-Gram * 1000
-
-#### Kilogram to Gram
-
-Kilogram / 1000
-
+##### Pushing this code to github
+* Zipping up the solution directory and uploading that to this box.
+* Demonstrating that a randomly-selected method works when I visit you to inspect the work.

@@ -79,7 +79,7 @@ Write(ViewData["Title"]);
             WriteLiteral("</h2>\n\n<div class=\"container\">\n<div class=\"row\">    \n    <div class=\"col-xs-4\"></div>\n        <div class=\"col-xs-4\">\n        ");
             EndContext();
             BeginContext(207, 1044, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c6e73813d8044a4a5efcbb55a10fab8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19bc51a519c54d93b65100b55ae84c58", async() => {
                 BeginContext(250, 380, true);
                 WriteLiteral(@"
             <div class=""form-group"">
@@ -92,7 +92,7 @@ Write(ViewData["Title"]);
                     ");
                 EndContext();
                 BeginContext(630, 43, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "19709ab059f1412a94e166386d76860e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0266ac331644eda82a0e6cc2249a3b1", async() => {
                     BeginContext(650, 14, true);
                     WriteLiteral("Meters to Feet");
                     EndContext();
@@ -114,7 +114,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(694, 43, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "365db583958d4fbdb9e3eff2b931e930", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aa2e8bb44624401c8f857edafd82be35", async() => {
                     BeginContext(714, 14, true);
                     WriteLiteral("Feet to Meters");
                     EndContext();
@@ -136,7 +136,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(758, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16dd5c3c0dfd4a26a52ea2326f9a1f90", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be0dacac3e1349b096adda173c27352b", async() => {
                     BeginContext(778, 15, true);
                     WriteLiteral("Meters to Yards");
                     EndContext();
@@ -158,7 +158,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(823, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbe3f4a4d84c4e4498efadd60a99f627", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8e8fe6a0ad645e9936ad4f09fe8deec", async() => {
                     BeginContext(843, 15, true);
                     WriteLiteral("Yards to Meters");
                     EndContext();
@@ -180,7 +180,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(888, 42, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e3c8c12f65cf47c69ee27f1c57a182a5", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b919b8cb2f3743c297852531a579a8e9", async() => {
                     BeginContext(908, 13, true);
                     WriteLiteral("Feet to Yards");
                     EndContext();
@@ -202,7 +202,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(951, 42, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85ec57dd0cb348cb89ba560825cc4258", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f49ec69c6838415fab33400627d401a8", async() => {
                     BeginContext(971, 13, true);
                     WriteLiteral("Yards to Feet");
                     EndContext();

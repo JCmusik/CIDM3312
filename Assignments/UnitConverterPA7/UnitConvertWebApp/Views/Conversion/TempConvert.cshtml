@@ -1,3 +1,4 @@
+@model ConverterViewModel
 @{
     ViewData["Title"] = "Temperature Converter Home Page";
 }
@@ -15,7 +16,7 @@
             </div>
             <div class="form-group">
                 <label for="type">Conversion Type:</label>
-                <select class="form-control" id="type" name="type">
+                <select class="form-control" name="type" >
                     <option value="c2f">Celsius to Fahrenheit</option>
                     <option value="f2c">Fahrenheit to Celsius</option>
                     <option value="c2k">Celsius to Kelvin</option>

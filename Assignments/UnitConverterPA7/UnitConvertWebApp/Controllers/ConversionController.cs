@@ -16,11 +16,19 @@ namespace UnitConvertWebApp.Controllers
     {
         #region Methods
 
-
-
         public IActionResult Index()
         {
+
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult NewIndex(ConverterViewModel model)
+        {
+            // do calculation here
+            model.ConvertedValue = model.ValueToConvert * model.ValueToConvert;
+
+            return View(model);
         }
 
         [HttpGet]

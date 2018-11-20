@@ -1,3 +1,4 @@
+@model ConverterViewModel
 @{
     ViewData["Title"] = "Conversion Home Page";
 }
@@ -8,4 +9,21 @@
         <h4>Instructions</h4>
         <p>Click on the links above to access conveter forms</p>
     </div>
+</div>
+
+<div class="container">
+    <form  asp-controller="Conversion" asp-action="NewIndex" method="post">
+
+        <div class="form-group">
+            <input type="text" asp-for="@Model.ValueToConvert" value="valueToConvert" />
+        </div>
+
+
+        <div class="form-group">
+            <input type="text" asp-for="@Model.TypeOfConversion" value="TypeOfConversion"/>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
 </div>

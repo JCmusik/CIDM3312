@@ -85,7 +85,7 @@ Write(ViewData["Title"]);
             WriteLiteral("</h2>\n\n<div class=\"container\">\n<div class=\"row\">    \n    <div class=\"col-xs-4\"></div>\n        <div class=\"col-xs-4\">\n        ");
             EndContext();
             BeginContext(205, 1344, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f91c021da714964abc0c9d605441b29", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "872029e9a5f1405cb673edf161a181ae", async() => {
                 BeginContext(246, 378, true);
                 WriteLiteral(@"
             <div class=""form-group"">
@@ -98,7 +98,7 @@ Write(ViewData["Title"]);
                     ");
                 EndContext();
                 BeginContext(624, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26ef2ea56ff644d58ef67e62fbc09aa8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e88716bc134047c59c786c2bcc0cf321", async() => {
                     BeginContext(644, 8, true);
                     WriteLiteral("Oz to Lb");
                     EndContext();
@@ -120,7 +120,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(682, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0455b4bd04b94cb5b4b6df1021a30fcc", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9ec0245f18ec4e56a242e6d0114284ab", async() => {
                     BeginContext(702, 8, true);
                     WriteLiteral("Lb to Oz");
                     EndContext();
@@ -142,7 +142,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(740, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a2121c6f21c9487e96016bc0d2045799", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1aea7fcda31b467d969a7d285a9b5ba7", async() => {
                     BeginContext(760, 7, true);
                     WriteLiteral("Oz to G");
                     EndContext();
@@ -164,7 +164,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(797, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c74ae20f85624b73815fc3135c4f1fae", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5fd10ed4e00847d2b7bb704bed1ad212", async() => {
                     BeginContext(817, 7, true);
                     WriteLiteral("G to Oz");
                     EndContext();
@@ -186,7 +186,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(854, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28eac79d369c4038a517e9830929e7c1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b0524289f8b461488d9c29f7a4f17eb", async() => {
                     BeginContext(874, 8, true);
                     WriteLiteral("Oz to Kg");
                     EndContext();
@@ -208,7 +208,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(912, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e575687564146e285ef7c1407491215", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ce3e09e413948da8aa1b2fa2faa99e0", async() => {
                     BeginContext(932, 8, true);
                     WriteLiteral("Kg to Oz");
                     EndContext();
@@ -230,7 +230,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(970, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6457fcd115424335bf3746f6afe3bd27", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c52a39e470d0488fb7634789a6ab1b88", async() => {
                     BeginContext(990, 7, true);
                     WriteLiteral("Lb to G");
                     EndContext();
@@ -252,7 +252,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(1027, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d77e4cf652c34445823dfc22d5088a19", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9b19c7cc4cba4258b7b810bb457dc308", async() => {
                     BeginContext(1047, 7, true);
                     WriteLiteral("G to Lb");
                     EndContext();
@@ -274,7 +274,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(1084, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "667193463c674f53b57a51d33c55007a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f57508637bc4120b680454075b4baab", async() => {
                     BeginContext(1104, 8, true);
                     WriteLiteral("Lb to Kg");
                     EndContext();
@@ -296,7 +296,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(1142, 37, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3d31179839e948e887f2e0804eb99b3f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1861470613a8437fb3e83ad5a0034ee9", async() => {
                     BeginContext(1162, 8, true);
                     WriteLiteral("Kg to Lb");
                     EndContext();
@@ -318,7 +318,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(1200, 35, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6652eaf0a30847df9f6c31bf48b134f7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "96d33593e3f74d16b84181b27bd1b024", async() => {
                     BeginContext(1220, 6, true);
                     WriteLiteral("G to K");
                     EndContext();
@@ -340,7 +340,7 @@ Write(ViewData["Title"]);
                 WriteLiteral("\n                    ");
                 EndContext();
                 BeginContext(1256, 35, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ed20047acbb40b68b9346d77186b756", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac226bbf1ad04b7ab73992a8ee880c45", async() => {
                     BeginContext(1276, 6, true);
                     WriteLiteral("K to G");
                     EndContext();

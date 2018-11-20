@@ -32,3 +32,4 @@
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverterPA7/UnitConvertWebApp/obj/Debug/netcoreapp2.1/UnitConvertWebApp.csproj.CopyComplete
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverterPA7/UnitConvertWebApp/obj/Debug/netcoreapp2.1/UnitConvertWebApp.dll
 /Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverterPA7/UnitConvertWebApp/obj/Debug/netcoreapp2.1/UnitConvertWebApp.pdb
+/Users/johncunningham/Projects/git/CIDM3312/Assignments/UnitConverterPA7/UnitConvertWebApp/obj/Debug/netcoreapp2.1/Razor/Views/Conversion/NewIndex.g.cshtml.cs

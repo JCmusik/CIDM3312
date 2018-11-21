@@ -1,0 +1,9 @@
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/bin/Debug/netstandard2.0/BufftekModels.deps.json
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/bin/Debug/netstandard2.0/BufftekModels.dll
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/bin/Debug/netstandard2.0/BufftekModels.pdb
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/obj/Debug/netstandard2.0/BufftekModels.csprojAssemblyReference.cache
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/obj/Debug/netstandard2.0/BufftekModels.csproj.CoreCompileInputs.cache
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/obj/Debug/netstandard2.0/BufftekModels.AssemblyInfoInputs.cache
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/obj/Debug/netstandard2.0/BufftekModels.AssemblyInfo.cs
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/obj/Debug/netstandard2.0/BufftekModels.dll
+/Users/johncunningham/Projects/git/CIDM3312/FinalProject/BufftekModels/obj/Debug/netstandard2.0/BufftekModels.pdb

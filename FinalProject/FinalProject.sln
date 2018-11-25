@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BufftekModels", "BufftekModels\BufftekModels.csproj", "{B86E47C1-94CD-40AD-8070-535173F4EC56}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuffteksWebApp", "BuffteksWebApp\BuffteksWebApp.csproj", "{006C3B82-3370-4271-9A42-A59F75598C59}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{B7524B2E-DD7E-45C5-AA0C-760D9DC6096B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuffteksWebApp", "BuffteksWebApp\BuffteksWebApp.csproj", "{64FC5163-23BC-453D-88D6-1E3DD4313A37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,5 +54,17 @@ Global
 		{B7524B2E-DD7E-45C5-AA0C-760D9DC6096B}.Release|x64.Build.0 = Release|Any CPU
 		{B7524B2E-DD7E-45C5-AA0C-760D9DC6096B}.Release|x86.ActiveCfg = Release|Any CPU
 		{B7524B2E-DD7E-45C5-AA0C-760D9DC6096B}.Release|x86.Build.0 = Release|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Debug|x64.Build.0 = Debug|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Debug|x86.Build.0 = Debug|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Release|x64.ActiveCfg = Release|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Release|x64.Build.0 = Release|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Release|x86.ActiveCfg = Release|Any CPU
+		{64FC5163-23BC-453D-88D6-1E3DD4313A37}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

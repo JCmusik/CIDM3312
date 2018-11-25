@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BufftekModels
+namespace BuffteksWebApp.Models
 {
     /// <summary>
     /// A project for Members and Clients to collaborate on

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BufftekModels
+namespace BuffteksWebApp.Models
 {
     /// <summary>
     /// A member of the Buffteks

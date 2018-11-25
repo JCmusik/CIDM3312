@@ -1,4 +1,4 @@
-namespace BufftekModels
+namespace BuffteksWebApp.Models
 {
     /// <summary>
     /// Abstract class for shared properties between Client and Member

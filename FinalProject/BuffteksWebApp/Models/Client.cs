@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace BufftekModels
+namespace BuffteksWebApp.Models
 {
     /// <summary>
     /// A client who provides a project to the Buffteks members

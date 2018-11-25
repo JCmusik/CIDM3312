@@ -16,7 +16,7 @@ namespace BufftekModels
                     return;   // DB members table been seeded
                 }
 
-                // create add Members, save changes
+                // create add Members, save changes`
 
                 // create, add Clients, save changes
 

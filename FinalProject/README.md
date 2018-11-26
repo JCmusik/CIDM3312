@@ -15,8 +15,10 @@ We are completing a website to manage Buffteks projects, students, and clients.
 ___________________________________________________________________________________________________
 
 #### needed for scaffolding
-* <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
-* <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" />
+```xml
+<DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" /> 
+```
 
 * dotnet aspnet-codegenerator controller -name MemberController -m Member -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
 

@@ -16,7 +16,6 @@ ________________________________________________________________________________
 
 #### Scaffolding info
 ```xml
-<DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
 <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" /> 
 ```
 

@@ -10,10 +10,10 @@ namespace BuffteksWebApp.Models
         {
             db.Database.EnsureCreated();
 
-            if (db.Members.Any())
-            {
-                return;   // DB members table been seeded
-            }
+            // if (db.Members.Any())
+            // {
+            //     return;   // DB members table been seeded
+            // }
 
             // create add Members, save changes
             //Create at least ten Members

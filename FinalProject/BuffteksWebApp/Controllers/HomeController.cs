@@ -10,11 +10,6 @@ namespace BuffteksWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        AppDbContext db;
-        public HomeController(AppDbContext context)
-        {
-            db = context;
-        }
         public IActionResult Index()
         {
             return View();

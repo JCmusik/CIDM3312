@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BuffteksWebApp.Models
+﻿namespace BuffteksWebApp.Models
 {
     /// <summary>
     /// A member of the Buffteks
@@ -10,5 +8,6 @@ namespace BuffteksWebApp.Models
         public int MemberID { get; set; }
         public int ClientID { get; set; }
         public Client Clients { get; set; }
+
     }
 }

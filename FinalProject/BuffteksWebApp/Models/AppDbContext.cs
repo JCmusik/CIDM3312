@@ -6,6 +6,7 @@ namespace BuffteksWebApp.Models
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MemberClient>()
@@ -14,6 +15,7 @@ namespace BuffteksWebApp.Models
             modelBuilder.Entity<ProjectMember>()
             .HasKey(pm => new { pm.ProjectID, pm.MemberId });
         }
+
         public DbSet<MemberClient> MemberCLients { get; set; }
         public DbSet<ProjectMember> ProjectMembers { get; set; }
 

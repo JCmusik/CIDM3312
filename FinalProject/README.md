@@ -20,11 +20,13 @@ ________________________________________________________________________________
 <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" /> 
 ```
 
-* dotnet aspnet-codegenerator controller -name MemberController -m Member -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+```
+ dotnet aspnet-codegenerator controller -name MemberController -m Member -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
 
-* dotnet aspnet-codegenerator controller -name ClientController -m Client -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name ClientController -m Client -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
 
-* dotnet aspnet-codegenerator controller -name ProjectController -m Project -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name ProjectController -m Project -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+```
 
 ___________________________________________________________________________________________________
     

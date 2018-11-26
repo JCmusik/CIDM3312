@@ -32,7 +32,7 @@ namespace BuffteksWebApp
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            services.AddDbContext<AppDbContext>(options => options.UseSqlite("DefaultConnection"));
             services.AddTransient<IMemberRepo, MemberRepo>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

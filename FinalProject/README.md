@@ -11,6 +11,12 @@ We are completing a website to manage Buffteks projects, students, and clients.
 
 * Using Scaffolding, create Controllers and Views to manage the 
     * Create, Read, Update, and Delete operations for each of the entities above
+
+* dotnet aspnet-codegenerator controller -name MemberController -m Member -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
+* dotnet aspnet-codegenerator controller -name ClientController -m Client -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
+* dotnet aspnet-codegenerator controller -name ProjectController -m Project -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
     
 #### Data seeding:
 * Create at least two projects

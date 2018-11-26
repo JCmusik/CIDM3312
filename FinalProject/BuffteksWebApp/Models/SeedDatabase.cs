@@ -1,23 +1,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BuffteksWebApp.Models
 {
     public class SeedDatabase
     {
-        public static void Seed(AppDbContext db)
+        public static void Seed(IApplicationBuilder app)
         {
-            db.Database.EnsureCreated();
+            var db = app.ApplicationServices.GetRequiredService<AppDbContext>();
+            db.Database.Migrate();
 
-            // if (db.Members.Any())
-            // {
-            //     return;   // DB members table been seeded
-            // }
+            if (!db.Members.Any())
+            {
 
-            // create add Members, save changes
-            //Create at least ten Members
-            var members = new List<Member>
+                // create add Members, save changes
+                //Create at least ten Members
+                var members = new List<Member>
                 {
                     new Member
                     {
@@ -91,8 +93,11 @@ namespace BuffteksWebApp.Models
                         Email = "vanessa@email.com"
                     }
                 };
-            db.AddRange(members);
-            db.SaveChanges();
+                db.AddRange(members);
+                db.SaveChanges();
+            }
+            else
+                return;  // database has already been seeded
 
 
             // create, add Clients, save changes

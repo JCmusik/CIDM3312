@@ -61,6 +61,7 @@ namespace BuffteksWebApp
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            SeedDatabase.Seed(app);
         }
     }
 }

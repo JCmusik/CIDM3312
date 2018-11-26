@@ -14,7 +14,7 @@ We are completing a website to manage Buffteks projects, students, and clients.
 
 ___________________________________________________________________________________________________
 
-#### needed for scaffolding
+#### Scaffolding info
 ```xml
 <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
 <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" /> 

@@ -9,5 +9,7 @@ namespace BuffteksWebApp.Models
     {
         public int ClientID { get; set; }
         List<Project> Projects { get; set; }
+        public int MemberID { get; set; }
+        public Member Member { get; set; }
     }
 }

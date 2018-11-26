@@ -10,8 +10,12 @@ namespace BuffteksWebApp.Models
         {
             modelBuilder.Entity<MemberClient>()
            .HasKey(mc => new { mc.MemberID, mc.ClientID });
+
+            modelBuilder.Entity<ProjectMember>()
+            .HasKey(pm => new { pm.ProjectID, pm.MemberId });
         }
         public DbSet<MemberClient> MemberCLients { get; set; }
+        public DbSet<ProjectMember> ProjectMembers { get; set; }
 
         public DbSet<Member> Members { get; set; }
         public DbSet<Client> Clients { get; set; }

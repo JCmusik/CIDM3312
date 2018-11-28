@@ -1,0 +1,53 @@
+@model MathOperation
+
+@{
+    ViewData["Title"] = "Calculation Page";
+}
+
+<form class="form-horizontal" asp-controller="Math" asp-action="ShowCalculationResults" method="post">
+<fieldset>
+
+<!-- Form Name -->
+<legend>@ViewData["Title"]</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="LeftOperand"></label>  
+  <div class="col-md-4">
+  <input id="LeftOperand" asp-for="@Model.LeftOperand" name="LeftOperand" type="text" placeholder="LeftOperand" class="form-control input-md">
+  <span class="help-block">Enter the first number to do calculation</span>  
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="RightOperand"></label>  
+  <div class="col-md-4">
+    <input id="RightOperand" asp-for="@Model.RightOperand" name="RightOperand" type="text" placeholder="Right Operand" class="form-control input-md">
+    <span class="help-block">Enter the second number to do calculation</span>  
+  </div>
+</div>
+
+<!-- Operand Selector -->
+<div class="form-group">
+    <label class="col-md-4" for="type"></label>
+    <div class="col-md-4">
+        <select class="form-control"  asp-for="@Model.Operator" name="type" >
+            <option value="Add">Add</option>
+            <option value="Sub">Subtract</option>
+            <option value="Mul">Multiply</option>
+            <option value="Div">Divide</option>
+        </select>
+    </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="calculate"></label>
+  <div class="col-md-4">
+    <button id="calculate" name="calculate" class="btn btn-primary">Calculate</button>
+  </div>
+</div>
+
+</fieldset>
+</form>

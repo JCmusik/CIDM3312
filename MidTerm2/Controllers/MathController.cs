@@ -10,8 +10,6 @@ namespace MidTerm2.Controllers
 {
     public class MathController : Controller
     {
-
-
         [HttpGet]
         public IActionResult DoCalculation()
         {

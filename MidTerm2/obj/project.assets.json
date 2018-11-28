@@ -11507,11 +11507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/johncunningham/Desktop/MidTerm2/MidTerm2.csproj",
+      "projectUniqueName": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm2/MidTerm2.csproj",
       "projectName": "MidTerm2",
-      "projectPath": "/Users/johncunningham/Desktop/MidTerm2/MidTerm2.csproj",
+      "projectPath": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm2/MidTerm2.csproj",
       "packagesPath": "/Users/johncunningham/.nuget/packages/",
-      "outputPath": "/Users/johncunningham/Desktop/MidTerm2/obj/",
+      "outputPath": "/Users/johncunningham/Projects/git/CIDM3312/MidTerm2/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

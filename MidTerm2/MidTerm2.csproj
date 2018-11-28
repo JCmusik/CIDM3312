@@ -9,4 +9,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="/Users/johncunningham/Projects/git/CIDM3312/Assignments/MathLibrary/bin/Debug/netstandard2.0/MathLibrary.dll" />
+  </ItemGroup>
+
 </Project>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MidTerm2.Models;
+using MathLibrary;
 
 namespace MidTerm2.Controllers
 {
@@ -22,7 +23,23 @@ namespace MidTerm2.Controllers
         [HttpPost]
         public IActionResult ShowCalculationResults(MathOperation operation)
         {
-
+            switch (operation.Operator)
+            {
+                case "+":
+                    operation.Result = MathLibrary.MathRoutines.Add(operation.LeftOperand, operation.RightOperand);
+                    break;
+                case "-":
+                    operation.Result = MathLibrary.MathRoutines.Subtract(operation.LeftOperand, operation.RightOperand);
+                    break;
+                case "*":
+                    operation.Result = MathLibrary.MathRoutines.Multiply(operation.LeftOperand, operation.RightOperand);
+                    break;
+                case "/":
+                    operation.Result = MathLibrary.MathRoutines.Divide(operation.LeftOperand, operation.RightOperand);
+                    break;
+                default:
+                    break;
+            }
 
             return View(operation);
         }

@@ -62,3 +62,5 @@
 /Users/johncunningham/Projects/git/CIDM3312/MidTerm2/obj/Debug/netcoreapp2.1/MidTerm2.dll
 /Users/johncunningham/Projects/git/CIDM3312/MidTerm2/obj/Debug/netcoreapp2.1/MidTerm2.pdb
 /Users/johncunningham/Projects/git/CIDM3312/MidTerm2/obj/Debug/netcoreapp2.1/MidTerm2.csproj.CopyComplete
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm2/bin/Debug/netcoreapp2.1/MathLibrary.dll
+/Users/johncunningham/Projects/git/CIDM3312/MidTerm2/bin/Debug/netcoreapp2.1/MathLibrary.pdb

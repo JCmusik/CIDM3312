@@ -10,6 +10,7 @@ namespace MidTerm2.Controllers
 {
     public class MathController : Controller
     {
+
         [HttpGet]
         public IActionResult DoCalculation()
         {
@@ -21,18 +22,8 @@ namespace MidTerm2.Controllers
         [HttpPost]
         public IActionResult ShowCalculationResults(MathOperation operation)
         {
-            var mathop = new MathOperation();
-            switch (operation.Operator)
-            {
-                case "Add":
-                    operation.Result = operation.LeftOperand + operation.RightOperand;
-                    break;
-                case "Mul":
-                    operation.Result = operation.LeftOperand * operation.RightOperand;
-                    break;
-                default:
-                    break;
-            }
+
+
             return View(operation);
         }
     }

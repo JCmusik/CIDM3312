@@ -30,15 +30,12 @@
 
 <!-- Operand Selector -->
 <div class="form-group">
-    <label class="col-md-4" for="type"></label>
-    <div class="col-md-4">
-        <select class="form-control"  asp-for="@Model.Operator" name="type" >
-            <option value="Add">Add</option>
-            <option value="Sub">Subtract</option>
-            <option value="Mul">Multiply</option>
-            <option value="Div">Divide</option>
-        </select>
-    </div>
+<label class="col-md-4 control-label" for="Operator"></label>  
+  <div class="col-md-4">
+    <input id="Operator" asp-for="@Model.Operator" name="Operator" type="text" placeholder="Type +, -, *, /" class="form-control input-md">
+    <span class="help-block">Type one of the operands</span>  
+  </div>
+    
 </div>
 
 <!-- Button -->

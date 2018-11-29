@@ -106,17 +106,17 @@ namespace BuffteksWebApp.Models
                 {
                     new Client
                     {
-                        FirstName = "",
-                        LastName = "",
-                        PhoneNumber = "",
-                        Email = ""
+                        FirstName = "Kids",
+                        LastName = "Inc",
+                        PhoneNumber = "806-376-5936",
+                        Email = "info@kidsinc.org"
                     },
                     new Client
                     {
-                        FirstName = "",
-                        LastName = "",
-                        PhoneNumber = "",
-                        Email = ""
+                        FirstName = "Palace",
+                        LastName = "Coffee",
+                        PhoneNumber = "806-476-0111",
+                        Email = "info@palacecoffee.com"
                     }
                 };
 
@@ -129,7 +129,7 @@ namespace BuffteksWebApp.Models
                 {
                     new Project
                     {
-                        Title = "",
+                        Title = "Kids Inc Webpage",
                         BeginDate = DateTime.Parse("12/14/2018"),
                         EndDate = DateTime.Parse("12/14/2019"),
                         TotalHours = 2000
@@ -137,7 +137,7 @@ namespace BuffteksWebApp.Models
                     },
                     new Project
                     {
-                        Title = "",
+                        Title = "Palace Coffee Database",
                         BeginDate = DateTime.Parse("12/14/2018"),
                         EndDate = DateTime.Parse("6/14/2019"),
                         TotalHours = 1000

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BuffteksWebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20181126052519_Initial")]
+    [Migration("20181129050213_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

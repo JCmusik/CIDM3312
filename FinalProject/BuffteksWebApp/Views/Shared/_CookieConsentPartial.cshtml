@@ -8,27 +8,14 @@
 
 @if (showBanner)
 {
-    <nav id="cookieConsent" class="navbar navbar-default navbar-fixed-top" role="alert">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cookieConsent .navbar-collapse">
-                    <span class="sr-only">Toggle cookie consent banner</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <span class="navbar-brand"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></span>
-            </div>
-            <div class="collapse navbar-collapse">
-                <p class="navbar-text">
-                    These cookies are essential for websites on our services to perform their basic functions.
-                </p>
-                <div class="navbar-right">
-                    <button type="button" class="btn btn-default navbar-btn" data-cookie-string="@cookieString">Accept</button>
-                </div>
-            </div>
+<nav id="cookieConsent" class="navbar navbar-expand-md" role="alert">
+        <p class="navbar-text">
+        Cookies are essential for websites on our services to perform their basic functions. Click this button to accept.
+        </p>
+        <div class="navbar navbar-right">
+            <button data-target="#cookieConsent" data-toggle="collapse" type="button" class="btn btn-primary" data-cookie-string="@cookieString">Accept</button>
         </div>
-    </nav>
+</nav>
     <script>
         (function () {
             document.querySelector("#cookieConsent button[data-cookie-string]").addEventListener("click", function (el) {

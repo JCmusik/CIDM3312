@@ -13,6 +13,7 @@ namespace BuffteksWebApp.Models
         {
             var db = app.ApplicationServices.GetRequiredService<AppDbContext>();
             db.Database.Migrate();
+            db.Database.EnsureCreated();
 
             List<Project> projects;
 

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BuffteksWebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20181129050213_Initial")]
+    [Migration("20181203012027_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,19 +58,6 @@ namespace BuffteksWebApp.Migrations
                     b.ToTable("Members");
                 });
 
-            modelBuilder.Entity("BuffteksWebApp.Models.MemberClient", b =>
-                {
-                    b.Property<int>("MemberID");
-
-                    b.Property<int>("ClientID");
-
-                    b.HasKey("MemberID", "ClientID");
-
-                    b.HasIndex("ClientID");
-
-                    b.ToTable("MemberClients");
-                });
-
             modelBuilder.Entity("BuffteksWebApp.Models.Project", b =>
                 {
                     b.Property<int>("ProjectID")
@@ -78,7 +65,11 @@ namespace BuffteksWebApp.Migrations
 
                     b.Property<DateTime>("BeginDate");
 
+                    b.Property<int>("ClientID");
+
                     b.Property<DateTime>("EndDate");
+
+                    b.Property<int>("MemberID");
 
                     b.Property<string>("Title");
 
@@ -86,20 +77,9 @@ namespace BuffteksWebApp.Migrations
 
                     b.HasKey("ProjectID");
 
+                    b.HasIndex("ClientID");
+
                     b.ToTable("Projects");
-                });
-
-            modelBuilder.Entity("BuffteksWebApp.Models.ProjectMember", b =>
-                {
-                    b.Property<int>("ProjectID");
-
-                    b.Property<int>("MemberId");
-
-                    b.HasKey("ProjectID", "MemberId");
-
-                    b.HasIndex("MemberId");
-
-                    b.ToTable("ProjectMembers");
                 });
 
             modelBuilder.Entity("BuffteksWebApp.Models.Member", b =>
@@ -109,29 +89,11 @@ namespace BuffteksWebApp.Migrations
                         .HasForeignKey("ProjectID");
                 });
 
-            modelBuilder.Entity("BuffteksWebApp.Models.MemberClient", b =>
+            modelBuilder.Entity("BuffteksWebApp.Models.Project", b =>
                 {
                     b.HasOne("BuffteksWebApp.Models.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("BuffteksWebApp.Models.Member", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberID")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("BuffteksWebApp.Models.ProjectMember", b =>
-                {
-                    b.HasOne("BuffteksWebApp.Models.Member", "Member")
-                        .WithMany()
-                        .HasForeignKey("MemberId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("BuffteksWebApp.Models.Project", "Project")
-                        .WithMany()
-                        .HasForeignKey("ProjectID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

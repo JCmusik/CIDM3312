@@ -17,8 +17,7 @@ ________________________________________________________________________________
 #### Scaffolding info
 
 [Microsoft Docs:  Add a model to an ASP.NET Core MVC app Tutorial](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/adding-model?view=aspnetcore-2.1#prepare-the-project-for-scaffolding)
-
-Run this ` dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design ` and the following line will be added to your .csproj in your <code><ItemGroup></code>
+Run this ` dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design ` and the following line will be added to your .csproj in your <code>`<ItemGroup`</code>
 ```xml
 <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" /> 
 ```

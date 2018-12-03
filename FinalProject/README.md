@@ -23,7 +23,7 @@ Run this ` dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design `
 <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" /> 
 ```
 
-You may need to add the Microsoft.EntityFrameworkCore.Tools.DotNet package by running ` dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet `
+You may need to run the following command as well ` dotnet tool install --global dotnet-aspnet-codegenerator ` 
 
 ```
 dotnet aspnet-codegenerator controller -name MemberController -m Member -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries

@@ -33,7 +33,6 @@ namespace BuffteksWebApp.Migrations
                     BeginDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
                     TotalHours = table.Column<int>(nullable: false),
-                    MemberID = table.Column<int>(nullable: false),
                     ClientID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

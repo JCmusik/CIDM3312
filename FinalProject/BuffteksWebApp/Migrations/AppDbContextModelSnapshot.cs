@@ -67,8 +67,6 @@ namespace BuffteksWebApp.Migrations
 
                     b.Property<DateTime>("EndDate");
 
-                    b.Property<int>("MemberID");
-
                     b.Property<string>("Title");
 
                     b.Property<int>("TotalHours");

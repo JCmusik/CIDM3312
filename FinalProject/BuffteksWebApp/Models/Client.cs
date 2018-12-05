@@ -8,6 +8,5 @@ namespace BuffteksWebApp.Models
     public class Client : Person
     {
         public int ClientID { get; set; }
-        List<Project> Projects { get; set; }
     }
 }

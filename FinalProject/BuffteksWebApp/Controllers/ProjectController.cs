@@ -21,8 +21,7 @@ namespace BuffteksWebApp.Controllers
         // GET: Project
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Projects.Include(p => p.Client);
-            return View(await appDbContext.ToListAsync());
+            return View(await _context.Projects.ToListAsync());
         }
 
         // GET: Project/Details/5
@@ -34,7 +33,6 @@ namespace BuffteksWebApp.Controllers
             }
 
             var project = await _context.Projects
-                .Include(p => p.Client)
                 .FirstOrDefaultAsync(m => m.ProjectID == id);
             if (project == null)
             {
@@ -47,7 +45,6 @@ namespace BuffteksWebApp.Controllers
         // GET: Project/Create
         public IActionResult Create()
         {
-            ViewData["ClientID"] = new SelectList(_context.Clients, "ClientID", "ClientID");
             return View();
         }
 
@@ -56,7 +53,7 @@ namespace BuffteksWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProjectID,Title,BeginDate,EndDate,TotalHours,ClientID")] Project project)
+        public async Task<IActionResult> Create([Bind("ProjectID,Title,BeginDate,EndDate,TotalHours")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +61,6 @@ namespace BuffteksWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientID"] = new SelectList(_context.Clients, "ClientID", "ClientID", project.ClientID);
             return View(project);
         }
 
@@ -81,7 +77,6 @@ namespace BuffteksWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["ClientID"] = new SelectList(_context.Clients, "ClientID", "ClientID", project.ClientID);
             return View(project);
         }
 
@@ -90,7 +85,7 @@ namespace BuffteksWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProjectID,Title,BeginDate,EndDate,TotalHours,ClientID")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectID,Title,BeginDate,EndDate,TotalHours")] Project project)
         {
             if (id != project.ProjectID)
             {
@@ -117,7 +112,6 @@ namespace BuffteksWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ClientID"] = new SelectList(_context.Clients, "ClientID", "ClientID", project.ClientID);
             return View(project);
         }
 
@@ -130,7 +124,6 @@ namespace BuffteksWebApp.Controllers
             }
 
             var project = await _context.Projects
-                .Include(p => p.Client)
                 .FirstOrDefaultAsync(m => m.ProjectID == id);
             if (project == null)
             {

@@ -33,7 +33,7 @@ namespace BuffteksWebApp.Controllers
             }
 
             var client = await _context.Clients
-                .FirstOrDefaultAsync(m => m.ClientID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (client == null)
             {
                 return NotFound();
@@ -53,7 +53,7 @@ namespace BuffteksWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ClientID,FirstName,LastName,Email,PhoneNumber")] Client client)
+        public async Task<IActionResult> Create([Bind("ClientID,ID,FirstName,LastName,Email,PhoneNumber")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -85,9 +85,9 @@ namespace BuffteksWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ClientID,FirstName,LastName,Email,PhoneNumber")] Client client)
+        public async Task<IActionResult> Edit(int id, [Bind("ClientID,ID,FirstName,LastName,Email,PhoneNumber")] Client client)
         {
-            if (id != client.ClientID)
+            if (id != client.ID)
             {
                 return NotFound();
             }
@@ -101,7 +101,7 @@ namespace BuffteksWebApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(client.ClientID))
+                    if (!ClientExists(client.ID))
                     {
                         return NotFound();
                     }
@@ -124,7 +124,7 @@ namespace BuffteksWebApp.Controllers
             }
 
             var client = await _context.Clients
-                .FirstOrDefaultAsync(m => m.ClientID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (client == null)
             {
                 return NotFound();
@@ -146,7 +146,7 @@ namespace BuffteksWebApp.Controllers
 
         private bool ClientExists(int id)
         {
-            return _context.Clients.Any(e => e.ClientID == id);
+            return _context.Clients.Any(e => e.ID == id);
         }
     }
 }

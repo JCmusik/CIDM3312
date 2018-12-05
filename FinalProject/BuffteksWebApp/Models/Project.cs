@@ -17,8 +17,6 @@ namespace BuffteksWebApp.Models
         public DateTime EndDate { get; set; }
         [Display(Name = "Total Hours")]
         public int TotalHours { get; set; }
-        public int ClientID { get; set; }
-        public Client Client { get; set; }
-        public List<Member> Members { get; set; }
+        public ICollection<ProjectPerson> ProjectPeople { get; set; }
     }
 }

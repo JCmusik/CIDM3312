@@ -12,131 +12,194 @@ namespace BuffteksWebApp.Models
         public static void Seed(IApplicationBuilder app)
         {
             var db = app.ApplicationServices.GetRequiredService<AppDbContext>();
-            db.Database.Migrate();
+
             db.Database.EnsureCreated();
 
-            List<Project> projects;
-
-            if (!db.Members.Any())
+            if (!db.Projects.Any())
             {
                 //Create at least ten Members
                 // Create at least two clients
 
                 // Create at least two projects
-                projects = new List<Project>
+                var projects = new List<Project>
                 {
-                        new Project
-                        {
-                            Title = "Kids Inc Webpage",
-                            BeginDate = DateTime.Parse("12/14/2018"),
-                            EndDate = DateTime.Parse("12/14/2019"),
-                            TotalHours = 2000,
-                            Client = new Client
-                            {
-                                FirstName = "Kids",
-                                LastName = "Inc",
-                                PhoneNumber = "806-376-5936",
-                                Email = "info@kidsinc.org"
-                            },
-                                Members = new List<Member>
-                                {
-                                    new Member
-                                    {
-                                        FirstName = "John",
-                                        LastName = "Cunningham",
-                                        PhoneNumber = "806-555-1111",
-                                        Email = "john@email.com"
+                    new Project
+                    {
+                        Title = "Kids Inc Webpage",
+                        BeginDate = DateTime.Parse("12/14/2018"),
+                        EndDate = DateTime.Parse("12/14/2019"),
+                        TotalHours = 2000,
 
-                                    },
-                                    new Member
-                                    {
-                                        FirstName = "Mara",
-                                        LastName = "Kinoff",
-                                        PhoneNumber = "806-555-1112",
-                                        Email = "mara@email.com"
-                                    },
-                                    new Member
-                                    {
-                                        FirstName = "Gabby",
-                                        LastName = "Cumbest",
-                                        PhoneNumber = "806-555-1113",
-                                        Email = "gabby@email.com"
-                                    },
-                                    new Member
-                                    {
-                                        FirstName = "Amy",
-                                        LastName = "Saysouriyosack",
-                                        PhoneNumber = "806-555-1114",
-                                        Email = "amy@email.com"
-                                    },
-                                    new Member
-                                    {
-                                        FirstName = "Cesareo",
-                                        LastName = "Lona",
-                                        PhoneNumber = "806-555-1115",
-                                        Email = "cesar@email.com"
-                                    }
-                                },
-                        },
-                        new Project
-                        {
-                            Title = "Palace Coffee Database",
-                            BeginDate = DateTime.Parse("12/14/2018"),
-                            EndDate = DateTime.Parse("6/14/2019"),
-                            TotalHours = 1000,
-                            Client = new Client
-                            {
-                                FirstName = "Palace",
-                                LastName = "Coffee",
-                                PhoneNumber = "806-476-0111",
-                                Email = "info@palacecoffee.com"
-                            },
-                            Members = new List<Member>
-                            {
-                                new Member
-                                {
-                                    FirstName = "Michael",
-                                    LastName = "Matthews",
-                                    PhoneNumber = "806-555-1116",
-                                    Email = "michael@email.com"
-                                },
-                                        new Member
-                                {
-                                    FirstName = "Mason",
-                                    LastName = "McCollum",
-                                    PhoneNumber = "806-555-1117",
-                                    Email = "mason@email.com"
-                                },
-                                new Member
-                                {
-                                    FirstName = "Catherine",
-                                    LastName = "McGovern",
-                                    PhoneNumber = "806-555-1118",
-                                    Email = "catherine@email.com"
-                                },
-                                new Member
-                                {
-                                    FirstName = "Quan",
-                                    LastName = "Nyguyen",
-                                    PhoneNumber = "806-555-1119",
-                                    Email = "quan@email.com"
-                                },
-                                new Member
-                                {
-                                    FirstName = "Vanessa",
-                                    LastName = "Valenzuela",
-                                    PhoneNumber = "806-555-1120",
-                                    Email = "vanessa@email.com"
-                                }
-                            }
-                        }
-                    };
+                    },
+                    new Project
+                    {
+                        Title = "Palace Coffee Database",
+                        BeginDate = DateTime.Parse("12/14/2018"),
+                        EndDate = DateTime.Parse("6/14/2019"),
+                        TotalHours = 1000,
+                    }
+                };
+                db.Projects.AddRange(projects);
+                db.SaveChanges();
+
+                var clients = new List<Client>
+                {
+                    new Client
+                    {
+                        FirstName = "Kids",
+                        LastName = "Inc",
+                        PhoneNumber = "806-376-5936",
+                        Email = "info@kidsinc.org"
+                    },
+                    new Client
+                    {
+                        FirstName = "Palace",
+                        LastName = "Coffee",
+                        PhoneNumber = "806-476-0111",
+                        Email = "info@palacecoffee.com"
+                    },
+                };
+                db.Clients.AddRange(clients);
+                db.SaveChanges();
+
+                var members = new List<Member>
+                {
+                    new Member
+                    {
+                        FirstName = "John",
+                        LastName = "Cunningham",
+                        PhoneNumber = "806-555-1111",
+                        Email = "john@email.com"
+
+                    },
+                    new Member
+                    {
+                        FirstName = "Mara",
+                        LastName = "Kinoff",
+                        PhoneNumber = "806-555-1112",
+                        Email = "mara@email.com"
+                    },
+                    new Member
+                    {
+                        FirstName = "Gabby",
+                        LastName = "Cumbest",
+                        PhoneNumber = "806-555-1113",
+                        Email = "gabby@email.com"
+                    },
+                    new Member
+                    {
+                        FirstName = "Amy",
+                        LastName = "Saysouriyosack",
+                        PhoneNumber = "806-555-1114",
+                        Email = "amy@email.com"
+                    },
+                    new Member
+                    {
+                        FirstName = "Cesareo",
+                        LastName = "Lona",
+                        PhoneNumber = "806-555-1115",
+                        Email = "cesar@email.com"
+                    },
+                    new Member
+                    {
+                        FirstName = "Michael",
+                        LastName = "Matthews",
+                        PhoneNumber = "806-555-1116",
+                        Email = "michael@email.com"
+                    },
+                    new Member
+                    {
+                        FirstName = "Mason",
+                        LastName = "McCollum",
+                        PhoneNumber = "806-555-1117",
+                        Email = "mason@email.com"
+                    },
+                    new Member
+                    {
+                        FirstName = "Catherine",
+                        LastName = "McGovern",
+                        PhoneNumber = "806-555-1118",
+                        Email = "catherine@email.com"
+                    },
+                    new Member
+                    {
+                        FirstName = "Quan",
+                        LastName = "Nyguyen",
+                        PhoneNumber = "806-555-1119",
+                        Email = "quan@email.com"
+                    },
+                    new Member
+                    {
+                        FirstName = "Vanessa",
+                        LastName = "Valenzuela",
+                        PhoneNumber = "806-555-1120",
+                        Email = "vanessa@email.com"
+                    }
+                };
+
+                db.Members.AddRange(members);
+                db.SaveChanges();
+
+
+                var projpeople = new List<ProjectPerson>
+                {
+                    new ProjectPerson {ProjectID = projects[0].ProjectID,
+                                        Project = projects[0],
+                                        PersonID = members[0].ID,
+                                        Person = members[0]
+                                        },
+                    new ProjectPerson {ProjectID = projects[0].ProjectID,
+                                        Project = projects[0],
+                                        PersonID = members[1].ID,
+                                        Person = members[1]
+                                        },
+                    new ProjectPerson {ProjectID = projects[0].ProjectID,
+                                        Project = projects[0],
+                                        PersonID = members[2].ID,
+                                        Person = members[2]
+                                        },
+                    new ProjectPerson {ProjectID = projects[0].ProjectID,
+                                        Project = projects[0],
+                                        PersonID = members[3].ID,
+                                        Person = members[3]
+                                        },
+                    new ProjectPerson {ProjectID = projects[0].ProjectID,
+                                        Project = projects[0],
+                                        PersonID = members[4].ID,
+                                        Person = members[4]
+                                        },
+                    new ProjectPerson {ProjectID = projects[1].ProjectID,
+                                        Project = projects[1],
+                                        PersonID = members[5].ID,
+                                        Person = members[5]
+                                        },
+                    new ProjectPerson {ProjectID = projects[1].ProjectID,
+                                        Project = projects[1],
+                                        PersonID = members[6].ID,
+                                        Person = members[6]
+                                        },
+                    new ProjectPerson {ProjectID = projects[1].ProjectID,
+                                        Project = projects[1],
+                                        PersonID = members[7].ID,
+                                        Person = members[7]
+                                        },
+                    new ProjectPerson {ProjectID = projects[1].ProjectID,
+                                        Project = projects[1],
+                                        PersonID = members[8].ID,
+                                        Person = members[8]
+                                        },
+                    new ProjectPerson {ProjectID = projects[1].ProjectID,
+                                        Project = projects[1],
+                                        PersonID = members[9].ID,
+                                        Person = members[9]
+                                        },
+
+                };
+                db.ProjectPersons.AddRange(projpeople);
+                db.SaveChanges();
             }
             else
                 return;  // database has already been seeded
-
-            db.Projects.AddRange(projects);
-            db.SaveChanges();
 
             //Assign Members and Clients to Projects
         }

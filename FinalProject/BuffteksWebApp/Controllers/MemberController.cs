@@ -33,7 +33,7 @@ namespace BuffteksWebApp.Controllers
             }
 
             var member = await _context.Members
-                .FirstOrDefaultAsync(m => m.MemberID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (member == null)
             {
                 return NotFound();
@@ -53,7 +53,7 @@ namespace BuffteksWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MemberID,FirstName,LastName,Email,PhoneNumber")] Member member)
+        public async Task<IActionResult> Create([Bind("MemberID,ID,FirstName,LastName,Email,PhoneNumber")] Member member)
         {
             if (ModelState.IsValid)
             {
@@ -85,9 +85,9 @@ namespace BuffteksWebApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MemberID,FirstName,LastName,Email,PhoneNumber")] Member member)
+        public async Task<IActionResult> Edit(int id, [Bind("MemberID,ID,FirstName,LastName,Email,PhoneNumber")] Member member)
         {
-            if (id != member.MemberID)
+            if (id != member.ID)
             {
                 return NotFound();
             }
@@ -101,7 +101,7 @@ namespace BuffteksWebApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MemberExists(member.MemberID))
+                    if (!MemberExists(member.ID))
                     {
                         return NotFound();
                     }
@@ -124,7 +124,7 @@ namespace BuffteksWebApp.Controllers
             }
 
             var member = await _context.Members
-                .FirstOrDefaultAsync(m => m.MemberID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (member == null)
             {
                 return NotFound();
@@ -146,7 +146,7 @@ namespace BuffteksWebApp.Controllers
 
         private bool MemberExists(int id)
         {
-            return _context.Members.Any(e => e.MemberID == id);
+            return _context.Members.Any(e => e.ID == id);
         }
     }
 }

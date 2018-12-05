@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace BuffteksWebApp.Models
@@ -7,6 +8,7 @@ namespace BuffteksWebApp.Models
     /// </summary>
     public abstract class Person
     {
+        public int ID { get; set; }
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
@@ -14,5 +16,6 @@ namespace BuffteksWebApp.Models
         public string Email { get; set; }
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
+        public ICollection<ProjectPerson> Projects { get; set; }
     }
 }

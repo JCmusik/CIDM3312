@@ -8,23 +8,26 @@ namespace BuffteksWebApp.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Clients",
+                name: "Person",
                 columns: table => new
                 {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
-                    ClientID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true)
+                    Discriminator = table.Column<string>(nullable: false),
+                    ClientID = table.Column<int>(nullable: true),
+                    MemberID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clients", x => x.ClientID);
+                    table.PrimaryKey("PK_Person", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Projects",
+                name: "Project",
                 columns: table => new
                 {
                     ProjectID = table.Column<int>(nullable: false)
@@ -32,64 +35,53 @@ namespace BuffteksWebApp.Migrations
                     Title = table.Column<string>(nullable: true),
                     BeginDate = table.Column<DateTime>(nullable: false),
                     EndDate = table.Column<DateTime>(nullable: false),
-                    TotalHours = table.Column<int>(nullable: false),
-                    ClientID = table.Column<int>(nullable: false)
+                    TotalHours = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Projects", x => x.ProjectID);
-                    table.ForeignKey(
-                        name: "FK_Projects_Clients_ClientID",
-                        column: x => x.ClientID,
-                        principalTable: "Clients",
-                        principalColumn: "ClientID",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Project", x => x.ProjectID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Members",
+                name: "ProjectPersons",
                 columns: table => new
                 {
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
-                    Email = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<string>(nullable: true),
-                    MemberID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ProjectID = table.Column<int>(nullable: true)
+                    ProjectID = table.Column<int>(nullable: false),
+                    PersonID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Members", x => x.MemberID);
+                    table.PrimaryKey("PK_ProjectPersons", x => new { x.PersonID, x.ProjectID });
                     table.ForeignKey(
-                        name: "FK_Members_Projects_ProjectID",
+                        name: "FK_ProjectPersons_Person_PersonID",
+                        column: x => x.PersonID,
+                        principalTable: "Person",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProjectPersons_Project_ProjectID",
                         column: x => x.ProjectID,
-                        principalTable: "Projects",
+                        principalTable: "Project",
                         principalColumn: "ProjectID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Members_ProjectID",
-                table: "Members",
+                name: "IX_ProjectPersons_ProjectID",
+                table: "ProjectPersons",
                 column: "ProjectID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Projects_ClientID",
-                table: "Projects",
-                column: "ClientID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Members");
+                name: "ProjectPersons");
 
             migrationBuilder.DropTable(
-                name: "Projects");
+                name: "Person");
 
             migrationBuilder.DropTable(
-                name: "Clients");
+                name: "Project");
         }
     }
 }

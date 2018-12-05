@@ -9,12 +9,9 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table table-dark table-hover">
+<table class="table table-dark table-hover table-responsive-md">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.MemberID)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.FirstName)
             </th>
@@ -33,9 +30,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MemberID)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>

@@ -1,42 +1,100 @@
-@model BuffteksWebApp.Models.Project
+@model BuffteksWebApp.Models.ProjectDetailViewModel
 
 @{
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>Project Details</h2>
 
 <div>
-    <h4>Project</h4>
+    <h4 class="bg-secondary p-3">Project</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.DisplayNameFor(model => model.Project.Title)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Title)
+            <b>@Html.DisplayFor(model => model.Project.Title)</b>
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.BeginDate)
+            @Html.DisplayNameFor(model => model.Project.BeginDate)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.BeginDate)
+            @Html.DisplayFor(model => model.Project.BeginDate)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
+            @Html.DisplayNameFor(model => model.Project.EndDate)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.EndDate)
+            @Html.DisplayFor(model => model.Project.EndDate)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.TotalHours)
+            @Html.DisplayNameFor(model => model.Project.TotalHours)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.TotalHours)
+            @Html.DisplayFor(model => model.Project.TotalHours)
         </dd>
     </dl>
 </div>
+<div class="row">
+<div class="col-lg-4">    
+    <h4 class="bg-secondary p-3">Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var client in Model.Clients)
+        {
+            <dt>
+               Organization Name
+            </dt>
+            <dd>
+                <b>@client</b>    
+            </dd>
+            <dt>
+               @Html.DisplayNameFor(c => client.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(c => client.Email)
+            </dd>
+            <dt>
+               @Html.DisplayNameFor(c => client.PhoneNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(c => client.PhoneNumber)
+            </dd>
+            
+        }
+    </dl>
+</div>
+<div class="col-lg-6">
+    <h4 class="bg-secondary p-3">Team Members</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var member in Model.Members)
+        {
+            <dt>
+                Name
+            </dt>
+            <dd>
+                <b>@member</b>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(m => member.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(m => member.Email) 
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(m => member.PhoneNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(m => member.PhoneNumber) 
+            </dd>
+            <hr>
+        }
+    </dl>
+</div>
+</div> <!-- end of row --> 
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProjectID">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Project.ProjectID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

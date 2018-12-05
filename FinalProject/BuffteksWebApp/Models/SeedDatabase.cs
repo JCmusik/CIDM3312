@@ -168,6 +168,11 @@ namespace BuffteksWebApp.Models
                                         PersonID = members[4].ID,
                                         Person = members[4]
                                         },
+                                        new ProjectPerson {ProjectID = projects[0].ProjectID,
+                                        Project = projects[0],
+                                        PersonID = clients[0].ID,
+                                        Person = clients[0]
+                                        },
                     new ProjectPerson {ProjectID = projects[1].ProjectID,
                                         Project = projects[1],
                                         PersonID = members[5].ID,
@@ -192,6 +197,11 @@ namespace BuffteksWebApp.Models
                                         Project = projects[1],
                                         PersonID = members[9].ID,
                                         Person = members[9]
+                                        },
+                    new ProjectPerson {ProjectID = projects[1].ProjectID,
+                                        Project = projects[1],
+                                        PersonID = clients[1].ID,
+                                        Person = clients[1]
                                         },
 
                 };

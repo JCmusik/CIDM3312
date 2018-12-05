@@ -17,5 +17,7 @@ namespace BuffteksWebApp.Models
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
         public ICollection<ProjectPerson> Projects { get; set; }
+
+        public override string ToString() => $"{this.FirstName} {this.LastName}";
     }
 }

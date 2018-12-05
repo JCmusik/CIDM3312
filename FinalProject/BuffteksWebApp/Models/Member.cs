@@ -6,6 +6,5 @@
     public class Member : Person
     {
         public int MemberID { get; set; }
-
     }
 }

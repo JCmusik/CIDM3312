@@ -1,0 +1,10 @@
+<!-- Search form -->
+<form asp-action="SearchResults" method="get">
+    <div class="form">
+        <p>
+            Search by Project Name: 
+            <input type="text" class="text-dark m-1 p-2" name="SearchString" value="@ViewData["currentFilter"]" />
+                <input type="submit" value="Search" class="btn btn-default m-3" />
+        </p>
+    </div>
+</form>

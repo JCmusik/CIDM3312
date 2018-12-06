@@ -1,0 +1,98 @@
+@model BuffteksWebApp.Models.ProjectDetailViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Project Details</h2>
+<div>
+    <a asp-action="Search">Back to Search</a>
+</div>
+<div>
+    <h4 class="bg-secondary p-3">Project</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Title)
+        </dt>
+        <dd>
+            <b>@Html.DisplayFor(model => model.Project.Title)</b>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.BeginDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Project.BeginDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.EndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Project.EndDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.TotalHours)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Project.TotalHours)
+        </dd>
+    </dl>
+</div>
+<div class="row">
+<div class="col-lg-5">    
+    <h4 class="bg-secondary p-3">Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var client in Model.Clients)
+        {
+            <dt>
+               Organization Name
+            </dt>
+            <dd>
+                <b>@client</b>    
+            </dd>
+            <dt>
+               @Html.DisplayNameFor(c => client.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(c => client.Email)
+            </dd>
+            <dt>
+               @Html.DisplayNameFor(c => client.PhoneNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(c => client.PhoneNumber)
+            </dd>
+            
+        }
+    </dl>
+</div>
+<div class="col-lg-6">
+    <h4 class="bg-secondary p-3">Team Members</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var member in Model.Members)
+        {
+            <dt>
+                Name
+            </dt>
+            <dd>
+                <b>@member</b>
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(m => member.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(m => member.Email) 
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(m => member.PhoneNumber)
+            </dt>
+            <dd>
+                @Html.DisplayFor(m => member.PhoneNumber) 
+            </dd>
+            <hr>
+        }
+    </dl>
+</div>
+</div> <!-- end of row --> 

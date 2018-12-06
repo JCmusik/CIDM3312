@@ -49,3 +49,26 @@ ________________________________________________________________________________
 * Also, provide the URL to the Github repository you've used for this project. 
 * BOTH ARE REQUIRED or you will receive ZERO credit for this project.
 
+____________________________________________________________________________________________________
+## Final Exam Period
+
+#### You will present your work during the final exam period. You will be prepared to do the following:
+
+* Ensure you've seeded some initial data values
+* Bring a flash drive with you (mandatory)
+* Bring flash drive up to the podium with you
+* Clone your project from Github to the flash drive (NOT TO THE PODIUM COMPUTER HARD DRIVE) - you MAY NOT DOWNLOAD THE ZIP, YOU MUST CLONE
+* Open VS Code
+* Run your mvc web app
+
+##### Inside your app:
+* Create a new project
+* Select client
+* Select students
+
+#### Penalty for a Failure to Perform
+
+An inability to complete any of the steps constitutes a failure to perform in the presentation.  The result is your final project will be lowered by one letter grade.  As an example: if your project warranted a 95, which is an 'A', then a failure to perform will lower your grade to an 85, which is a 'B,' and so on.
+
+
+

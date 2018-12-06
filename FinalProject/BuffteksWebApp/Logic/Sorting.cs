@@ -51,5 +51,31 @@ namespace BuffteksWebApp.Logic
 
             return person;
         }
+
+        public static ProjectDetailViewModel ProjectJoinMembersClients(AppDbContext db, Project project)
+        {
+
+            var clients = from person in db.Clients
+                          join projectPerson in db.ProjectPersons
+                          on person.ID equals projectPerson.Person.ID
+                          where project.ProjectID == projectPerson.ProjectID
+                          select person;
+
+            var members = from person in db.Members
+                          join projectperson in db.ProjectPersons
+                          on person.ID equals projectperson.Person.ID
+                          where project.ProjectID == projectperson.ProjectID
+                          select person;
+
+            var projDetails = new ProjectDetailViewModel
+            {
+                Project = project,
+                Members = members.ToList() ?? null,
+                Clients = clients.ToList() ?? null
+            };
+
+            return projDetails;
+        }
+
     }
 }

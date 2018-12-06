@@ -46,33 +46,17 @@ namespace BuffteksWebApp.Controllers
 
             var project = await _context.Projects
                 .FirstOrDefaultAsync(m => m.ProjectID == id);
+
             if (project == null)
             {
                 return NotFound();
             }
 
-            var clients = from person in _context.Clients
-                          join projectPerson in _context.ProjectPersons
-                          on person.ID equals projectPerson.Person.ID
-                          where project.ProjectID == projectPerson.ProjectID
-                          select person;
-
-            var members = from person in _context.Members
-                          join projectperson in _context.ProjectPersons
-                          on person.ID equals projectperson.Person.ID
-                          where project.ProjectID == projectperson.ProjectID
-                          select person;
-
-            var projDetails = new ProjectDetailViewModel
-            {
-                Project = project,
-                Members = members.ToList() ?? null,
-                Clients = clients.ToList() ?? null
-            };
-
+            var projDetails = Logic.Sorting.ProjectJoinMembersClients(_context, project);
 
             return View(projDetails);
         }
+
 
         // GET: Project/Create
         public IActionResult Create()

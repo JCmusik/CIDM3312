@@ -19,9 +19,21 @@ namespace BuffteksWebApp.Controllers
         }
 
         // GET: Project
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Projects.ToListAsync());
+            // Search bar filter
+            ViewData["CurrentFilter"] = searchString;
+
+            var projects = from p in _context.Projects
+                           select p;
+
+            // Searches project using title
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                projects = projects.Where(c => c.Title.Contains(searchString));
+            }
+
+            return View(await projects.AsNoTracking().ToListAsync());
         }
 
         // GET: Project/Details/5

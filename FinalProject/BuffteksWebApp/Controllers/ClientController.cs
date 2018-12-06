@@ -6,22 +6,48 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BuffteksWebApp.Models;
+using BuffteksWebApp.Logic;
 
 namespace BuffteksWebApp.Controllers
 {
     public class ClientController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly ISorting _sorter;
 
-        public ClientController(AppDbContext context)
+        public ClientController(AppDbContext context, ISorting sorter)
         {
             _context = context;
+            _sorter = sorter;
         }
 
         // GET: Client
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Clients.ToListAsync());
+            // Sets the type of person
+            string typePerson = "Clients";
+
+            // Sorting
+            ViewData["FirstNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "first_name" : "";
+            ViewData["FirstNameDescSortParm"] = String.IsNullOrEmpty(sortOrder) ? "first_name_desc" : "";
+            ViewData["LastNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "last_name" : "";
+            ViewData["LastNameDescSortParm"] = String.IsNullOrEmpty(sortOrder) ? "last_name_desc" : "";
+            ViewData["EmailSortParm"] = String.IsNullOrEmpty(sortOrder) ? "email" : "";
+            ViewData["EmailDescSortParm"] = String.IsNullOrEmpty(sortOrder) ? "email_desc" : "";
+
+            // Search bar filter
+            ViewData["CurrentFilter"] = searchString;
+
+            var clients = _sorter.Sort(_context, sortOrder, typePerson).Cast<Client>();
+
+            // Searches client using first or last name
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                clients = clients.Where(c => c.LastName.Contains(searchString)
+                                    || c.FirstName.Contains(searchString));
+            }
+
+            return View(await clients.AsNoTracking().ToListAsync());
         }
 
         // GET: Client/Details/5

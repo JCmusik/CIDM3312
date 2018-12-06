@@ -6,22 +6,48 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BuffteksWebApp.Models;
+using BuffteksWebApp.Logic;
 
 namespace BuffteksWebApp.Controllers
 {
     public class MemberController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly ISorting _sorter;
 
-        public MemberController(AppDbContext context)
+        public MemberController(AppDbContext context, ISorting sorter)
         {
             _context = context;
+            _sorter = sorter;
         }
 
         // GET: Member
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Members.ToListAsync());
+            // Sets the type of person
+            string typePerson = "Member";
+
+            // Sorting
+            ViewData["FirstNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "first_name" : "";
+            ViewData["FirstNameDescSortParm"] = String.IsNullOrEmpty(sortOrder) ? "first_name_desc" : "";
+            ViewData["LastNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "last_name" : "";
+            ViewData["LastNameDescSortParm"] = String.IsNullOrEmpty(sortOrder) ? "last_name_desc" : "";
+            ViewData["EmailSortParm"] = String.IsNullOrEmpty(sortOrder) ? "email" : "";
+            ViewData["EmailDescSortParm"] = String.IsNullOrEmpty(sortOrder) ? "email_desc" : "";
+
+            // Search bar filter
+            ViewData["CurrentFilter"] = searchString;
+
+            var members = _sorter.Sort(_context, sortOrder, typePerson).Cast<Member>();
+
+            // Searches members with first or last name
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                members = members.Where(m => m.LastName.Contains(searchString)
+                                    || m.FirstName.Contains(searchString));
+            }
+
+            return View(await members.AsNoTracking().ToListAsync());
         }
 
         // GET: Member/Details/5

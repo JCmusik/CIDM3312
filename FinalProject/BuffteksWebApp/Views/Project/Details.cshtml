@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
+    Model.ProjID = Model.Project.ProjectID;
 }
 
 <h2>Project Details</h2>
@@ -68,6 +69,7 @@
 <div class="col-lg-6">
     <h4 class="bg-secondary p-3">Team Members</h4>
     <hr />
+    <form method="post">
     <dl class="dl-horizontal">
         @foreach (var member in Model.Members)
         {
@@ -89,8 +91,10 @@
             <dd>
                 @Html.DisplayFor(m => member.PhoneNumber) 
             </dd>
+            <button type="submit" class="btn btn-danger btn-sm " asp-action="RemoveMember" asp-route-id="@Model.Project.ProjectID" asp-route-pid="SelectID">Remove from project</button>
             <hr>
         }
+        </form>
     </dl>
 </div>
 </div> <!-- end of row --> 

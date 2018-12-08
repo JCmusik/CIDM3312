@@ -17,10 +17,6 @@ namespace BuffteksWebApp.Models
 
             if (!db.Projects.Any() && !db.Clients.Any() && !db.Members.Any() && !db.ProjectPersons.Any())
             {
-                //Create at least ten Members
-                // Create at least two clients
-
-                // Create at least two projects
                 var projects = new List<Project>
                 {
                     new Project
@@ -202,8 +198,6 @@ namespace BuffteksWebApp.Models
             }
             else
                 return;  // database has already been seeded
-
-            //Assign Members and Clients to Projects
         }
     }
 }

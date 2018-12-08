@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BuffteksWebApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20181207040253_Initial")]
+    [Migration("20181208213445_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -102,7 +102,7 @@ namespace BuffteksWebApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("BuffteksWebApp.Models.Project", "Project")
-                        .WithMany("ProjectPeople")
+                        .WithMany("Persons")
                         .HasForeignKey("ProjectID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

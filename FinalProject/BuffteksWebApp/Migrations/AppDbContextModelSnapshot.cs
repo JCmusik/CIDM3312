@@ -100,7 +100,7 @@ namespace BuffteksWebApp.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("BuffteksWebApp.Models.Project", "Project")
-                        .WithMany("ProjectPeople")
+                        .WithMany("Persons")
                         .HasForeignKey("ProjectID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

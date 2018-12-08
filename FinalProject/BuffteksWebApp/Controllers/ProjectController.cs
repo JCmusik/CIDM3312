@@ -291,6 +291,39 @@ namespace BuffteksWebApp.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var project = await _context.Projects.FindAsync(id);
+
+            var projDetails = _sorter.ProjectJoinMembersClients(_context, project);
+
+            var mem = projDetails.Members;
+            var client = projDetails.Clients;
+
+            for (var i = 0; i < mem.Count; i++)
+            {
+
+                _context.ProjectPersons.Remove(
+                    new ProjectPerson
+                    {
+                        ProjectID = project.ProjectID,
+                        Project = project,
+                        PersonID = mem[i].ID,
+                        Person = mem[i]
+                    }
+                );
+            }
+
+            for (var i = 0; i < client.Count; i++)
+            {
+
+                _context.ProjectPersons.Remove(
+                    new ProjectPerson
+                    {
+                        ProjectID = project.ProjectID,
+                        Project = project,
+                        PersonID = client[i].ID,
+                        Person = client[i]
+                    }
+                );
+            }
             _context.Projects.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

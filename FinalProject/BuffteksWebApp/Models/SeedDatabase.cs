@@ -15,7 +15,7 @@ namespace BuffteksWebApp.Models
 
             db.Database.EnsureCreated();
 
-            if (!db.Projects.Any())
+            if (!db.Projects.Any() && !db.Clients.Any() && !db.Members.Any() && !db.ProjectPersons.Any())
             {
                 //Create at least ten Members
                 // Create at least two clients
@@ -39,8 +39,6 @@ namespace BuffteksWebApp.Models
                         TotalHours = 1000,
                     }
                 };
-                db.Projects.AddRange(projects);
-                db.SaveChanges();
 
                 var clients = new List<Client>
                 {

@@ -52,7 +52,7 @@ namespace BuffteksWebApp.Logic
             return person;
         }
 
-        public static ProjectDetailViewModel ProjectJoinMembersClients(AppDbContext db, Project project)
+        public ProjectDetailViewModel ProjectJoinMembersClients(AppDbContext db, Project project)
         {
 
             var clients = from client in db.Clients
@@ -77,7 +77,7 @@ namespace BuffteksWebApp.Logic
             return projDetails;
         }
 
-        public static ProjectDetailViewModel MembersClientsNotInProject(AppDbContext db, Project project)
+        public ProjectDetailViewModel MembersClientsNotInProject(AppDbContext db, Project project)
         {
 
             var clients = from client in db.Clients

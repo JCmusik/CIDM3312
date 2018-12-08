@@ -5,37 +5,52 @@
     Model.PAVID = Model.NewProject.ProjectID;
 }
 
-<h4>Add Clients/Members to Project: @Model.NewProject.Title</h4>
+<h4 class="bg-secondary p-3">@Model.NewProject.Title Project</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">  
-          
-        <form asp-action="AddClientToProject" method="post">
+        <form method="post">  
+          <label style="display: block" asp-for="SelectID" class="control-label bg-secondary p-3">Select client to add  </label>
+          <hr>
             <div class="form-group">
                 <input type="hidden" asp-for="PAVID"/>
             </div>
             <div class="form-group">
-                <label asp-for="SelectID" class="control-label">Select client</label>
-                <select asp-for="SelectID" asp-items="@Model.ClientList"></select>
+                <dl class="dl-horizontal">
+                    <dt>
+                        <select asp-for="SelectID" asp-items="@Model.ClientList" class="btn btn-default"></select>
+                    </dt>
+                </dl>
             </div>
             <div class="form-group">
-                <input type="submit" value="Add Client" class="btn btn-default" />
+                <dl class="dl-horizontal">
+                    <dd>
+                        <input asp-route-id="@Model.NewProject.ProjectID" asp-action="AddClientToProject" type="submit" value="Add Client" class="btn btn-primary btn-sm" />
+                    </dd>
+                </dl>
             </div>
         </form>
-
-
-        <form method="post">
-            <div class="form-group">
-                <label asp-for="SelectID" class="control-label">Select member</label>
-                <select asp-for="SelectID" asp-items="@Model.MemberList"></select>              
-            </div>
-            <div class="form-group">
-                <input asp-route-id="@Model.NewProject.ProjectID" asp-action="AddMemberToProject" type="submit" value="Add Member" class="btn btn-default btn-sm" />
-            </div>
-        </form>    
-
-
     </div>
+    <div class="col-md-4"> 
+        <form method="post">
+        <label asp-for="SelectID" style="display: block" class="control-label bg-secondary p-3">Select member to add</label>
+        <hr>
+            <dl class="dl-horizontal">
+                <div class="form-group">
+                    <dt>
+                    <select asp-for="SelectID" asp-items="@Model.MemberList" class="btn btn-default " ></select>    
+                    </dt>        
+                </div>
+             </dl>   
+                <dl class="dl-horizontal">
+                    <div class="form-group">
+                        <dd>
+                        <input asp-route-id="@Model.NewProject.ProjectID" asp-action="AddMemberToProject" type="submit" value="Add Member" class="btn btn-primary btn-sm" />
+                        </dd>
+                    </div>
+                </dl>
+        </form>
+</div>
 </div>
 
 <div>

@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BuffteksWebApp.Models;
+using BuffteksWebApp.Logic;
 
 namespace BuffteksWebApp.Controllers
 {
     public class ProjectController : Controller
     {
         private readonly AppDbContext _context;
+        private ISorting _sorter;
 
-        public ProjectController(AppDbContext context)
+        public ProjectController(AppDbContext context, ISorting sorter)
         {
             _context = context;
+            _sorter = sorter;
         }
 
         // GET: Project
@@ -41,7 +44,7 @@ namespace BuffteksWebApp.Controllers
                 return RedirectToAction("Search");
             }
 
-            var projDetails = Logic.Sorting.ProjectJoinMembersClients(_context, project);
+            var projDetails = _sorter.ProjectJoinMembersClients(_context, project);
 
 
             return View(projDetails);
@@ -63,7 +66,7 @@ namespace BuffteksWebApp.Controllers
                 return NotFound();
             }
 
-            var projDetails = Logic.Sorting.ProjectJoinMembersClients(_context, project);
+            var projDetails = _sorter.ProjectJoinMembersClients(_context, project);
 
             return View(projDetails);
         }
@@ -100,7 +103,7 @@ namespace BuffteksWebApp.Controllers
                 return NotFound();
             }
 
-            var projP = Logic.Sorting.MembersClientsNotInProject(_context, project);
+            var projP = _sorter.MembersClientsNotInProject(_context, project);
             var memSort = projP.Members;
             var cliSort = projP.Clients;
 
@@ -135,7 +138,38 @@ namespace BuffteksWebApp.Controllers
             if (ModelState.IsValid)
             {
                 var proj = await _context.Projects.SingleOrDefaultAsync(c => c.ProjectID == id);
-                var client = await _context.Members.SingleOrDefaultAsync(c => c.ID == project.SelectID);
+                var member = await _context.Members.SingleOrDefaultAsync(c => c.ID == project.SelectID);
+
+                var cliToAdd = new ProjectPerson
+                {
+                    Project = proj,
+                    ProjectID = project.PAVID,
+                    Person = member,
+                    PersonID = member.ID
+                };
+
+                _context.ProjectPersons.Add(cliToAdd);
+                await _context.SaveChangesAsync();
+
+
+                return RedirectToRoute(new
+                {
+                    controller = "Project",
+                    action = "Details",
+                    id = id
+                });
+            }
+
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddClientToProject(int id, ProjectAddViewModel project)
+        {
+            if (ModelState.IsValid)
+            {
+                var proj = await _context.Projects.SingleOrDefaultAsync(c => c.ProjectID == id);
+                var client = await _context.Clients.SingleOrDefaultAsync(c => c.ID == project.SelectID);
 
                 var cliToAdd = new ProjectPerson
                 {

@@ -63,6 +63,9 @@ namespace BuffteksWebApp
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "removeFromProj",
+                    template: "{controller=Project}/{action=Index}/{pid}/{id}");
             });
             SeedDatabase.Seed(app);
         }

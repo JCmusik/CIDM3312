@@ -55,17 +55,42 @@ namespace BuffteksWebApp.Logic
         public static ProjectDetailViewModel ProjectJoinMembersClients(AppDbContext db, Project project)
         {
 
-            var clients = from person in db.Clients
+            var clients = from client in db.Clients
                           join projectPerson in db.ProjectPersons
-                          on person.ID equals projectPerson.Person.ID
+                          on client.ID equals projectPerson.PersonID
                           where project.ProjectID == projectPerson.ProjectID
-                          select person;
+                          select client;
 
-            var members = from person in db.Members
+            var members = from member in db.Members
                           join projectperson in db.ProjectPersons
-                          on person.ID equals projectperson.Person.ID
+                          on member.ID equals projectperson.PersonID
                           where project.ProjectID == projectperson.ProjectID
-                          select person;
+                          select member;
+
+            var projDetails = new ProjectDetailViewModel
+            {
+                Project = project,
+                Members = members.ToList() ?? null,
+                Clients = clients.ToList() ?? null
+            };
+
+            return projDetails;
+        }
+
+        public static ProjectDetailViewModel MembersClientsNotInProject(AppDbContext db, Project project)
+        {
+
+            var clients = from client in db.Clients
+                          join projectPerson in db.ProjectPersons
+                          on client.ID equals projectPerson.PersonID
+                          where project.ProjectID != projectPerson.ProjectID
+                          select client;
+
+            var members = from member in db.Members
+                          join projectperson in db.ProjectPersons
+                          on member.ID equals projectperson.PersonID
+                          where project.ProjectID != projectperson.ProjectID
+                          select member;
 
             var projDetails = new ProjectDetailViewModel
             {

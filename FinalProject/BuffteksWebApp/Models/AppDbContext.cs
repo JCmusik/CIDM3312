@@ -23,7 +23,7 @@ namespace BuffteksWebApp.Models
 
             modelBuilder.Entity<ProjectPerson>()
             .HasOne(p => p.Project)
-            .WithMany(pr => pr.ProjectPeople)
+            .WithMany(pr => pr.Persons)
             .HasForeignKey(id => id.ProjectID);
 
             modelBuilder.Entity<ProjectPerson>()

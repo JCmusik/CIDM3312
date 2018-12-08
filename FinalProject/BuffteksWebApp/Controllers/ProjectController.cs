@@ -91,6 +91,97 @@ namespace BuffteksWebApp.Controllers
             return View(project);
         }
 
+        public async Task<IActionResult> ProjectAddNew(int id, Project project)
+        {
+            project = await _context.Projects.FindAsync(id);
+
+            if (project == null)
+            {
+                return NotFound();
+            }
+
+            var projP = Logic.Sorting.MembersClientsNotInProject(_context, project);
+            var memSort = projP.Members;
+            var cliSort = projP.Clients;
+
+            List<SelectListItem> memberList = new List<SelectListItem>();
+            List<SelectListItem> clientList = new List<SelectListItem>();
+
+            foreach (var m in memSort)
+            {
+                memberList.Add(new SelectListItem { Value = m.ID.ToString(), Text = m.ToString() });
+            }
+
+            foreach (var c in cliSort)
+            {
+                clientList.Add(new SelectListItem { Value = c.ID.ToString(), Text = c.ToString() });
+            }
+
+            var projDetails = new ProjectAddViewModel()
+            {
+                PAVID = id,
+                NewProject = project,
+                MemberList = memberList,
+                ClientList = clientList
+            };
+
+            return View(projDetails);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> AddMemberToProject(int id, ProjectAddViewModel project)
+        {
+            if (ModelState.IsValid)
+            {
+                var proj = await _context.Projects.SingleOrDefaultAsync(c => c.ProjectID == id);
+                var client = await _context.Members.SingleOrDefaultAsync(c => c.ID == project.SelectID);
+
+                var cliToAdd = new ProjectPerson
+                {
+                    Project = proj,
+                    ProjectID = project.PAVID,
+                    Person = client,
+                    PersonID = client.ID
+                };
+
+                _context.ProjectPersons.Add(cliToAdd);
+                await _context.SaveChangesAsync();
+
+
+                return RedirectToAction("Index");
+            }
+
+            return NotFound();
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteMemberFromProject(int id, ProjectAddViewModel project)
+        {
+            if (ModelState.IsValid)
+            {
+                var proj = await _context.Projects.SingleOrDefaultAsync(c => c.ProjectID == id);
+                var client = await _context.Members.SingleOrDefaultAsync(c => c.ID == project.SelectID);
+
+                var cliToAdd = new ProjectPerson
+                {
+                    Project = proj,
+                    ProjectID = project.PAVID,
+                    Person = client,
+                    PersonID = client.ID
+                };
+
+                _context.ProjectPersons.Remove(cliToAdd);
+                await _context.SaveChangesAsync();
+
+
+                return RedirectToRoute("removeFromProj");
+            }
+
+            return NotFound();
+        }
+
         // GET: Project/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

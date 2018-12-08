@@ -59,8 +59,6 @@ namespace BuffteksWebApp.Models
                         Email = "info@palacecoffee.com"
                     },
                 };
-                db.Clients.AddRange(clients);
-                db.SaveChanges();
 
                 var members = new List<Member>
                 {
@@ -137,12 +135,18 @@ namespace BuffteksWebApp.Models
                     }
                 };
 
-                db.Members.AddRange(members);
-                db.SaveChanges();
-
-
                 var projpeople = new List<ProjectPerson>
                 {
+                    new ProjectPerson {ProjectID = projects[0].ProjectID,
+                                        Project = projects[0],
+                                        PersonID = clients[0].ID,
+                                        Person = clients[0]
+                                        },
+                    new ProjectPerson {ProjectID = projects[1].ProjectID,
+                                        Project = projects[1],
+                                        PersonID = clients[1].ID,
+                                        Person = clients[1]
+                                        },
                     new ProjectPerson {ProjectID = projects[0].ProjectID,
                                         Project = projects[0],
                                         PersonID = members[0].ID,
@@ -168,11 +172,6 @@ namespace BuffteksWebApp.Models
                                         PersonID = members[4].ID,
                                         Person = members[4]
                                         },
-                                        new ProjectPerson {ProjectID = projects[0].ProjectID,
-                                        Project = projects[0],
-                                        PersonID = clients[0].ID,
-                                        Person = clients[0]
-                                        },
                     new ProjectPerson {ProjectID = projects[1].ProjectID,
                                         Project = projects[1],
                                         PersonID = members[5].ID,
@@ -197,12 +196,7 @@ namespace BuffteksWebApp.Models
                                         Project = projects[1],
                                         PersonID = members[9].ID,
                                         Person = members[9]
-                                        },
-                    new ProjectPerson {ProjectID = projects[1].ProjectID,
-                                        Project = projects[1],
-                                        PersonID = clients[1].ID,
-                                        Person = clients[1]
-                                        },
+                                        }
 
                 };
                 db.ProjectPersons.AddRange(projpeople);

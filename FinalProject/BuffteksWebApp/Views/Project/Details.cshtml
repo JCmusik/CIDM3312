@@ -11,6 +11,7 @@
     <h4 class="bg-secondary p-3">Project</h4>
     <hr />
     <dl class="dl-horizontal">
+        <input type="hidden" asp-for="ProjID" />
         <dt>
             @Html.DisplayNameFor(model => model.Project.Title)
         </dt>
@@ -41,9 +42,12 @@
 <div class="col-lg-5">    
     <h4 class="bg-secondary p-3">Client</h4>
     <hr />
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <dl class="dl-horizontal">
         @foreach (var client in Model.Clients)
         {
+            <input type="hidden" asp-for="SelectID" value="@client.ID"/>
             <dt>
                Organization Name
             </dt>
@@ -62,17 +66,21 @@
             <dd>
                 @Html.DisplayFor(c => client.PhoneNumber)
             </dd>
+            <input type="submit" class="btn btn-danger btn-sm" asp-route-id="@Model.Project.ProjectID" asp-action="RemoveClient" value="Remove from project">
             <hr> 
         }
     </dl>
+    </form>
 </div>
 <div class="col-lg-6">
     <h4 class="bg-secondary p-3">Team Members</h4>
     <hr />
     <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <dl class="dl-horizontal">
         @foreach (var member in Model.Members)
         {
+            <input type="hidden" asp-for="SelectID" value="@member.ID"/>
             <dt>
                 Name
             </dt>
@@ -91,7 +99,7 @@
             <dd>
                 @Html.DisplayFor(m => member.PhoneNumber) 
             </dd>
-            <button type="submit" class="btn btn-danger btn-sm " asp-action="RemoveMember" asp-route-id="@Model.Project.ProjectID" asp-route-pid="SelectID">Remove from project</button>
+            <input type="submit" class="btn btn-danger btn-sm" asp-route-id="@Model.Project.ProjectID" asp-action="RemoveMember" value="Remove from project">
             <hr>
         }
         </form>

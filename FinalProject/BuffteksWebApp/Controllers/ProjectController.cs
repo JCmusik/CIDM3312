@@ -72,7 +72,36 @@ namespace BuffteksWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult RemoveMember(int id, ProjectDetailViewModel project)
+        public IActionResult RemoveClient(int id, [Bind("SelectID", "ProjID")] ProjectDetailViewModel project)
+        {
+            if (ModelState.IsValid)
+            {
+                var proj = _context.Projects.SingleOrDefault(c => c.ProjectID == id);
+                var client = _context.Clients.SingleOrDefault(c => c.ID == project.SelectID);
+
+                var cliToAdd = new ProjectPerson
+                {
+                    Project = proj,
+                    ProjectID = id,
+                    Person = client,
+                    PersonID = client.ID
+                };
+
+                _context.ProjectPersons.Remove(cliToAdd);
+                _context.SaveChanges();
+
+                return RedirectToRoute(new
+                {
+                    controller = "Project",
+                    action = "Details",
+                    id = id
+                });
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public IActionResult RemoveMember(int id, [Bind("SelectID", "ProjID")] ProjectDetailViewModel project)
         {
             if (ModelState.IsValid)
             {

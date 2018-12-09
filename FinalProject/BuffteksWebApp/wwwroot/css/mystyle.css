@@ -1,0 +1,16 @@
+a {
+    color: aquamarine;
+
+}
+a:hover {
+    color: aqua;
+    text-decoration: none;
+}
+
+.nav-item {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    position: relative;
+    top: 6px;
+    margin-right: 15px;
+}

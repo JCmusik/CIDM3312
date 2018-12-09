@@ -240,7 +240,12 @@ namespace BuffteksWebApp.Controllers
                 await _context.SaveChangesAsync();
 
 
-                return RedirectToAction("Index");
+                return RedirectToRoute(new
+                {
+                    controller = "Project",
+                    action = "Details",
+                    id = id
+                });
             }
 
             return NotFound();

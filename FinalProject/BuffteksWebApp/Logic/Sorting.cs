@@ -33,7 +33,7 @@ namespace BuffteksWebApp.Logic
                     person = person.OrderByDescending(m => m.FirstName);
                     break;
                 case "last_name":
-                    person = person.OrderBy(m => m.FirstName);
+                    person = person.OrderBy(m => m.LastName);
                     break;
                 case "last_name_desc":
                     person = person.OrderByDescending(m => m.LastName);

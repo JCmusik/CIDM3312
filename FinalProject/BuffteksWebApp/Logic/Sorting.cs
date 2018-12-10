@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using BuffteksWebApp.Models;
 
@@ -79,6 +80,10 @@ namespace BuffteksWebApp.Logic
 
         public ProjectDetailViewModel MembersClientsNotInProject(AppDbContext db, Project project)
         {
+            var mem = db.Members.ToList();
+
+            var projP = db.Clients.ToList();
+
 
             var clients = from client in db.Clients
                           join projectPerson in db.ProjectPersons
@@ -92,11 +97,45 @@ namespace BuffteksWebApp.Logic
                           where project.ProjectID != projectperson.ProjectID
                           select member;
 
+
+            var memNotProj = new List<Member>();
+
+            foreach (var m in mem)
+            {
+                memNotProj.Add(m);
+            }
+
+            foreach (var mm in members)
+            {
+                foreach (var m in mem)
+                {
+                    if (m.ID != mm.ID)
+                        memNotProj.Remove(mm);
+                }
+            }
+
+            var cliNotProj = new List<Client>();
+            foreach (var p in projP)
+            {
+                cliNotProj.Add(p);
+            }
+
+            foreach (var cl in clients)
+            {
+                foreach (var p in projP)
+                {
+                    if (p.ID != cl.ID)
+                        cliNotProj.Remove(cl);
+                }
+            }
+
+
+
             var projDetails = new ProjectDetailViewModel
             {
                 Project = project,
-                Members = members.ToList() ?? null,
-                Clients = clients.ToList() ?? null
+                Members = memNotProj ?? null,
+                Clients = cliNotProj ?? null
             };
 
             return projDetails;

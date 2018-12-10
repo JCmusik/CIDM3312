@@ -55,7 +55,6 @@ namespace BuffteksWebApp.Logic
 
         public ProjectDetailViewModel ProjectJoinMembersClients(AppDbContext db, Project project)
         {
-
             var clients = from client in db.Clients
                           join projectPerson in db.ProjectPersons
                           on client.ID equals projectPerson.PersonID
@@ -71,8 +70,8 @@ namespace BuffteksWebApp.Logic
             var projDetails = new ProjectDetailViewModel
             {
                 Project = project,
-                Members = members.ToList() ?? null,
-                Clients = clients.ToList() ?? null
+                Members = members.ToList(),
+                Clients = clients.ToList()
             };
 
             return projDetails;
@@ -82,21 +81,19 @@ namespace BuffteksWebApp.Logic
         {
             var mem = db.Members.ToList();
 
-            var projP = db.Clients.ToList();
-
+            var cli = db.Clients.ToList();
 
             var clients = from client in db.Clients
                           join projectPerson in db.ProjectPersons
                           on client.ID equals projectPerson.PersonID
-                          where project.ProjectID != projectPerson.ProjectID
+                          where project.ProjectID == projectPerson.ProjectID
                           select client;
 
             var members = from member in db.Members
                           join projectperson in db.ProjectPersons
                           on member.ID equals projectperson.PersonID
-                          where project.ProjectID != projectperson.ProjectID
+                          where project.ProjectID == projectperson.ProjectID
                           select member;
-
 
             var memNotProj = new List<Member>();
 
@@ -109,28 +106,26 @@ namespace BuffteksWebApp.Logic
             {
                 foreach (var m in mem)
                 {
-                    if (m.ID != mm.ID)
-                        memNotProj.Remove(mm);
+                    if (m.ID == mm.ID)
+                        memNotProj.Remove(m);
                 }
             }
 
             var cliNotProj = new List<Client>();
-            foreach (var p in projP)
+
+            foreach (var c in cli)
             {
-                cliNotProj.Add(p);
+                cliNotProj.Add(c);
             }
 
             foreach (var cl in clients)
             {
-                foreach (var p in projP)
+                foreach (var c in cli)
                 {
-                    if (p.ID != cl.ID)
-                        cliNotProj.Remove(cl);
+                    if (c.ID == cl.ID)
+                        cliNotProj.Remove(c);
                 }
             }
-
-
-
             var projDetails = new ProjectDetailViewModel
             {
                 Project = project,
